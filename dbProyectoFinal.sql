@@ -69,13 +69,42 @@ create table CarritoDetalles (
     cantidad int not null,
     precioUnitario decimal (10,2),
     subTotal decimal (10,2),
-    primary key pk_carrito_detalles (idCarrito),
+    primary key pk_carrito_detalles (idDetalleCarrito),
     constraint fk_carrito_detalles_clientes foreign key (idCliente)
 		references Clientes (idCliente),
 	constraint fk_carrito_detalles_productos foreign key (idProducto)
 		references Productos (idProducto)
 );
 
+create table Detallepedidos(
+	idDetallePedido int auto_increment not null, 
+    idPedido int not null, 
+    idProducto int not null, 
+    cantidad int not null, 
+    precioUnitario double, 
+    subTotal double, 
+    constraint pk_detallePedido primary key (idDetallePedido), 
+    
+    constraint fk_detallePedido_Pedidos foreign key (idPedido) 
+		references Pedidos(idPedido),
+	constraint fk_detallePedido_Producto foreign key (idProducto) 
+		references Productos(idProducto)
+); 
+
+create table Envios(
+	idEnvio int auto_increment not null, 
+    idPedido int not null, 
+    direccionEnvio varchar(250), 
+    empresaEnvio varchar(250), 
+    codigoSeguimiento int, 
+    fechaEnvio datetime, 
+    fechaEntrega datetime, 
+    estado enum('Pendiente','En tránsito','Entregado'), 
+    constraint pk_envios primary key(idEnvio),
+    
+    constraint fk_envios_Pedidos foreign key (idPedido) 
+		references Pedidos (idPedido)
+); 
 
 delimiter $$
 -- 1. Listar Usuarios
@@ -372,5 +401,110 @@ create procedure sp_EliminarCarritoDetalle(
 )
 begin
     delete from CarritoDetalles where idDetalleCarrito = p_idDetalleCarrito;
+end$$
+delimiter ;
+
+-- CRUD para detallePedidos 
+delimiter $$
+create procedure sp_listarDetallePedido()
+	begin
+		select * from DetallePedidos;
+	end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_añadirDetallePedido(
+	in p_idPedido int,
+	in p_idProducto int,
+	in p_cantidad int,
+	in p_precioUnitario double,
+	in p_subTotal double
+)
+begin
+	insert into Detallepedidos(idPedido, idProducto, cantidad, precioUnitario, subTotal)
+	values(p_idPedido, p_idProducto, p_cantidad, p_precioUnitario, p_subTotal);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_eliminarDetallePedidos(in p_idDetallePedido int)
+begin
+	delete from Detallepedidos where idDetallePedido = p_idDetallePedido;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_editarDetallePedido(
+	in p_idDetallePedido int,
+	in p_idPedido int,
+	in p_idProducto int,
+	in p_cantidad int,
+	in p_precioUnitario double,
+	in p_subTotal double
+)
+begin
+	update Detallepedidos
+	set idPedido = p_idPedido,
+		idProducto = p_idProducto,
+		cantidad = p_cantidad,
+		precioUnitario = p_precioUnitario,
+		subTotal = p_subTotal
+	where idDetallePedido = p_idDetallePedido;
+end$$
+delimiter ;
+
+-- CRUD para Envios 
+
+delimiter $$
+create procedure sp_listarEnvios()
+begin
+    select * from Envios;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_añadirEnvio(
+	in p_idPedido int,
+	in p_direccionEnvio varchar(250),
+	in p_empresaEnvio varchar(250),
+	in p_codigoSeguimiento int,
+	in p_fechaEnvio datetime,
+	in p_fechaEntrega datetime,
+	in p_estado enum('Pendiente','En tránsito','Entregado')
+)
+begin
+	insert into Envios(idPedido, direccionEnvio, empresaEnvio, codigoSeguimiento, fechaEnvio, fechaEntrega, estado)
+	values(p_idPedido, p_direccionEnvio, p_empresaEnvio, p_codigoSeguimiento, p_fechaEnvio, p_fechaEntrega, p_estado);
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_eliminarEnvio(in p_idEnvio int)
+begin
+	delete from Envios where idEnvio = p_idEnvio;
+end$$
+delimiter ;
+
+delimiter $$
+create procedure sp_editarEnvio(
+	in p_idEnvio int,
+	in p_idPedido int,
+	in p_direccionEnvio varchar(250),
+	in p_empresaEnvio varchar(250),
+	in p_codigoSeguimiento int,
+	in p_fechaEnvio datetime,
+	in p_fechaEntrega datetime,
+	in p_estado enum('Pendiente','En tránsito','Entregado')
+)
+begin
+	update Envios
+	set idPedido = p_idPedido,
+		direccionEnvio = p_direccionEnvio,
+		empresaEnvio = p_empresaEnvio,
+		codigoSeguimiento = p_codigoSeguimiento,
+		fechaEnvio = p_fechaEnvio,
+		fechaEntrega = p_fechaEntrega,
+		estado = p_estado
+	where idEnvio = p_idEnvio;
 end$$
 delimiter ;
