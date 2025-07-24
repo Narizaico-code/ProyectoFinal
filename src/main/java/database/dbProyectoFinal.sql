@@ -17,10 +17,10 @@ create table Usuarios (
 create table Clientes (
     idCliente int auto_increment primary key,
     nombre varchar(100) not null,
-    email varchar(100),
-    telefono varchar(20),
-    direccion varchar(255),
-    id_usuario int,
+    email varchar(100) not null unique,
+    telefono varchar(20) not null,
+    direccion varchar(255) not null,
+    idUsuario int not null,
 	constraint fk_Clientes_Usuario foreign key (idCliente)
 		references Usuarios (idUsuario) 
 );
@@ -109,10 +109,159 @@ create table Envios(
 create table CarritoDetalles (
 	idDetalleCarrito int auto_increment not null,
     idCliente int not null,
-@@ -249,6 +261,58 @@ end $$
+    idProducto int not null,
+    estado enum('Activo', 'Procesado') default 'Procesando',
+    cantidad int not null,
+    precioUnitario decimal(10,2) not null,
+    constraint pk_CarritoDetalles primary key (idDetalleCarrito)
+);
 
+-- Procesos almacenados de Usuarios
+delimiter $$
+create procedure sp_listarUsuarios()
+	begin
+		select 
+			U.idUsuario, 
+			U.nombre, 
+			U.apellido, 
+			U.correo, 
+			U.contrasena, 
+			U.telefono, 
+			U.direccion, 
+			U.rol
+		from Usuarios U;
+	end$$
+delimiter ;
+call sp_listarUsuarios();
+
+delimiter $$
+create procedure sp_agregarUsuario(
+    in p_nombre varchar(128),
+    in p_apellido varchar(128),
+    in p_correo varchar(128),
+    in p_contrasena varchar(255),
+    in p_telefono varchar(12),
+    in p_direccion varchar(255),
+    in p_rol enum('Cliente', 'Admin'))
+		begin
+			insert into Usuarios(nombre, apellido, correo, contrasena, telefono, direccion, rol)
+			values (p_nombre, p_apellido, p_correo, p_contrasena, p_telefono, p_direccion, p_rol);
+		end
+$$delimiter ;
+
+delimiter $$
+-- 3. Actualizar Usuario
+create procedure sp_actualizarUsuario(
+    in p_idUsuario int,
+    in p_nombre varchar(128),
+    in p_apellido varchar(128),
+    in p_correo varchar(128),
+    in p_contrasena varchar(255),
+    in p_telefono varchar(12),
+    in p_direccion varchar(255),
+    in p_rol enum('Cliente', 'Admin')
+)
+begin
+    update Usuarios
+    set nombre = p_nombre,
+        apellido = p_apellido,
+        correo = p_correo,
+        contrasena = p_contrasena,
+        telefono = p_telefono,
+        direccion = p_direccion,
+        rol = p_rol
+    where idUsuario = p_idUsuario;
+end$$
 delimiter ;
 
+delimiter $$
+-- 4. Eliminar Usuario
+create procedure sp_eliminarUsuario(
+    in p_idUsuario int)
+	begin
+		delete from Usuarios where idUsuario = p_idUsuario;
+	end$$
+delimiter ;
+
+delimiter //
+create procedure sp_buscarUsuario(
+	in p_idUsuario int)
+	begin
+		select * from Clientes where idUsuario = p_idUsuario;
+    end
+//delimiter ;
+    
+-- procesos almacenados de Cliente
+delimiter //
+create procedure sp_agregarCliente(
+	in p_nombre varchar(100),
+    in p_correo varchar(100),
+    in p_telefono varchar(20),
+    in p_direccion varchar(255),
+    in p_idUsario int)
+	begin
+		insert into Clientes(nombre, email, telefono, direccion,idUsuario)
+			values (p_nombre, p_correo, p_telefono, p_direccion, p_idUsario);
+    end
+//delimiter ;
+call sp_agregarCliente();
+
+-- listarCliente
+delimiter //
+create procedure sp_listarCliente()
+	begin
+		select 
+			C.idCliente, 
+			C.nombre, 
+			C.email, 
+			C.telefono, 
+			C.direccion, 
+			C.idUsuario
+        From Clientes C;
+    end
+//delimiter ;
+call sp_listarCliente();
+
+-- EliminarCliente
+delimiter //
+create procedure sp_eliminarCliente(
+	in p_idCliente int)
+	begin
+		delete from Clientes where idCliente = p_idCliente;
+    end
+//delimiter ;
+
+-- buscarCliente 
+delimiter //
+create procedure sp_buscarCliente(
+	in p_idCliente int)
+	begin
+		select * from Cliente where idCliente = p_idCliente;
+    end
+//delimiter ;
+
+-- actualizarCliente
+delimiter //
+create procedure sp_actualizarCliente(
+    in p_idCliente int,
+    in p_nombre varchar(100),
+    in p_correo varchar(100),
+    in p_telefono varchar(20),
+    in p_direccion varchar(255),
+    in p_idUsuario int)
+	begin
+		update Clientes
+		set nombre = p_nombre,
+			correo = p_correo,
+			telefono = p_telefono,
+			direccion = p_direccion,
+			idUsuario = p_idUsuario,
+		where idCliente = p_idCliente;
+	end
+$$delimiter ;
+desc Clientes;
+
+-- Procesos almacenados para pedidos
 delimiter $$
 -- 1. Listar Pedidos
 create procedure sp_ListarPedidos()
@@ -165,68 +314,10 @@ begin
 end$$
 delimiter ;
 
-delimiter $$
--- 1. Listar Usuarios
-create procedure sp_ListarUsuarios()
-begin
-    select * from Usuarios;
-end$$
-delimiter ;
 
-delimiter $$
--- 2. Agregar Usuario
-create procedure sp_AgregarUsuario(
-    in p_nombre varchar(128),
-    in p_apellido varchar(128),
-    in p_correo varchar(128),
-    in p_contrasena varchar(255),
-    in p_telefono varchar(12),
-    in p_direccion varchar(255),
-    in p_rol enum('Cliente', 'Admin')
-)
-begin
-    insert into Usuarios(nombre, apellido, correo, contrasena, telefono, direccion, rol)
-    values (p_nombre, p_apellido, p_correo, p_contrasena, p_telefono, p_direccion, p_rol);
-end$$
-delimiter ;
 
+-- Procesos para Proveedores
 delimiter $$
--- 3. Actualizar Usuario
-create procedure sp_ActualizarUsuario(
-    in p_idUsuario int,
-    in p_nombre varchar(128),
-    in p_apellido varchar(128),
-    in p_correo varchar(128),
-    in p_contrasena varchar(255),
-    in p_telefono varchar(12),
-    in p_direccion varchar(255),
-    in p_rol enum('Cliente', 'Admin')
-)
-begin
-    update Usuarios
-    set nombre = p_nombre,
-        apellido = p_apellido,
-        correo = p_correo,
-        contrasena = p_contrasena,
-        telefono = p_telefono,
-        direccion = p_direccion,
-        rol = p_rol
-    where idUsuario = p_idUsuario;
-end$$
-delimiter ;
-
-delimiter $$
--- 4. Eliminar Usuario
-create procedure sp_EliminarUsuario(
-    in p_idUsuario int
-)
-begin
-    delete from Usuarios where idUsuario = p_idUsuario;
-end$$
-delimiter ;
-
-delimiter $$
-
 -- Listar Proveedores
 create procedure sp_ListarProveedores()
 begin
