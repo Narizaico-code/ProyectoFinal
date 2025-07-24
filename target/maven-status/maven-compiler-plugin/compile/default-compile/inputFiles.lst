@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-C:\Users\ricar\OneDrive\Escritorio\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
-C:\Users\ricar\OneDrive\Escritorio\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
-C:\Users\ricar\OneDrive\Escritorio\ProyectoFinal\src\main\java\controller\ServletLogin.java
-C:\Users\ricar\OneDrive\Escritorio\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
-C:\Users\ricar\OneDrive\Escritorio\ProyectoFinal\src\main\java\model\Usuario.java
-=======
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Usuario.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletLogin.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
->>>>>>> ft/Angel
+C:\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
+C:\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
+C:\ProyectoFinal\src\main\java\controller\ServletLogin.java
+C:\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
+C:\ProyectoFinal\src\main\java\model\Usuario.java
