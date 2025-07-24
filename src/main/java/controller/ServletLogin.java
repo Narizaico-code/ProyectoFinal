@@ -16,5 +16,6 @@ import model.Usuario;
 public class ServletLogin {
 
     protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta) throws IOException, ServletException {
+        
     }
 }

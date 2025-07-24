@@ -1,37 +1,60 @@
-<%-- Document : index.jsp Created on : 20/07/2025, 01:42:45 Author : Angel Geovanny --%>
+<%-- 
+    Document   : index.jsp
+    Created on : 20/07/2025, 01:42:45
+    Author     : Angel Geovanny
+--%>
 
-    <%@page contentType="text/html" pageEncoding="UTF-8" %>
-        <!DOCTYPE html>
-        <html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="es">
 
-        <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>JSP Page</title>
-            <style>
-                body{
-                    background-color: rgb(61, 61, 61);
-                }
-                .div {
-                    border-radius: 15px;
-                    position: fixed;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    background-color: rgb(177, 195, 241);
-                    padding: 15px;
-                }
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
 
-                .div h1 {
-                    font-family: Arial, Helvetica, sans-serif;
-                    padding: 1fr;
-                }
-            </style>
-        </head>
+        .container-buttons {
+            text-align: center;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-        <body>
-            <div class="div">
-                <h1>Hola amigos!</h1>
-            </div>
-        </body>
+        .container-buttons h1 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
 
-        </html>
+        .btn-custom {
+            width: 200px;
+            height: 60px;
+            font-size: 1.2rem;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-buttons">
+        <h1>¡Bienvenido!</h1>
+        <a href="registro.jsp">
+            <button class="btn btn-success btn-custom">Registrar</button>
+        </a>
+        <a href="login.jsp">
+            <button class="btn btn-primary btn-custom">Login</button>
+        </a>
+    </div>
+</body>
+
+</html>
