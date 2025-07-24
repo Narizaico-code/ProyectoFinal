@@ -51,8 +51,7 @@
         <a href="registro.jsp">
             <button class="btn btn-success btn-custom">Registrar</button>
         </a>
-        <a href="menuPrincipal.jsp">
-        <a href="login.jsp">
+        <a href="ServletLogin">
             <button class="btn btn-primary btn-custom">Login</button>
         </a>
     </div>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.UsuarioDAO;
 import java.util.List;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 import model.Usuario;
 
@@ -15,31 +16,39 @@ import model.Usuario;
  * @author Angel Geovanny
  */
 @WebServlet("/ServletLogin")
-public class ServletLogin {
+public class ServletLogin extends HttpServlet {
 
-    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta) throws IOException, ServletException {
+    @Override
+    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta) throws ServletException, IOException {
         respuesta.setContentType("text/html;charset=UTF-8");
-        
+
         String correo = solicitud.getParameter("correo");
         String contraseña = solicitud.getParameter("contraseña");
-        
-        if (correo != null || contraseña != null) {
+
+        if (correo != null && contraseña != null) {
             UsuarioDAO dao = new UsuarioDAO();
-            List<Usuario> listaClientes = dao.listarTodos();
-            HttpSession session = null;
-            for (Usuario usuario : listaClientes) {
-                if (usuario.getCorreo().equalsIgnoreCase(correo) || usuario.getContraseña().equalsIgnoreCase(contraseña) ) {
+            List<Usuario> listaUsuarios = dao.listarTodos();
+            solicitud.setAttribute("listaUsuarios", listaUsuarios);
+
+            for (Usuario usuario : listaUsuarios) {
+                if (usuario.getCorreo().equalsIgnoreCase(correo) && usuario.getContraseña().equals(contraseña)) {
+                    HttpSession session = solicitud.getSession();
                     session.setAttribute("correo", correo);
                     session.setAttribute("nombre", usuario.getNombre());
                     session.setAttribute("telefono", usuario.getTelefono());
                     session.setAttribute("direccion", usuario.getDireccion());
                     session.setAttribute("rol", usuario.getRol());
+
                     respuesta.sendRedirect("ServletMenuPrincipal");
-                }else{
-                    
+                    return;
                 }
             }
+
+            solicitud.setAttribute("error", "Correo o contraseña incorrectos");
+            solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
+        } else {
+            solicitud.setAttribute("error", "Faltan datos");
+            solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
         }
-        
     }
 }
