@@ -16,6 +16,10 @@ import model.Usuario;
 public class ServletLogin {
 
     protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta) throws IOException, ServletException {
+        respuesta.setContentType("text/html;charset=UTF-8");
+        
+        String correo = solicitud.getParameter("correo");
+        String contraseña = solicitud.getParameter("contraseña");
         
     }
 }
