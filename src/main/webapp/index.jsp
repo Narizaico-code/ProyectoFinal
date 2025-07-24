@@ -7,31 +7,15 @@
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>JSP Page</title>
-            <style>
-                body{
-                    background-color: rgb(61, 61, 61);
-                }
-                .div {
-                    border-radius: 15px;
-                    position: fixed;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    background-color: rgb(177, 195, 241);
-                    padding: 15px;
-                }
-
-                .div h1 {
-                    font-family: Arial, Helvetica, sans-serif;
-                    padding: 1fr;
-                }
-            </style>
+            <link rel="stylesheet" href="style/index.css">
         </head>
 
         <body>
-            <div class="div">
-                <h1>Hola amigos!</h1>
-            </div>
+            <a href="login.jsp">
+                <div class="div">
+                    <h1>Hola amigos!</h1>
+                </div>
+            </a>
         </body>
 
         </html>

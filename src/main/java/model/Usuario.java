@@ -17,6 +17,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int IdUsuario;
+    
 
     public int getIdUsuario() {
         return IdUsuario;

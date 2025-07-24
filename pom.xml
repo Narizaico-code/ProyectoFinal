@@ -42,7 +42,8 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>8.0</version>
+            <version>${jakartaee}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     
