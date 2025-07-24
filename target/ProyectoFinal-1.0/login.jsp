@@ -1,4 +1,3 @@
-Este es login:
 <%-- Document : login Created on : 20/07/2025, 01:45:28 Author : Angel Geovanny --%>
 
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
@@ -11,7 +10,7 @@ Este es login:
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
                 integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
                 crossorigin="anonymous">
-            <a class="a" href="index.jsp"><img src="images/menu.png" alt="Imagen de regreso a menu"></a>
+            <a class="a" href="index.jsp"><img src="/images/menu.png" alt="Imagen de regreso a menu"></a>
             <style>
                 .a {
                     position: absolute;
