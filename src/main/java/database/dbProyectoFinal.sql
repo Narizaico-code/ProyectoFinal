@@ -11,7 +11,7 @@ create table Usuarios (
     telefono varchar (12) not null,
     direccion varchar (255) not null,
     rol enum('Cliente', 'Admin') default 'Cliente',
-    constraint pk_Usuarios primary key (idUsuario)
+    constraint pk_usuarios primary key (idUsuario)
 );
 
 create table Clientes (
@@ -21,22 +21,23 @@ create table Clientes (
     telefono varchar(20) not null,
     direccion varchar(255) not null,
     idUsuario int not null,
-	constraint fk_Clientes_Usuario foreign key (idCliente)
+	constraint fk_clientes_usuario foreign key (idCliente)
 		references Usuarios (idUsuario) 
 );
 
 create table Proveedores (
-    idProveedor int primary key auto_increment,
+    idProveedor int auto_increment,
     nombreProveedor varchar(100) not null,
     contactoNombre varchar(100),
     telefono varchar(20),
     correo varchar(100),
     direccion varchar(255),
-    estado enum('activo', 'inactivo') default 'activo'
+    estado enum('activo', 'inactivo') default 'activo',
+    constraint pk_proveedores primary key (idProveedor)
 );
 
 create table Productos (
-    idProducto int primary key auto_increment,
+    idProducto int auto_increment,
     nombreProducto varchar(100) not null,
     descripcion varchar(255),
     precio double not null,
@@ -46,7 +47,8 @@ create table Productos (
     marca varchar(100),
     categoria varchar(100),
     imagenURL varchar(255),
-    estado enum('activo', 'inactivo') default 'activo'
+    estado enum('activo', 'inactivo') default 'activo',
+    constraint pk_idProducto primary key (idProducto)
 );
 
 create table CarritoDetalles (
@@ -57,7 +59,7 @@ create table CarritoDetalles (
     cantidad int not null,
     precioUnitario decimal (10,2),
     subTotal decimal (10,2),
-    primary key pk_carrito_detalles (idCarrito),
+    constraint pk_carrito_detalles primary key  (idDetalleCarrito),
     constraint fk_carrito_detalles_clientes foreign key (idCliente)
 		references Clientes (idCliente),
 	constraint fk_carrito_detalles_productos foreign key (idProducto)
@@ -71,7 +73,7 @@ create table Pedidos (
     total decimal (10,2) not null,
     metodoPago ENUM('Efectivo','Tarjeta Credito', 'Tarjeta Debito') default 'Efectivo',
     estado ENUM('Pendiente', 'Pagado','Enviado', 'Entregado', 'Cancelado') default 'Pendiente',
-    primary key pk_pedidos (idPedido),
+    constraint pk_pedidos primary key (idPedido),
     constraint pk_pedidos_clientes foreign key (idCliente)
 		references Clientes (idCliente)
 );
@@ -84,7 +86,6 @@ create table Detallepedidos(
     precioUnitario double, 
     subTotal double, 
     constraint pk_detallePedido primary key (idDetallePedido), 
-    
     constraint fk_detallePedido_Pedidos foreign key (idPedido) 
 		references Pedidos(idPedido),
 	constraint fk_detallePedido_Producto foreign key (idProducto) 
@@ -101,19 +102,8 @@ create table Envios(
     fechaEntrega datetime, 
     estado enum('Pendiente','En tránsito','Entregado'), 
     constraint pk_envios primary key(idEnvio),
-    
     constraint fk_envios_Pedidos foreign key (idPedido) 
 		references Pedidos (idPedido)
-);
-
-create table CarritoDetalles (
-	idDetalleCarrito int auto_increment not null,
-    idCliente int not null,
-    idProducto int not null,
-    estado enum('Activo', 'Procesado') default 'Procesando',
-    cantidad int not null,
-    precioUnitario decimal(10,2) not null,
-    constraint pk_CarritoDetalles primary key (idDetalleCarrito)
 );
 
 -- Procesos almacenados de Usuarios
@@ -204,7 +194,6 @@ create procedure sp_agregarCliente(
 			values (p_nombre, p_correo, p_telefono, p_direccion, p_idUsario);
     end
 //delimiter ;
-call sp_agregarCliente();
 
 -- listarCliente
 delimiter //
@@ -314,8 +303,6 @@ begin
 end$$
 delimiter ;
 
-
-
 -- Procesos para Proveedores
 delimiter $$
 -- Listar Proveedores
@@ -323,8 +310,9 @@ create procedure sp_ListarProveedores()
 begin
     select * from Proveedores;
 end $$
-
+delimiter ;
 -- Agregar Proveedor
+delimiter $$
 create procedure sp_AgregarProveedor(
     in p_nombreProveedor varchar(100),
     in p_contactoNombre varchar(100),
@@ -337,8 +325,9 @@ begin
     insert into Proveedores(nombreProveedor, contactoNombre, telefono, correo, direccion, estado)
     values (p_nombreProveedor, p_contactoNombre, p_telefono, p_correo, p_direccion, p_estado);
 end $$
-
+delimiter ;
 -- Editar Proveedor
+delimiter $$
 create procedure sp_ActualizarProveedor(
     in p_idProveedor int,
     in p_nombreProveedor varchar(100),
@@ -358,26 +347,26 @@ begin
         estado = p_estado
     where idProveedor = p_idProveedor;
 end $$
-
+delimiter ;
 -- Eliminar Proveedor
+delimiter $$
 create procedure sp_EliminarProveedor(
     in p_idProveedor int
 )
 begin
     delete from Proveedores where idProveedor = p_idProveedor;
 end $$
-
 delimiter ;
 
 delimiter $$
-
 -- Listar Productos
 create procedure sp_ListarProductos()
 begin
     select * from Productos;
 end $$
-
+delimiter ;
 -- Agregar Producto
+delimiter $$
 create procedure sp_AgregarProducto(
     in p_nombreProducto varchar(100),
     in p_descripcion varchar(255),
@@ -400,8 +389,9 @@ begin
         p_marca, p_categoria, p_imagenURL, p_estado
     );
 end $$
-
+delimiter ;
 -- Editar Producto
+delimiter $$
 create procedure sp_ActualizarProducto(
     in p_idProducto int,
     in p_nombreProducto varchar(100),
@@ -429,8 +419,9 @@ begin
         estado = p_estado
     where idProducto = p_idProducto;
 end $$
-
+delimiter ;
 -- Eliminar Producto
+delimiter $$
 create procedure sp_EliminarProducto(
     in p_idProducto int
 )
