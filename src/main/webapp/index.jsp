@@ -51,11 +51,8 @@
         <a href="registro.jsp">
             <button class="btn btn-success btn-custom">Registrar</button>
         </a>
-<<<<<<< HEAD
         <a href="menuPrincipal.jsp">
-=======
-        <a href="login.jsp">
->>>>>>> main
+        <a href="menuPrincipal.jsp">
             <button class="btn btn-primary btn-custom">Login</button>
         </a>
     </div>
