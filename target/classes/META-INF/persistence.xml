@@ -7,15 +7,16 @@
         <class>model.Cliente</class>
         <properties>
             <!--configuracion del JDBC-->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/proyecto_final_db?useSSL=false"/> 
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/proyecto_final_db?useSSL=false"/> 
             <property name="javax.persistence.jdbc.user" value="root"/> 
             <property name="javax.persistence.jdbc.password" value="root"/> 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/> 
             <!--configuracion de Hibernet-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
             <property name="hibernate.hbm2dd.auto" value="update" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>

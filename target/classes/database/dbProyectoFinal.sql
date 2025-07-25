@@ -492,5 +492,5 @@ begin
     delete from CarritoDetalles where idDetalleCarrito = p_idDetalleCarrito;
 end$$
 delimiter ;
-
+select u from Usuarios u;
 call sp_agregarUsuario('Jose Fernando', 'Zeta Galeano', 'jzeta-2024452@kinal.edu.gt', 'Zeta2007', '5454-7878', 'Mixco', 'Cliente');

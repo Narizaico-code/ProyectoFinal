@@ -18,37 +18,53 @@ import model.Usuario;
 @WebServlet("/ServletLogin")
 public class ServletLogin extends HttpServlet {
 
+    UsuarioDAO dao = new UsuarioDAO();
+
     @Override
-    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
+            throws ServletException, IOException {
+        solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest solicitud, HttpServletResponse respuesta) throws ServletException, IOException {
         respuesta.setContentType("text/html;charset=UTF-8");
 
         String correo = solicitud.getParameter("correo");
-        String contraseña = solicitud.getParameter("contraseña");
+        String contraseña = solicitud.getParameter("contrasena");
 
-        if (correo != null && contraseña != null) {
-            UsuarioDAO dao = new UsuarioDAO();
-            List<Usuario> listaUsuarios = dao.listarTodos();
-            solicitud.setAttribute("listaUsuarios", listaUsuarios);
-
-            for (Usuario usuario : listaUsuarios) {
-                if (usuario.getCorreo().equalsIgnoreCase(correo) && usuario.getContraseña().equals(contraseña)) {
-                    HttpSession session = solicitud.getSession();
-                    session.setAttribute("correo", correo);
-                    session.setAttribute("nombre", usuario.getNombre());
-                    session.setAttribute("telefono", usuario.getTelefono());
-                    session.setAttribute("direccion", usuario.getDireccion());
-                    session.setAttribute("rol", usuario.getRol());
-
-                    respuesta.sendRedirect("ServletMenuPrincipal");
-                    return;
-                }
-            }
-
-            solicitud.setAttribute("error", "Correo o contraseña incorrectos");
-            solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
-        } else {
+        if (correo == null || contraseña == null || correo.isEmpty() || contraseña.isEmpty()) {
             solicitud.setAttribute("error", "Faltan datos");
             solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
+            return;
         }
+
+        if (correo != null && contraseña != null) {
+
+            UsuarioDAO dao = new UsuarioDAO();
+            List<Usuario> listaUsuarios = dao.listarTodos();
+
+            // Buscar usuario
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getCorreo().equalsIgnoreCase(correo)
+             && usuario.getContrasena().equals(contraseña)) {
+                // Credenciales OK, inicializar sesión
+                HttpSession session = solicitud.getSession();
+                session.setAttribute("correo",    usuario.getCorreo());
+                session.setAttribute("nombre",    usuario.getNombre());
+                session.setAttribute("telefono",  usuario.getTelefono());
+                session.setAttribute("direccion", usuario.getDireccion());
+                session.setAttribute("rol",       usuario.getRol());
+
+                // Redirigir al menú principal
+                respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
+                return;
+            }
+        }
+
+        // Si llegamos aquí, credenciales inválidas
+        solicitud.setAttribute("error", "Correo o contraseña incorrectos");
+        solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
     }
+}
 }
