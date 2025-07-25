@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @author Angel Geovanny
  */
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Usuarios")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +24,8 @@ public class Usuario {
     private String apellido;
     @Column(name = "correo")
     private String correo;
-    @Column(name = "contraseña")
-    private String contraseña;
+    @Column(name = "contrasena")
+    private String contrasena;
     @Column(name = "telefono")
     private String telefono;
     @Column(name = "direccion")
@@ -65,12 +65,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContrasena(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getTelefono() {
