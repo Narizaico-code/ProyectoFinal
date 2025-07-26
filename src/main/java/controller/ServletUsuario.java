@@ -49,9 +49,6 @@ public class ServletUsuario extends HttpServlet {
         dao.guardar(usuario);
 
         // Confirmación
-        out.println("<html><body>");
-        out.println("<h2>¡Registro exitoso!</h2>");
-        out.println("<p>Bienvenido, " + nombre + " " + apellido + "</p>");
-        out.println("</body></html>");
+        response.sendRedirect("login.jsp");
     }
 }
