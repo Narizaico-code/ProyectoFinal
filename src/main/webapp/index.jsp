@@ -48,13 +48,9 @@
 <body>
     <div class="container-buttons">
         <h1>¡Bienvenido!</h1>
-        <a href="registro.jsp">
+        <a href="registrarse.jsp">
             <button class="btn btn-success btn-custom">Registrar</button>
         </a>
-        <a href="registrarse.jsp">
-            <button class="btn btn-primary btn-custom">Login</button>
-        </a>
-        <a href="menuPrincipal.jsp">
         <a href="menuPrincipal.jsp">
             <button class="btn btn-primary btn-custom">Login</button>
         </a>
