@@ -25,7 +25,7 @@
         <a href="login.jsp">
             <button class="btn btn-primary btn-custom">Login</button>
         </a>
-        <a href="contactenos.jsp">
+        <a href="sueteres.jsp">
             <button class="btn btn-success btn-custom">Contactenos</button>
         </a>
     </div>
