@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,8 +29,10 @@ public class Usuario {
     private String contrasena;
     @Column(name = "telefono")
     private String telefono;
-    @Column(name = "direccion")
-    private String direccion;
+    @Column(name = "genero")
+    private String genero;
+    @Column(name = "fechaNacimiento")
+    private Timestamp fechaNacimiento;
     @Column(name = "rol")
     private String rol;
 
@@ -81,13 +84,7 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
+  
 
     public String getRol() {
         return rol;
@@ -95,6 +92,22 @@ public class Usuario {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public Timestamp getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Timestamp fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
 }

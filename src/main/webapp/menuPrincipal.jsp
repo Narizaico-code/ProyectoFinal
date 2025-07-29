@@ -5,305 +5,195 @@
         <meta charset="UTF-8">
         <title>${titulo}</title>
         <style>
-
-            body {
-
-                font-family: 'Segoe UI', sans-serif;
-
-                background-color: #f9f9f9;
-
-                margin: 0;
-
-                padding: 0;
-
-                display: flex;
-
-                flex-direction: column;
-
-                height: 100vh;
-
-            }
-
-            /* Encabezado */
-
-            .menu {
-
-                background-color: #ffffff;
-
-                padding: 15px 30px;
-
-                display: flex;
-
-                align-items: center;
-
-                justify-content: space-between;
-
-                color: #333;
-
-                border-bottom: 1px solid #ddd;
-
-                position: sticky;
-
-                top: 0;
-
-                z-index: 1000;
-
-            }
-
-            /* Buscador centrado */
-
-            .search-bar {
-
-                display: flex;
-
-                align-items: center;
-
-                gap: 8px;
-
-                flex-grow: 1;
-
-                justify-content: center;
-
-            }
-
-            .search-bar input[type="text"] {
-
-                padding: 8px 12px;
-
-                border: 1px solid #ccc;
-
-                border-radius: 20px;
-
-                font-size: 14px;
-
-                width: 250px;
-
-                transition: all 0.3s ease;
-
-            }
-
-            .search-bar input[type="text"]:focus {
-
-                outline: none;
-
-                border-color: #ff9800;
-
-                box-shadow: 0 0 5px rgba(255, 152, 0, 0.3);
-
-            }
-
-            .search-bar button {
-
-                padding: 8px 16px;
-
-                background-color: #ff9800;
-
-                border: none;
-
-                border-radius: 20px;
-
-                color: white;
-
-                font-weight: bold;
-
-                cursor: pointer;
-
-                transition: background-color 0.3s ease;
-
-            }
-
-            .search-bar button:hover {
-
-                background-color: #e68900;
-
-            }
-
-            /* Links del menú a la derecha */
-
-            .nav-links {
-
-                display: flex;
-
-                align-items: center;
-
-            }
-
-            .nav-links a {
-
-                color: #333;
-
-                text-decoration: none;
-
-                font-weight: 500;
-
-                margin-left: 20px;
-
-                transition: color 0.3s ease;
-
-            }
-
-            .nav-links a:hover {
-
-                color: #ff9800;
-
-            }
-
-            /* Contenido */
-
-            .contenido {
-
-                flex: 1;
-
-                display: flex;
-
-                flex-direction: column;
-
-            }
-
-            /* Categorías */
-
-            .categorias {
-
-                background-color: #fff;
-
-                padding: 30px 20px;
-
-                display: flex;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-                gap: 15px;
-
-                border-bottom: 1px solid #eee;
-
-            }
-
-            .categorias button {
-
-                background-color: #f0f0f0;
-
-                border: none;
-
-                padding: 10px 20px;
-
-                border-radius: 30px;
-
-                font-weight: 500;
-
-                color: #333;
-
-                cursor: pointer;
-
-                transition: all 0.3s ease;
-
-            }
-
-            .categorias button:hover {
-
-                background-color: #ff9800;
-
-                color: white;
-
-            }
-
-             /*Productos*/ 
-
-            .productos {
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: flex-start;
-            gap: 25px;
-            padding: 30px 20px;
-            overflow-y: auto;
+        :root {
+        --primary-color: #a3c4f3;
+        --secondary-color: #d6eadf;
+        --accent-color: #f5cac3;
+        --text-color: #333;
+        --background-color: #fefefe;
+        --button-hover: #b5d3f5;
         }
- 
+
+        body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: var(--secondary-color);
+        margin: 0;
+        padding: 0;
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        }
+
+        
+        .menu {
+        background-color: var(--background-color);
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--text-color);
+        border-bottom: 1px solid #ccc;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        }
+
+        
+        .search-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-grow: 1;
+        justify-content: center;
+        }
+
+        .search-bar input[type="text"] {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        font-size: 14px;
+        width: 250px;
+        transition: all 0.3s ease;
+        }
+
+        .search-bar input[type="text"]:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 5px rgba(245, 202, 195, 0.3);
+        }
+
+        .search-bar button {
+        padding: 8px 16px;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 20px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+        background-color: var(--button-hover);
+        }
+
+       
+        .nav-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+        color: var(--accent-color);
+        }
+
+       
+        .categorias {
+        background-color: var(--background-color);
+        padding: 30px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        border-bottom: 1px solid #eee;
+        }
+
+        .categorias button {
+        background-color: #f0f0f0;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-weight: 500;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        }
+
+        .categorias button:hover {
+        background-color: var(--primary-color);
+        color: white;
+        }
+
+       
+        .mega-menu {
+        display: flex;
+        justify-content: center;
+        background-color: var(--background-color);
+        padding: 30px;
+        gap: 50px;
+        border-bottom: 1px solid #ccc;
+        }
+
+        .mega-menu .col h4 {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: var(--text-color);
+        }
+
+        .mega-menu .col a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        transition: color 0.3s ease;
+        }
+
+        .mega-menu .col a:hover {
+        color: var(--accent-color);
+        }
+
+       
+        .productos {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        gap: 25px;
+        padding: 30px 20px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        }
+
         .producto {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            width: 220px;
-            padding: 15px;
-            text-align: center;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 220px;
+        padding: 15px;
+        text-align: center;
         }
- 
+
         .producto img {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            border-radius: 5px;
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 5px;
         }
- 
+
         .producto h3 {
-            margin: 12px 0 8px 0;
-            font-size: 18px;
+        margin: 12px 0 8px 0;
+        font-size: 18px;
+        color: var(--primary-color);
         }
- 
+
         .producto p {
-            font-size: 14px;
-            color: #555;
+        font-size: 14px;
+        color: #555;
         }
 
-            .mega-menu {
-
-                display: flex;
-
-                justify-content: center;
-
-                background-color: #fff;
-
-                padding: 30px;
-
-                gap: 50px;
-
-                border-bottom: 1px solid #ddd;
-
-            }
-
-            .mega-menu .col {
-
-                display: flex;
-
-                flex-direction: column;
-
-                gap: 8px;
-
-            }
-
-            .mega-menu .col h4 {
-
-                font-weight: bold;
-
-                margin-bottom: 10px;
-
-                color: #333;
-
-            }
-
-            .mega-menu .col a {
-
-                text-decoration: none;
-
-                color: #555;
-
-                font-size: 14px;
-
-                transition: color 0.3s ease;
-
-            }
-
-            .mega-menu .col a:hover {
-
-                color: #ff9800;
-
-            }
-            
-            
-           
+       
+        h2 {
+        padding: 10px 20px;
+        margin: 0 0 10px 0;
+        text-align: left;
+        font-size: 24px;
+        color: var(--text-color);
+        }
         </style>
+
     </head>
     <body>
 
@@ -314,7 +204,7 @@
                 <input type="text" name="query" placeholder="Buscar productos...">
                 <button type="submit">Buscar</button>
             </form>
-            
+
             <div class="nav-links">
                 <a href="inicio.jsp">Inicio</a>
                 <a href="contacto.jsp">Contacto</a>
@@ -405,39 +295,26 @@
                         mujer.style.display = "none";
 
                     } else {
-
                         mujer.style.display = "flex";
-
                         hombre.style.display = "none";
-
                     }
-
                 }
 
                 // Ocultar el mega menú cuando se hace clic fuera
-
                 document.addEventListener("click", function (event) {
-
                     const btnHombre = document.querySelector("button[onclick=\"mostrarMegaMenu('hombre')\"]");
-
                     const btnMujer = document.querySelector("button[onclick=\"mostrarMegaMenu('mujer')\"]");
-
                     const menuHombre = document.getElementById("menu-hombre");
-
                     const menuMujer = document.getElementById("menu-mujer");
 
                     // Si el clic NO fue sobre los botones ni sobre los menús
-
                     if (
                             !menuHombre.contains(event.target) &&
                             !btnHombre.contains(event.target) &&
                             !menuMujer.contains(event.target) &&
                             !btnMujer.contains(event.target)
-
                             ) {
-
                         menuHombre.style.display = "none";
-
                         menuMujer.style.display = "none";
 
                     }
@@ -447,103 +324,105 @@
         </script>
 
         <!-- Sección Productos -->
-            <h1>Camisas</h1>
-            <div class="producto">
-                <img src="images/camisa1.jpg" alt="Camisa elegante">
-                <h3>Camisa Elegante</h3>
-                <p>Camisa de algodón con diseño moderno y cómodo para cualquier ocasión.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/pantalon1.jpg" alt="Pantalón casual">
-                <h3>Pantalón Casual</h3>
-                <p>Pantalón casual con ajuste perfecto y tela resistente.</p>
-            </div>
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Zapatos deportivos">
-                <h3>Zapatos Deportivos</h3>
-                <p>Zapatos deportivos ligeros y cómodos para uso diario.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Pantalones Cargo">
-                <h3>Pantalones Cargo</h3>
-                <p>Pantalones Cargo ligeros y cómodos para uso diario.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Estampados">
-                <h3>Estampados</h3>
-                <p>Estampados ligeros y cómodos para uso diario.</p>
-            </div>
-        </div>
-        
-         <div class="productos">
-            <div class="producto">
-                <img src="images/camisa1.jpg" alt="Playeras Deportivas">
-                <h3>Playeras Deportivas</h3>
-                <p>Playeras Deportivas ligeras y anti transpirantes .</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/pantalon1.jpg" alt="Pantalón casual">
-                <h3>Pantalón Casual</h3>
-                <p>Pantalón casual con ajuste perfecto y tela resistente.</p>
-            </div>
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Zapatos deportivos">
-                <h3>Zapatos Deportivos</h3>
-                <p>Zapatos deportivos ligeros y cómodos para uso diario.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Pantalones Cargo">
-                <h3>Pantalones Cargo</h3>
-                <p>Pantalones Cargo ligeros y cómodos para uso diario.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Estampados">
-                <h3>Estampados</h3>
-                <p>Estampados ligeros y cómodos para uso diario.</p>
-            </div>
-        </div>
-        
-         <div class="productos">
-            <div class="producto">
-                <img src="images/camisa1.jpg" alt="Camisa elegante">
-                <h3>Camisa Elegante</h3>
-                <p>Camisa de algodón con diseño moderno y cómodo para cualquier ocasión.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/pantalon1.jpg" alt="Pantalón casual">
-                <h3>Pantalón Casual</h3>
-                <p>Pantalón casual con ajuste perfecto y tela resistente.</p>
-            </div>
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Zapatos deportivos">
-                <h3>Zapatos Deportivos</h3>
-                <p>Zapatos deportivos ligeros y cómodos para uso diario.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Pantalones Cargo">
-                <h3>Pantalones Cargo</h3>
-                <p>Pantalones Cargo ligeros y cómodos para uso diario.</p>
-            </div>
-            
-            <div class="producto">
-                <img src="images/zapatos1.jpg" alt="Estampados">
-                <h3>Estampados</h3>
-                <p>Estampados ligeros y cómodos para uso diario.</p>
-            </div>
-        </div>
-        
-    </div>
-        
-       
+        <div class="contenido">
 
+            <!-- Sección: Camisas -->
+            <section>
+                <h2>Camisas</h2>
+                <div class="productos">
+                    <div class="producto">
+                        <img src="images/camisa1.jpg" alt="Camisa Elegante">
+                        <h3>Camisa Elegante</h3>
+                        <p>Camisa de algodón con diseño moderno para eventos formales.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/camisa1.jpg" alt="Camisa Básica">
+                        <h3>Camisa Básica</h3>
+                        <p>Camisa básica de uso diario, ligera y cómoda.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/camisa1.jpg" alt="Camisa a Cuadros">
+                        <h3>Camisa a Cuadros</h3>
+                        <p>Camisa informal con diseño de cuadros clásicos.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/camisa1.jpg" alt="Camisa Slim Fit">
+                        <h3>Camisa Slim Fit</h3>
+                        <p>Ajustada al cuerpo para un estilo más moderno.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/camisa1.jpg" alt="Camisa Casual">
+                        <h3>Camisa Casual</h3>
+                        <p>Ideal para salidas informales o trabajo casual.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Pantalones -->
+            <section>
+                <h2>Pantalones</h2>
+                <div class="productos">
+                    <div class="producto">
+                        <img src="images/pantalon1.jpg" alt="Pantalón Casual">
+                        <h3>Pantalón Casual</h3>
+                        <p>De corte recto, cómodo para el día a día.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/pantalon1.jpg" alt="Pantalón Cargo">
+                        <h3>Pantalón Cargo</h3>
+                        <p>Con bolsillos laterales, estilo urbano.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/pantalon1.jpg" alt="Jogger">
+                        <h3>Jogger</h3>
+                        <p>Pantalón deportivo con puños elásticos.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/pantalon1.jpg" alt="Pantalón de Vestir">
+                        <h3>Pantalón de Vestir</h3>
+                        <p>Para eventos formales y reuniones de trabajo.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/pantalon1.jpg" alt="Pantalón Slim">
+                        <h3>Pantalón Slim</h3>
+                        <p>Ajustado a las piernas para un look moderno.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Suéteres -->
+            <section>
+                <h2>Suéteres</h2>
+                <div class="productos">
+                    <div class="producto">
+                        <img src="images/zapatos1.jpg" alt="Suéter Básico">
+                        <h3>Suéter Básico</h3>
+                        <p>Suéter de lana ligero y cálido para uso diario.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/zapatos1.jpg" alt="Suéter de Cuello Alto">
+                        <h3>Cuello Alto</h3>
+                        <p>Ideal para invierno y días fríos.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/zapatos1.jpg" alt="Suéter con Capucha">
+                        <h3>Con Capucha</h3>
+                        <p>Diseño casual con estilo deportivo.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/zapatos1.jpg" alt="Cardigan">
+                        <h3>Cardigan</h3>
+                        <p>Abrigo abierto con botones para un look elegante.</p>
+                    </div>
+                    <div class="producto">
+                        <img src="images/zapatos1.jpg" alt="Suéter Trenzado">
+                        <h3>Trenzado</h3>
+                        <p>Textura de punto grueso para mayor abrigo.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
 </body>
 </html>
 

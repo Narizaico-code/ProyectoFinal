@@ -53,7 +53,8 @@ public class ServletLogin extends HttpServlet {
                 session.setAttribute("correo",    usuario.getCorreo());
                 session.setAttribute("nombre",    usuario.getNombre());
                 session.setAttribute("telefono",  usuario.getTelefono());
-                session.setAttribute("direccion", usuario.getDireccion());
+                session.setAttribute("genero", usuario.getGenero());
+                session.setAttribute("fechaNacimiento", usuario.getFechaNacimiento());
                 session.setAttribute("rol",       usuario.getRol());
 
                 // Redirigir al menú principal
