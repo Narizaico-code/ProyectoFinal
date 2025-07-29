@@ -10,6 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Formulario de Registro</title>
+<<<<<<< HEAD
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -62,11 +63,18 @@
                 background-color: #218838;
             }
         </style>
+=======
+        <link rel="stylesheet" href="style/index.css">
+>>>>>>> main
     </head>
     <body>
         <div class="form-container">
             <h2>Registrarse</h2>
+<<<<<<< HEAD
             <form action="procesarRegistro.jsp" method="post">
+=======
+            <form action="ServletUsuario" method="post">
+>>>>>>> main
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" maxlength="128" required>
 
@@ -96,4 +104,8 @@
             </form>
         </div>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> main

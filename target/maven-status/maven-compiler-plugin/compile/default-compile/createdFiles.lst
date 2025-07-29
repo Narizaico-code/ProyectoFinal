@@ -1,4 +1,8 @@
 controller\ServletLogin.class
+<<<<<<< HEAD
+=======
+controller\ServletUsuario.class
+>>>>>>> main
 dao\UsuarioDAO.class
 controller\ServletMenuPrincipal.class
 model\Usuario.class

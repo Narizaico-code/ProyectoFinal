@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
  * @author Angel Geovanny
  */
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Usuarios")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +25,14 @@ public class Usuario {
     private String apellido;
     @Column(name = "correo")
     private String correo;
-    @Column(name = "contraseña")
-    private String contraseña;
+    @Column(name = "contrasena")
+    private String contrasena;
     @Column(name = "telefono")
     private String telefono;
-    @Column(name = "direccion")
-    private String direccion;
+    @Column(name = "genero")
+    private String genero;
+    @Column(name = "fechaNacimiento")
+    private Timestamp fechaNacimiento;
     @Column(name = "rol")
     private String rol;
 
@@ -65,12 +68,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContrasena(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getTelefono() {
@@ -81,13 +84,7 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
+  
 
     public String getRol() {
         return rol;
@@ -95,6 +92,22 @@ public class Usuario {
 
     public void setRol(String rol) {
         this.rol = rol;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public Timestamp getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Timestamp fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
 }
