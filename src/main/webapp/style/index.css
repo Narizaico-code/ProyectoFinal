@@ -1,158 +1,273 @@
 /* Paleta Discord-Inspirada adaptada para Stillz */
+
 :root {
+
   --fondo-oscuro: #313338;
+
   --fondo-panel: #2C2F33;
+
   --blurple: #5865F2;
+
   --blurple-hover: #4752C4;
+
   --texto-claro: #FFFFFF;
+
   --texto-suave: #B9BBBE;
+
   --borde-input: #4F545C;
-}
 
+}
+ 
 /* Reset y fuente */
+
 * {
+
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
+
   font-family: 'Segoe UI', sans-serif;
-}
 
+}
+ 
 body, html {
+
   height: 100%;
+
   background-color: var(--fondo-oscuro);
-  color: var(--texto-claro);
-}
 
+  color: var(--texto-claro);
+
+}
+ 
 /* Fondo principal */
+
 .fondo {
+
   display: flex;
+
   flex-direction: column;
+
   min-height: 100vh;
+
   padding: 20px;
-}
 
+}
+ 
 /* Header con logo y navegación */
+
 header {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   background-color: var(--fondo-panel);
+
   padding: 15px 30px;
+
   border-radius: 12px;
+
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
   margin-bottom: 40px;
-}
 
+}
+ 
 .logo {
+
   height: 60px;
-}
 
+}
+ 
 nav button {
+
   background: none;
+
   border: none;
+
   color: var(--texto-suave);
+
   font-size: 16px;
+
   margin-left: 20px;
+
   cursor: pointer;
+
   transition: color 0.3s;
-}
 
+}
+ 
 nav button:hover {
-  color: var(--blurple);
-}
 
+  color: var(--blurple);
+
+}
+ 
 /* Contenido central */
+
 .contenido {
+
   display: flex;
+
   justify-content: space-between;
+
   flex-wrap: wrap;
+
   gap: 40px;
+
   padding: 0 20px;
-}
 
+}
+ 
 /* Sección informativa */
+
 .info {
+
   flex: 1 1 300px;
+
   max-width: 500px;
-}
 
+}
+ 
 .info h1 {
+
   font-size: 36px;
+
   margin-bottom: 15px;
-}
 
+}
+ 
 .info p {
+
   font-size: 18px;
+
   color: var(--texto-suave);
-}
 
+}
+ 
 /* Panel de login */
+
 .panel {
+
   flex: 1 1 300px;
+
   max-width: 400px;
+
   background-color: var(--fondo-panel);
+
   padding: 30px;
+
   border-radius: 12px;
+
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
+
   text-align: center;
-}
 
+}
+ 
 .panel h2 {
+
   font-size: 28px;
+
   margin-bottom: 25px;
-}
 
+}
+ 
 /* Botones */
+
 .botones {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 15px;
-}
 
+}
+ 
 button.login,
+
 button.registrarse {
+
   padding: 12px;
+
   font-size: 16px;
+
   border-radius: 8px;
+
   border: none;
+
   cursor: pointer;
+
   color: var(--texto-claro);
+
   transition: background-color 0.3s;
-}
 
+}
+ 
 button.login {
+
   background-color: var(--blurple);
-}
 
+}
+ 
 button.login:hover {
-  background-color: var(--blurple-hover);
-}
 
+  background-color: var(--blurple-hover);
+
+}
+ 
 button.registrarse {
+
   background-color: transparent;
+
   border: 1px solid var(--blurple);
+
   color: var(--blurple);
-}
 
+}
+ 
 button.registrarse:hover {
+
   background-color: var(--blurple-hover);
+
   color: var(--texto-claro);
+
   border-color: var(--blurple-hover);
-}
 
+}
+ 
 /* Responsive */
+
 @media (max-width: 768px) {
+
   .contenido {
+
     flex-direction: column;
+
     align-items: center;
-  }
 
+  }
+ 
   header {
+
     flex-direction: column;
+
     text-align: center;
+
+  }
+ 
+  nav button {
+
+    margin: 10px 10px 0 10px;
+
   }
 
-  nav button {
-    margin: 10px 10px 0 10px;
-  }
 }
+
+ 
