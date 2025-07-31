@@ -259,7 +259,7 @@
             </form>
 
             <div class="nav-links">
-                <a href="contacto.jsp">Contacto</a>
+                <a href="camisas.jsp">Contacto</a>
                 <a href="index.jsp">Cerrar Sesión</a>
             </div>
         </div>
