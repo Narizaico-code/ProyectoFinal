@@ -1,3 +1,9 @@
+<%-- 
+    Document   : registrarse
+    Created on : 25/07/2025, 11:23:24
+    Author     : ricardo
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
