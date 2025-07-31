@@ -327,19 +327,13 @@
             </div>
 
             <script>
-
                 function mostrarMegaMenu(tipo) {
-
                     const hombre = document.getElementById("menu-hombre");
-
                     const mujer = document.getElementById("menu-mujer");
-
+                    
                     if (tipo === 'hombre') {
-
                         hombre.style.display = "flex";
-
                         mujer.style.display = "none";
-
                     } else {
                         mujer.style.display = "flex";
                         hombre.style.display = "none";
@@ -355,11 +349,11 @@
 
                     // Si el clic NO fue sobre los botones ni sobre los menús
                     if (
-                            !menuHombre.contains(event.target) &&
-                            !btnHombre.contains(event.target) &&
-                            !menuMujer.contains(event.target) &&
-                            !btnMujer.contains(event.target)
-                            ) {
+                        !menuHombre.contains(event.target) &&
+                        !btnHombre.contains(event.target) &&
+                        !menuMujer.contains(event.target) &&
+                        !btnMujer.contains(event.target))
+                    {
                         menuHombre.style.display = "none";
                         menuMujer.style.display = "none";
 
