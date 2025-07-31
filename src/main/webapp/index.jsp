@@ -1,24 +1,14 @@
-<%-- 
-    Document   : index.jsp
-    Created on : 20/07/2025, 01:42:45
-    Author     : Angel Geovanny
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Bienvenido</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stillz Ropa</title>
+  <link rel="stylesheet" href="style/index.css" />
 </head>
-
 <body>
     <div class="container-buttons">
-        <h1>Â¡Bienvenido!</h1>
+        <h1>¡Bienvenido!</h1>
         <a href="registrarse.jsp">
             <button class="btn btn-success btn-custom">Registrar</button>
         </a>
@@ -28,4 +18,31 @@
     </div>
 </body>
 
+  <div class="fondo">
+    <header>
+      <img src="logo.png" alt="Logo Stillz" class="logo" />
+      <nav>
+        <button>Misi?n y Visi?n</button>
+        <button>Acerca de</button>
+        <button>Valores</button>
+        <button>Cont?ctenos</button>
+      </nav>
+    </header>
+
+    <main class="contenido">
+      <section class="info">
+        <h1>Stillz: Estilo con Actitud</h1>
+        <p>Tienda de ropa urbana que mezcla lo retro y moderno. Crea tu estilo ?nico y aut?ntico con Stillz.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Bienvenido</h2>
+        <div class="botones">
+          <button class="login">Iniciar Sesi?n</button>
+          <button class="registrarse">Registrarse</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
 </html>
