@@ -232,9 +232,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="btn-regresar-container">
-                <a href="index.jsp">
+                <a href="ServletMenuPrincipal">
                     <button class="btn btn-primary btn-custom">Regresar</button>
                 </a>
             </div>
@@ -262,7 +261,7 @@
                     </div>
 
                     <button type="submit">Enviar</button>
-                    <input type="hidden" name="_next" value="http://localhost:8080/ProyectoFinal/">
+                    <input type="hidden" name="_next" value="http://localhost:8080/ProyectoFinal/ServletMenuPrincipal">
                     <input type="hidden" name="_captcha" value="false">
                 </form>
             </div>
