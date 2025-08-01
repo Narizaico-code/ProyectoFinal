@@ -1,28 +1,29 @@
 package dao;
 
 import java.util.List;
-import javax.persistence.Persistence;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import model.Usuario;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import model.Producto;
 
 /**
  *
  * @author Angel Geovanny
  */
-public class UsuarioDAO {
+public class ProductoDAO {
 
     //Entity Manager Factory - PU
     private EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
 
-    public void guardar(Usuario usuario) {
+    public void guardar(Producto producto) {
         //Entity Manager, manejar las transacciones.
         EntityManager admin = fabrica.createEntityManager();
 
         try {
             admin.getTransaction().begin();
-            admin.persist(usuario);
+            admin.persist(producto);
             admin.getTransaction().commit();
         } catch (Exception e) {
             System.out.println("Error al guardar usuario: " + e.getMessage());
@@ -31,35 +32,51 @@ public class UsuarioDAO {
         }
     }
 
-    public List<Usuario> listarTodos() {
+    public List<Producto> listarTodos() {
         EntityManager admin = fabrica.createEntityManager();
         try {
             //getResultList -> lista de objetos
 
             //JPQL
-            return admin.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
+            return admin.createQuery("SELECT p FROM Producto p", Producto.class).getResultList();
         } finally {
             admin.close();
         }
     }
 
-    public Usuario buscarPorId(int id) {
+    public Producto buscarPorId(int id) {
         EntityManager admin = fabrica.createEntityManager();
-
         try {
-            return admin.find(Usuario.class, id);
+            return admin.find(Producto.class, id);
         } finally {
             admin.close();
         }
     }
 
-    public void actualizar(Usuario usuario) {
+    public List<Producto> listarPorBusqueda(String busqueda) {
+    EntityManager admin = fabrica.createEntityManager();
+    try {
+        String consulta = "SELECT p FROM Producto p WHERE p.estado = 'activo' AND (p.talla = :filtro OR p.categoria = :filtro)";
+        Query query = admin.createQuery(consulta);
+        query.setParameter("filtro", busqueda);
+        List<Producto> resultados = query.getResultList();
+        return resultados;
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null; // o Collections.emptyList();
+    } finally {
+        admin.close();
+    }
+}
+
+
+    public void actualizar(Producto producto) {
         //entitymanager, entitytransation -> begin, proceso, commit | rollback --> close
         EntityManager admin = fabrica.createEntityManager();
         EntityTransaction transaccion = admin.getTransaction();
         try {
             transaccion.begin();
-            admin.merge(usuario);
+            admin.merge(producto);
             transaccion.commit();
         } catch (Exception e) {
             if (transaccion.isActive()) {
@@ -76,9 +93,9 @@ public class UsuarioDAO {
 
         try {
             tr.begin();
-            Usuario usuario = admin.find(Usuario.class, id);
-            if (usuario != null) {
-                admin.remove(usuario);
+            Producto producto = admin.find(Producto.class, id);
+            if (producto != null) {
+                admin.remove(producto);
             }
             tr.commit();
         } catch (Exception e) {
