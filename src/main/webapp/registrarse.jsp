@@ -11,67 +11,12 @@
         <meta charset="UTF-8">
         <title>Formulario de Registro</title>
 
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f0f2f5;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-
-            .form-container {
-                background-color: #fff;
-                padding: 2rem;
-                border-radius: 10px;
-                box-shadow: 0 0 15px rgba(0,0,0,0.1);
-                width: 350px;
-            }
-
-            h2 {
-                text-align: center;
-                margin-bottom: 1rem;
-            }
-
-            form {
-                display: flex;
-                flex-direction: column;
-            }
-
-            label {
-                margin-top: 10px;
-                margin-bottom: 5px;
-                font-weight: bold;
-            }
-
-            input, select, button {
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-            }
-
-            button {
-                margin-top: 15px;
-                background-color: #28a745;
-                color: white;
-                border: none;
-                cursor: pointer;
-            }
-
-            button:hover {
-                background-color: #218838;
-            }
-        </style>
-
-        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/extra.css">
 
     </head>
     <body>
         <div class="form-container">
             <h2>Registrarse</h2>
-
-            <form action="procesarRegistro.jsp" method="post">
 
             <form action="ServletUsuario" method="post">
 

@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 controller\ServletLogin.class
 controller\ServletUsuario.class
 dao\UsuarioDAO.class
+=======
+controller\ServletListarProducto.class
+model\Productos.class
+controller\ServletEditarProducto.class
+>>>>>>> ft/Angel
 controller\ServletMenuPrincipal.class
 model\Usuario.class
 controller\ServletCerrarSesion.class
+controller\ServletLogin.class
+controller\ServletProductos.class
+controller\ServletUsuario.class
+dao\UsuarioDAO.class
+dao\ProductoDAO.class
+controller\ServletEliminarProducto.class
