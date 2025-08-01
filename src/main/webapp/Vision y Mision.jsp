@@ -17,7 +17,7 @@
 </head>
 <body>
 <header>
-    <img src="images/logo_stillz.jpg" alt="Logo Stillz" />
+    <img src="/src/main/webapp/images/logo_stillz.jpg" alt="Logo Stillz" />
     <h1>Stillz</h1>
 </header>
 
