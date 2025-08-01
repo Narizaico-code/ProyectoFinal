@@ -53,22 +53,24 @@ public class ProductoDAO {
         }
     }
 
-    public List<Producto> listarPorBusqueda(String busqueda) {
-    EntityManager admin = fabrica.createEntityManager();
-    try {
-        String consulta = "SELECT p FROM Producto p WHERE p.estado = 'activo' AND (p.talla = :filtro OR p.categoria = :filtro)";
-        Query query = admin.createQuery(consulta);
-        query.setParameter("filtro", busqueda);
-        List<Producto> resultados = query.getResultList();
-        return resultados;
-    } catch (Exception e) {
-        e.printStackTrace();
-        return null; // o Collections.emptyList();
-    } finally {
-        admin.close();
+    public List<Producto> listarPorBusqueda(String filtro) {
+        EntityManager admin = fabrica.createEntityManager();
+        try {
+            String jpql = "SELECT p FROM Producto p WHERE p.estado = 'activo' AND "
+                    + "(LOWER(p.nombreProducto) LIKE :filtro OR "
+                    + "LOWER(p.talla) LIKE :filtro OR "
+                    + "LOWER(p.color) LIKE :filtro OR "
+                    + "LOWER(p.categoria) LIKE :filtro)";
+            Query query = admin.createQuery(jpql);
+            query.setParameter("filtro", "%" + filtro.toLowerCase() + "%");
+            return query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            admin.close();
+        }
     }
-}
-
 
     public void actualizar(Producto producto) {
         //entitymanager, entitytransation -> begin, proceso, commit | rollback --> close

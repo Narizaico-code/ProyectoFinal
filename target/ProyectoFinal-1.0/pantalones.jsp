@@ -4,19 +4,57 @@
     Author     : informatica
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="model.Producto" %>
+<%@ page import="java.util.List" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page import="dao.ProductoDAO" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pantalones</title>
-        <link rel="stylesheet" href="2"/>
+        <link rel="stylesheet" href="style/pantalones.css"/>
     </head>
     <body>
-        <h1>Pantalones</h1>
-        <div>
-            <h2></h2>
+        <div class="nav-links">
+            <a href="menuPrincipal.jsp">Regresar</a>
+        </div>
+        <div> 
+            <form method="get" action="ServletPantalon">
+                <input type="text" name="query" placeholder="Buscar..." required />
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        <div class="contenido">
+            <%
+                List<Producto> resultadoBusqueda = (List<Producto>) request.getAttribute("resultadoBusqueda");
 
+                if (resultadoBusqueda != null && !resultadoBusqueda.isEmpty()) {
+            %>
+            <h2>Resultados</h2>
+            <div class="productos">
+                <%
+                    for (Producto producto : resultadoBusqueda) {
+                %>
+                <div class="producto">
+                    <img src="<%= producto.getImagenURL()%>" alt="<%= producto.getNombreProducto()%>">
+                    <h3><%= producto.getNombreProducto()%></h3>
+                    <p><%= producto.getDescripcion()%></p>
+                    <p>Talla: <%= producto.getTalla()%></p>
+                    <p>Color: <%= producto.getColor()%></p>
+                </div>
+                <%
+                    }
+                %>
+            </div>
+            <%
+            } else {
+            %>
+            <p>No se encontraron productos.</p>
+            <%
+                }
+            %>
         </div>
     </body>
 </html>
