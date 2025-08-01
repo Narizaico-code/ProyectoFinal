@@ -10,12 +10,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Formulario de Registro</title>
-        <link rel="stylesheet" href="style/index.css">
+
+        <link rel="stylesheet" href="style/extra.css">
+
     </head>
     <body>
         <div class="form-container">
             <h2>Registrarse</h2>
+
             <form action="ServletUsuario" method="post">
+
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" maxlength="128" required>
 
@@ -45,4 +49,7 @@
             </form>
         </div>
     </body>
+
 </html>
+</html>
+

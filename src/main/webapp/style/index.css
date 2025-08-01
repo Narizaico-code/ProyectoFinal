@@ -1,11 +1,10 @@
 :root {
-  --fondo-oscuro: #313338;
-  --fondo-panel: #2C2F33;
-  --blurple: #5865F2;
-  --blurple-hover: #4752C4;
-  --texto-claro: #FFFFFF;
-  --texto-suave: #B9BBBE;
-  --borde-input: #4F545C;
+  --fondo-oscuro: #0F1A2B;         /* Azul marino oscuro para fondo general */
+  --fondo-panel: #000000;          /* Panel Bienvenido: negro */
+  --texto-primario: #FFFFFF;
+  --texto-secundario: #CCCCCC;
+  --dorado: #8C6E3F;
+  --dorado-hover: #A88C5E;
 }
 
 * {
@@ -18,7 +17,7 @@
 body, html {
   height: 100%;
   background-color: var(--fondo-oscuro);
-  color: var(--texto-claro);
+  color: var(--texto-primario);
 }
 
 .fondo {
@@ -28,15 +27,21 @@ body, html {
   padding: 20px;
 }
 
+<<<<<<< HEAD
+=======
+/* Header */
+>>>>>>> ft/Angel
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--fondo-panel);
+  background-color: #000000;
   padding: 15px 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 1px solid var(--dorado);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
   margin-bottom: 40px;
+  color: var(--dorado);
 }
 
 .logo {
@@ -46,7 +51,7 @@ header {
 nav button {
   background: none;
   border: none;
-  color: var(--texto-suave);
+  color: var(--dorado);
   font-size: 16px;
   margin-left: 20px;
   cursor: pointer;
@@ -54,7 +59,7 @@ nav button {
 }
 
 nav button:hover {
-  color: var(--blurple);
+  color: var(--dorado-hover);
 }
 
 .contenido {
@@ -74,11 +79,12 @@ nav button:hover {
 .info h1 {
   font-size: 36px;
   margin-bottom: 15px;
+  color: var(--dorado);
 }
 
 .info p {
   font-size: 18px;
-  color: var(--texto-suave);
+  color: var(--texto-secundario);
 }
 
 .panel {
@@ -87,13 +93,15 @@ nav button:hover {
   background-color: var(--fondo-panel);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
   text-align: center;
+  color: var(--dorado);
 }
 
 .panel h2 {
   font-size: 28px;
   margin-bottom: 25px;
+  color: var(--dorado);
 }
 
 .botones {
@@ -109,28 +117,28 @@ button.registrarse {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  color: var(--texto-claro);
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 button.login {
-  background-color: var(--blurple);
+  background-color: var(--dorado);
+  color: #000000;
 }
 
 button.login:hover {
-  background-color: var(--blurple-hover);
+  background-color: var(--dorado-hover);
 }
 
 button.registrarse {
   background-color: transparent;
-  border: 1px solid var(--blurple);
-  color: var(--blurple);
+  border: 2px solid var(--dorado);
+  color: var(--dorado);
 }
 
 button.registrarse:hover {
-  background-color: var(--blurple-hover);
-  color: var(--texto-claro);
-  border-color: var(--blurple-hover);
+  background-color: var(--dorado-hover);
+  color: #000000;
 }
 
 @media (max-width: 768px) {

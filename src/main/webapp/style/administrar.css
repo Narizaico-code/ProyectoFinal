@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu .search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.menu .search-bar img {
+    height: 50px; /* Logo size */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.tablas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px; /* **Mantener el ancho del cuadro grande (300px o más si quieres)** */
+    min-height: 250px; /* **Establecer una altura mínima para el cuadro, incluso con imagen pequeña** */
+    display: flex; /* Usamos flexbox para centrar contenido verticalmente */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: space-between; /* Espacio entre imagen y título */
+    align-items: center; /* Centrar horizontalmente los elementos */
+    padding: 20px; /* **Añadir padding para que el contenido no pegue a los bordes del cuadro** */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    /* **Este es el cambio clave para la imagen dentro del cuadro grande** */
+    width: 150px; /* **Hacemos que la imagen sea más pequeña en ancho** */
+    height: 150px; /* **Y también más pequeña en alto (o lo que desees)** */
+    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    border-radius: 5px; /* Ligeras esquinas redondeadas para la imagen, opcional */
+    margin-bottom: 15px; /* Espacio entre la imagen y el título */
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1); /* La imagen sigue haciendo zoom al pasar el ratón */
+}
+
+.card h3 {
+    margin-top: auto; /* Empuja el título hacia abajo si hay espacio extra */
+    margin-bottom: 0; /* Asegurarse de que no haya margen inferior extra */
+    color: #333;
+    font-size: 1.5em; /* Tamaño de la fuente del título */
+}

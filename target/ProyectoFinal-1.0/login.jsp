@@ -11,7 +11,7 @@
               integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
               crossorigin="anonymous">
     <a class="a" href="index.jsp"><img src="images/menu.png" alt="Imagen de regreso a menu"></a>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/extra.css">
 
 </head>
 
