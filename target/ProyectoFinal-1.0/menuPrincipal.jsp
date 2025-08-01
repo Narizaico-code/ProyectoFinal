@@ -4,6 +4,8 @@
     Author     : ricardo
 --%>
 
+<%@page import="dao.UsuarioDAO"%>
+<%@page import="model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Productos"%>
@@ -264,6 +266,19 @@
             <div class="nav-links">
                 <a href="camisas.jsp">Contacto</a>
                 <a href="index.jsp">Cerrar Sesión</a>
+                <% String usuario = (String) request.getSession().getAttribute("correo");
+                    UsuarioDAO dao = new UsuarioDAO();
+                    List<Usuario> admins = dao.listarAdmin();
+                    if (usuario != null) {
+                        for (Usuario usu : admins) {
+                            if (usu.getCorreo().equalsIgnoreCase(usuario)) {
+                %>
+                <a href="administrar.jsp">Administrar</a>
+                <%
+                            }
+                        }
+                    }
+                %>
             </div>
         </div>
 
@@ -318,7 +333,7 @@
 
             <!-- Categoría Camisas -->
             <div class="categorias">
-                <button type="submit" onclick="location.href='camisas.jsp'"><h2>Camisas</h2></button>
+                <button type="submit" onclick="location.href = 'camisas.jsp'"><h2>Camisas</h2></button>
                 <div class="productos">
                     <%
                         for (Productos p : camisas) {
@@ -342,7 +357,7 @@
 
             <!-- Categoría Pantalones -->
             <div class="categorias">
-                <button type="submit" onclick="location.href='pantalones.jsp'"><h2>Pantalones</h2></button>
+                <button type="submit" onclick="location.href = 'pantalones.jsp'"><h2>Pantalones</h2></button>
                 <div class="productos">
                     <%
                         for (Productos p : pantalones) {
@@ -366,7 +381,7 @@
 
             <!-- Categoría Suéteres -->
             <div class="categorias">
-                <button type="submit" onclick="location.href='sueteres.jsp'"><h2>Suéteres</h2></button>
+                <button type="submit" onclick="location.href = 'sueteres.jsp'"><h2>Suéteres</h2></button>
                 <div class="productos">
                     <%
                         for (Productos p : sueteres) {

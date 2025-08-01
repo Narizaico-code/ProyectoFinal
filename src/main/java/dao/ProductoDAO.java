@@ -47,33 +47,19 @@ public class ProductoDAO {
     }
 
     public List<Productos> listarPorBusqueda(String busqueda) {
-
         EntityManager admin = fabrica.createEntityManager();
-
         try {
-
             String consulta = "SELECT p FROM Producto p WHERE p.estado = 'activo' AND (p.talla = :filtro OR p.categoria = :filtro)";
-
             Query query = admin.createQuery(consulta);
-
             query.setParameter("filtro", busqueda);
-
             List<Productos> resultados = query.getResultList();
-
             return resultados;
-
         } catch (Exception e) {
-
             e.printStackTrace();
-
             return null; // o Collections.emptyList();
-
         } finally {
-
             admin.close();
-
         }
-
     }
 
     public void actualizar(Productos producto) {
