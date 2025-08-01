@@ -87,104 +87,104 @@
         </div>
         <div class="productos">
             <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ss7iQ90yvlwTKDgUGGxStwvKm3LZY7KLLA&s" alt="Suéter de Spiderman">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ss7iQ90yvlwTKDgUGGxStwvKm3LZY7KLLA&s" alt="Camisa semi formal">
                 <h3>Camisa semi formal</h3>
                 <p>Camisa de algodon con lineas en azul</p>
             </div>
             <div class="card">
-                <img src="https://leonisa.gt/cdn/shop/files/M3036_457_1200X1500_1_1024x1024.jpg?v=1722810009" alt="Sudadera Manga Larga">
+                <img src="https://leonisa.gt/cdn/shop/files/M3036_457_1200X1500_1_1024x1024.jpg?v=1722810009" alt="Camis manga larga">
                 <h3>Camis manga larga</h3>
                 <p>Camisa de algodon, manga larga</p>
             </div>
             <div class="card">
-                <img src="https://m.media-amazon.com/images/I/81ObyhBUNAL._UY1000_.jpg" alt="Sudadera de Stitch">
+                <img src="https://m.media-amazon.com/images/I/81ObyhBUNAL._UY1000_.jpg" alt="Camisa estilo playa">
                 <h3>Camisa estilo playa</h3>
                 <p>Camisa de lino, con detyalles en azul, para vacacionar</p>
             </div>
             <div class="card">
-                <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09GS3H-1.jpg" alt="Suéter de Dragon Ball">
+                <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09GS3H-1.jpg" alt="Camisa polo">
                 <h3>Camisa polo</h3>
-                <p>Camisa polo muy ligera echa de algodón y polestireno</p>
+                <p>Camisa polo muy ligera hecha de algodón y polestireno</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/d3/47/69/d34769d78df2e872fbc2994be628c1b0.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de Daisy y Yankees</h3>
-                <p>Suéter lila con diseño único</p>
+                <img src="https://i.pinimg.com/1200x/2e/ba/82/2eba8287a363ad0ec4a50bf14f069fbe.jpg" alt="Camisa casual">
+                <h3>Camisa casual</h3>
+                <p>Camisa de manga larga hecha de algodón y elastano</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/d9/f2/6f/d9f26f4016717e9d36a8abc6efef29c8.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de Rugrats</h3>
-                <p>Suéter  de la serie Rugrats</p>
+                <img src="https://i.pinimg.com/736x/b4/fc/ba/b4fcbac548db57b9b86b4499859d75e4.jpg" alt="Camisa a cuadros">
+                <h3>Camisa a cuadros</h3>
+                <p>Un diseño de cuadros sencillo y casual hecha dealgodón.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/6c/6f/6f/6c6f6f17b5fb5a090b0f3d6b9e6bec8e.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de carlitos rugrats</h3>
-                <p>Suéter  de la serie Rugrats</p>
+                <img src="https://i.pinimg.com/736x/d8/64/5a/d8645ad2b52551f8bb662f734d873b74.jpg" alt="Suéter Daisy y Yankees">
+                <h3>Camisa sencilla</h3>
+                <p>es de estilo casual, con un diseño sencillo y hechos de algodón.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/1200x/e4/98/cc/e498cc4bc14ba44a2b696f1d1fab9f46.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de  carro Toyota Supra</h3>
-                <p>Suéter  de Toyota Supra  </p>
+                <img src="https://i.pinimg.com/736x/e5/df/f4/e5dff4fe42028cc05013e3b3f355fa81.jpg" alt="Camisa multi diseño">
+                <h3>Camisa multi diseño</h3>
+                <p>Camisa que combina una mitad estampada con flores y la otra de color sólido, hecho de algodón.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/1200x/55/c4/e4/55c4e457e051b552de3140ed04143386.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter  </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/b0/78/fe/b078fe5397518bce073f4406145d9138.jpg"all="Camisa Veraniega">
+                <h3>Camisa Veraniega</h3>
+                <p>Camisa con un diseño que combina palmeras estampadas en un material de seda.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/55/e8/2f/55e82fe6ec5def4dd4d572fef98beb40.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter Ferrari </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/ba/43/2f/ba432f44d867fa0399b671049f3cfb5d.jpg"all="Camisa Tropical">
+                <h3>Camisa Tropical</h3>
+                <p>Camisa con un diseño que combina detalles estampados en un material de seda.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/fa/73/36/fa733644ecbf16931a55857f9d374a0c.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter  Ktm </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/ca/1d/4c/ca1d4cc68fdabfc9ab1222e2dea76786.jpg"all="Camisa Militar Casual">
+                <h3>Camisa Militar Casual</h3>
+                <p>Camisa con un diseño sencillo y detalles en los bolsillos, hecho de lino.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/1200x/8f/49/ff/8f49ff4cfd1bfeba32b6e3877fd2b5af.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de one piece </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/1200x/34/71/58/347158882cf395f9b43df634d34bf7fa.jpg"all="Camisa con corte elegante">
+                <h3>Camisa con corte elegante</h3>
+                <p>Camisa con un diseño que combina detalles en botones y un corte elegante, hecho de lino.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/1200x/3d/66/fa/3d66fac7da32baf0ebf0f8eb37a9f45f.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Nasa </h3>
-                <p>Suéter  de Nasa    </p>
+                <img src="https://i.pinimg.com/1200x/19/5d/32/195d32a53c3a74c80b59c53ae58d0749.jpg"all="Camisa Casual de Manga Corta">
+                <h3>Camisa Casual de Manga Corta</h3>
+                <p>Camisa de manga corta y con un diseño sencillo, hecho de lino, ideal para días cálidos.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/91/1e/6c/911e6c28a10918cbbdb490e689debcf5.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Moto Kawasaki </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/7c/3b/b4/7c3bb4f58bd7f01dfb4a6de61eb63e58.jpg"all="Camisa Estilo Moderno">
+                <h3>Camisa Formal</h3>
+                <p>Camisa de manga larga, ideal para un estilo formal o de negocios, hecho de algodón de tejido fino.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/f1/04/a0/f104a0aae3bc89f61bc6f03992187e09.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Yamaha  </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/1200x/39/8f/e5/398fe58817656884a0bf1822e49939a7.jpg"all="Camisa en Nudo">
+                <h3>Camisa en Nudo</h3>
+                <p>Camisa estilo contemporáneo, con un diseño distintivo que incluye elementos en forma de nudos.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/3f/23/70/3f237063f047d025cedfd009cd79d8f3.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Moto Panigale </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/3c/67/8d/3c678dd7111c50a5b5e0e030fda4ac7d.jpg"all="Camisa Estilo Casual con Detalles">
+                <h3>Camisa Estilo Casual con Detalles</h3>
+                <p>Camisas con un diseño sencillo que destaca por los botones en la parte superior del pecho.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/c4/a5/e7/c4a5e74eb95e04465254e7ee6c54e5b6.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Porshe </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/c7/c2/c6/c7c2c695ac624a744a6d3c28c4f0fb78.jpg"all="Camisa con Diseño Asimétrico">
+                <h3>Camisa con Diseño Asimétrico</h3>
+                <p>Camisa con un diseño único que combina una mitad con estampado floral y la otra de color sólido.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/e9/55/8e/e9558ed36912254c84f083445c290d15.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Bmw M4 </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/736x/97/48/41/97484107b85ce0d1ab72d5e1551c12d8.jpg"all="Camisa con Efecto Degradado">
+                <h3>Camisa con Efecto Degradado</h3>
+                <p>Camisa de estilo veraniego con un diseño de color degradado con cuello en V hecho de lino.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/00/5a/4b/005a4b652e8675eea9dd859281efc700.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Jeep  </h3>
-                <p>Suéter      </p>
+                <img src="https://i.pinimg.com/1200x/c9/dd/24/c9dd2455f7923004ca35231201bd8e63.jpg"all="Camisa de Cuadros Texturizados">
+                <h3>Camisa de Cuadros Texturizados</h3>
+                <p>Camisa de manga larga con un diseño de parches de diferentes colores y texturas formando un patrón de cuadros.</p>
             </div>
             <div class="card">
-                <img src="https://i.pinimg.com/736x/35/79/69/357969fc831ef8a9566b273f8e42fcb9.jpg"all="Suéter Daisy y Yankees">
-                <h3>Sudadero Fox </h3>
-                <p>Sudadero      </p>
+                <img src="https://i.pinimg.com/736x/d4/be/96/d4be962d6f76e83d8e2d58a0ac00119f.jpg"all="Camisa con Efecto de Ondas">
+                <h3>Camisa con Efecto de Ondas</h3>
+                <p>Camisa de estilo casual con un patrón de ondas horizontales y un efecto degradado hecho de mezcla de algodón y lino.</p>
             </div>
         </div>
 
