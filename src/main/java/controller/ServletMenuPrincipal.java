@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Producto;
+import model.Productos;
 
 /**
  *
@@ -31,10 +31,10 @@ public class ServletMenuPrincipal extends HttpServlet {
         ProductoDAO dao = new ProductoDAO();
 
         if (busqueda != null && !busqueda.trim().isEmpty()) {
-            List<Producto> resultados = dao.listarPorBusqueda(busqueda);
+            List<Productos> resultados = dao.listarPorBusqueda(busqueda);
             solicitud.setAttribute("resultadoBusqueda", resultados);
         } else {
-            List<Producto> todos = dao.listarTodos();
+            List<Productos> todos = dao.listarTodos();
             solicitud.setAttribute("productos", todos);
         }
 
