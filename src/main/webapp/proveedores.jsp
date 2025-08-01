@@ -96,19 +96,19 @@
                 <td><%= p.getDireccion()%></td>
                 <td><%= p.getEstado()%></td>
                 <td>
-                    <form action="ProveedorServlet" method="get" style="display:inline;">
+                    <form action="ServletProveedores" method="get" style="display:inline;">
                         <input type="hidden" name="accion" value="editar">
                         <input type="hidden" name="id" value="<%= p.getIdProveedor()%>">
                         <button class="action-btn edit" type="submit">Editar</button>
                     </form>
 
-                    <form action="ProveedorServlet" method="get" style="display:inline;">
+                    <form action="ServletProveedores" method="get" style="display:inline;">
                         <input type="hidden" name="accion" value="eliminar">
                         <input type="hidden" name="id" value="<%= p.getIdProveedor()%>">
                         <button class="action-btn delete" type="submit">Eliminar</button>
                     </form>
 
-                    <form action="ProveedorServlet" method="get" style="display:inline;">
+                    <form action="ServletProveedores" method="get" style="display:inline;">
                         <input type="hidden" name="accion" value="desactivar">
                         <input type="hidden" name="id" value="<%= p.getIdProveedor()%>">
                         <button class="action-btn deactivate" type="submit">Desactivar</button>
@@ -119,7 +119,7 @@
         </table>
 
         <h2>Agregar Proveedor</h2>
-        <form action="ProveedorServlet" method="post">
+        <form action="ServletProveedores" method="post">
             <input type="text" name="nombreProveedor" placeholder="Nombre del proveedor" required><br>
             <input type="text" name="contactoNombre" placeholder="Nombre del contacto"><br>
             <input type="text" name="telefono" placeholder="Teléfono"><br>

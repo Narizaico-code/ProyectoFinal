@@ -25,7 +25,7 @@ public class ServletProveedores extends HttpServlet {
         } else if ("desactivar".equals(accion)) {
             int id = Integer.parseInt(solicitud.getParameter("id"));
             dao.desactivar(id);
-            respuesta.sendRedirect("ProveedorServlet?accion=listar");
+            respuesta.sendRedirect("ServletProveedores?accion=listar");
         }
     }
 
@@ -39,6 +39,6 @@ public class ServletProveedores extends HttpServlet {
         p.setDireccion(solicitud.getParameter("direccion"));
 
         dao.agregar(p);
-        respuesta.sendRedirect("ProveedorServlet?accion=listar");
+        respuesta.sendRedirect("ServletProveedores?accion=listar");
     }
 }

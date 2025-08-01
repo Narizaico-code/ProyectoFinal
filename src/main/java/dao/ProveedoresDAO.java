@@ -13,7 +13,7 @@ public class ProveedoresDAO {
         EntityManager admin = fabrica.createEntityManager();
         List<Proveedores> proveedores = null;
         try {
-            proveedores = admin.createQuery("SELECT p FROM Proveedor p WHERE p.estado = 'activo'", Proveedores.class)
+            proveedores = admin.createQuery("SELECT p FROM Proveedores  p WHERE p.estado = 'activo'", Proveedores.class)
                     .getResultList();
         } finally {
             admin.close();
