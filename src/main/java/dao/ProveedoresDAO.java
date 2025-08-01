@@ -1,70 +1,90 @@
 package dao;
 
-import model.Proveedores;
-
-import javax.persistence.*;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import model.Proveedores;
 
 public class ProveedoresDAO {
 
     private EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
 
-    public List<Proveedores> listar() {
-        EntityManager admin = fabrica.createEntityManager();
-        List<Proveedores> proveedores = null;
+    // Guardar nuevo proveedor
+    public void guardar(Proveedores proveedor) {
+        EntityManager em = fabrica.createEntityManager();
         try {
-            proveedores = admin.createQuery("SELECT p FROM Proveedores  p WHERE p.estado = 'activo'", Proveedores.class)
-                    .getResultList();
+            em.getTransaction().begin();
+            em.persist(proveedor);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println("Error al guardar proveedor: " + e.getMessage());
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
         } finally {
-            admin.close();
+            em.close();
         }
-        return proveedores;
     }
 
-    public void agregar(Proveedores proveedor) {
-        EntityManager admin = fabrica.createEntityManager();
-        EntityTransaction tx = admin.getTransaction();
+    // Listar todos los proveedores (activos)
+    public List<Proveedores> listarActivos() {
+        EntityManager em = fabrica.createEntityManager();
+        try {
+            return em.createQuery("SELECT p FROM Proveedores p WHERE p.estado = 'activo'", Proveedores.class).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    // Buscar proveedor por ID
+    public Proveedores buscar(int id) {
+        EntityManager em = fabrica.createEntityManager();
+        try {
+            return em.find(Proveedores.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
+    // Actualizar proveedor
+    public void actualizar(Proveedores proveedor) {
+        EntityManager em = fabrica.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            admin.persist(proveedor);
+            em.merge(proveedor);
             tx.commit();
         } catch (Exception e) {
+            System.out.println("Error al actualizar proveedor: " + e.getMessage());
             if (tx.isActive()) {
                 tx.rollback();
             }
-            e.printStackTrace();
         } finally {
-            admin.close();
+            em.close();
         }
     }
 
-    public void desactivar(int idProveedor) {
-        EntityManager admin = fabrica.createEntityManager();
-        EntityTransaction tx = admin.getTransaction();
+    // Eliminar proveedor (cambio de estado a "inactivo")
+    public void eliminar(int id) {
+        EntityManager em = fabrica.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            Proveedores proveedor = admin.find(Proveedores.class, idProveedor);
+            Proveedores proveedor = em.find(Proveedores.class, id);
             if (proveedor != null) {
-                proveedor.setEstado("inactivo");
-                admin.merge(proveedor);
+                proveedor.setEstado("inactivo"); // no borramos, solo cambiamos estado
+                em.merge(proveedor);
             }
             tx.commit();
         } catch (Exception e) {
+            System.out.println("Error al eliminar proveedor: " + e.getMessage());
             if (tx.isActive()) {
                 tx.rollback();
             }
-            e.printStackTrace();
         } finally {
-            admin.close();
-        }
-    }
-
-    public Proveedores buscar(int idProveedor) {
-        EntityManager admin = fabrica.createEntityManager();
-        try {
-            return admin.find(Proveedores.class, idProveedor);
-        } finally {
-            admin.close();
+            em.close();
         }
     }
 }

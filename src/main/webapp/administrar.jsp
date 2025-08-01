@@ -31,7 +31,7 @@
                 <h3>Productos</h3>
             </div>
             <div class="card">
-                <a href="proveedores.jsp"><img src="https://img.icons8.com/?size=100&id=61849&format=png&color=000000" alt="Proveedores"></a>
+                <a href="ServletProveedores"><img src="https://img.icons8.com/?size=100&id=61849&format=png&color=000000" alt="Proveedores"></a>
                 <h3>Proveedores</h3>
             </div>
             <div class="card">

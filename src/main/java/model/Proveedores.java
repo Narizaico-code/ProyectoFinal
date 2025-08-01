@@ -8,27 +8,18 @@ public class Proveedores {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idProveedor")
     private int idProveedor;
 
-    @Column(name = "nombreProveedor", nullable = false)
+    @Column(nullable = false)
     private String nombreProveedor;
 
-    @Column(name = "contactoNombre")
     private String contactoNombre;
-
-    @Column(name = "telefono")
     private String telefono;
-
-    @Column(name = "correo")
     private String correo;
-
-    @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "estado")
+    @Column(columnDefinition = "ENUM('activo', 'inactivo') default 'activo'")
     private String estado;
-
 
     public int getIdProveedor() {
         return idProveedor;

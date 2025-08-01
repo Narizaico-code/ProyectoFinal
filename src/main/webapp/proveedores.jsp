@@ -4,128 +4,147 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Proveedores</title>
+        <title>Listado de Proveedores</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
             }
-            header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 20px;
-            }
-            header img {
-                height: 60px;
-            }
-            .buttons {
-                margin-bottom: 15px;
-            }
-            .buttons a {
-                margin-right: 10px;
-                padding: 8px 12px;
-                text-decoration: none;
-                background-color: #007BFF;
-                color: white;
-                border-radius: 5px;
-            }
-            .buttons a:hover {
-                background-color: #0056b3;
-            }
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            th, td {
-                padding: 8px;
-                border: 1px solid #aaa;
+            h1 {
                 text-align: center;
             }
-            .action-btn {
-                margin: 2px;
-                padding: 4px 8px;
-                border: none;
+            .btn-add {
+                background-color: #007bff;
                 color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                cursor: pointer;
+            }
+            .btn {
+                padding: 5px 10px;
+                border: none;
                 border-radius: 4px;
                 cursor: pointer;
             }
-            .edit {
-                background-color: #ffc107;
+            .btn-edit {
+                background-color: #f1c40f;
+                color: black;
             }
-            .delete {
-                background-color: #dc3545;
+            .btn-delete {
+                background-color: #e74c3c;
+                color: white;
             }
-            .deactivate {
-                background-color: #6c757d;
+            table {
+                width: 98%;
+                margin: auto;
+                border-collapse: collapse;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #111;
+                color: white;
+            }
+            form {
+                width: 50%;
+                margin: 0 auto 30px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                background-color: #f9f9f9;
+            }
+            input {
+                width: 96%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #aaa;
+                border-radius: 5px;
             }
         </style>
     </head>
     <body>
 
-        <header>
-            <img src="logo stillz" alt="Logo stillz">
-            <div class="buttons">
-                <a href="contactenos.jsp">Contactenos</a>
-                <a href="index.jsp">Regresar</a>
-            </div>
-        </header>
+        <h1>Listado de Proveedores</h1>
 
-        <h1>Lista de Proveedores</h1>
+        <!-- Formulario para agregar o editar -->
+        <form id="formProveedor" method="post" action="ServletProveedores">
+            <h3 id="formTitulo">Nuevo Proveedor</h3>
+            <input type="hidden" name="idProveedor" id="idProveedor" />
+            <input type="text" name="nombreProveedor" id="nombreProveedor" placeholder="Nombre Proveedor" required /><br>
+            <input type="text" name="contactoNombre" id="contactoNombre" placeholder="Nombre del Contacto" /><br>
+            <input type="text" name="telefono" id="telefono" placeholder="Teléfono" /><br>
+            <input type="email" name="correo" id="correo" placeholder="Correo Electrónico" /><br>
+            <input type="text" name="direccion" id="direccion" placeholder="Dirección" /><br>
+            <input type="hidden" name="estado" id="estado" value="activo" />
+            <button type="submit" class="btn-add">Guardar</button>
+        </form>
 
+        <!-- Tabla de proveedores -->
         <table>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Contacto</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Dirección</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-            <%
-                List<Proveedores> lista = (List<Proveedores>) request.getAttribute("listaProveedores");
-                for (Proveedores p : lista) {
-            %>
-            <tr>
-                <td><%= p.getIdProveedor()%></td>
-                <td><%= p.getNombreProveedor()%></td>
-                <td><%= p.getContactoNombre()%></td>
-                <td><%= p.getTelefono()%></td>
-                <td><%= p.getCorreo()%></td>
-                <td><%= p.getDireccion()%></td>
-                <td><%= p.getEstado()%></td>
-                <td>
-                    <form action="ServletProveedores" method="get" style="display:inline;">
-                        <input type="hidden" name="accion" value="editar">
-                        <input type="hidden" name="id" value="<%= p.getIdProveedor()%>">
-                        <button class="action-btn edit" type="submit">Editar</button>
-                    </form>
-
-                    <form action="ServletProveedores" method="get" style="display:inline;">
-                        <input type="hidden" name="accion" value="eliminar">
-                        <input type="hidden" name="id" value="<%= p.getIdProveedor()%>">
-                        <button class="action-btn delete" type="submit">Eliminar</button>
-                    </form>
-
-                    <form action="ServletProveedores" method="get" style="display:inline;">
-                        <input type="hidden" name="accion" value="desactivar">
-                        <input type="hidden" name="id" value="<%= p.getIdProveedor()%>">
-                        <button class="action-btn deactivate" type="submit">Desactivar</button>
-                    </form>
-                </td>
-            </tr>
-            <% }%>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Proveedor</th>
+                    <th>Contacto</th>
+                    <th>Teléfono</th>
+                    <th>Correo</th>
+                    <th>Dirección</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    List<Proveedores> proveedores = (List<Proveedores>) request.getAttribute("proveedores");
+                    if (proveedores != null && !proveedores.isEmpty()) {
+                        for (Proveedores p : proveedores) {
+                %>
+                <tr>
+                    <td><%= p.getIdProveedor()%></td>
+                    <td><%= p.getNombreProveedor()%></td>
+                    <td><%= p.getContactoNombre()%></td>
+                    <td><%= p.getTelefono()%></td>
+                    <td><%= p.getCorreo()%></td>
+                    <td><%= p.getDireccion()%></td>
+                    <td><%= p.getEstado()%></td>
+                    <td>
+                        <button type="button" class="btn btn-edit"
+                                onclick="cargarFormularioEditar('<%= p.getIdProveedor()%>', '<%= p.getNombreProveedor()%>',
+                                            '<%= p.getContactoNombre()%>', '<%= p.getTelefono()%>',
+                                            '<%= p.getCorreo()%>', '<%= p.getDireccion()%>')">
+                            Editar
+                        </button>
+                        <a href="ServletProveedores?accion=eliminar&id=<%= p.getIdProveedor()%>">
+                            <button type="button" class="btn btn-delete">Eliminar</button>
+                        </a>
+                    </td>
+                </tr>
+                <%
+                    }
+                } else {
+                %>
+                <tr><td colspan="8">No hay proveedores disponibles.</td></tr>
+                <% }%>
+            </tbody>
         </table>
 
-        <h2>Agregar Proveedor</h2>
-        <form action="ServletProveedores" method="post">
-            <input type="text" name="nombreProveedor" placeholder="Nombre del proveedor" required><br>
-            <input type="text" name="contactoNombre" placeholder="Nombre del contacto"><br>
-            <input type="text" name="telefono" placeholder="Teléfono"><br>
-            <input type="email" name="correo" placeholder="Correo"><br>
-            <input type="text" name="direccion" placeholder="Dirección"><br>
-            <input type="submit" value="Agregar">
-        </form>
+
+        <script>
+            function cargarFormularioEditar(id, nombre, contacto, telefono, correo, direccion) {
+                document.getElementById("formTitulo").innerText = "Editar Proveedor";
+                document.getElementById("idProveedor").value = id;
+                document.getElementById("nombreProveedor").value = nombre;
+                document.getElementById("contactoNombre").value = contacto;
+                document.getElementById("telefono").value = telefono;
+                document.getElementById("correo").value = correo;
+                document.getElementById("direccion").value = direccion;
+                document.getElementById("estado").value = "activo";
+                document.getElementById("formProveedor").scrollIntoView({behavior: "smooth"});
+            }
+        </script>
     </body>
 </html>

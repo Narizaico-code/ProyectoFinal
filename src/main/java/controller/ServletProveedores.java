@@ -2,43 +2,70 @@ package controller;
 
 import dao.ProveedoresDAO;
 import model.Proveedores;
-import java.io.IOException;
-import java.util.List;
-import javax.servlet.*;
+
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
+import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/ServletProveedores")
 public class ServletProveedores extends HttpServlet {
 
-    ProveedoresDAO dao = new ProveedoresDAO();
-
     @Override
-    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta) throws ServletException, IOException {
-        String accion = solicitud.getParameter("accion");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-        if ("listar".equals(accion)) {
-            List<Proveedores> lista = dao.listar();
-            solicitud.setAttribute("listaProveedores", lista);
-            RequestDispatcher dispatcher = solicitud.getRequestDispatcher("proveedores.jsp");
-            dispatcher.forward(solicitud, respuesta);
-        } else if ("desactivar".equals(accion)) {
-            int id = Integer.parseInt(solicitud.getParameter("id"));
-            dao.desactivar(id);
-            respuesta.sendRedirect("ServletProveedores?accion=listar");
+        request.setCharacterEncoding("UTF-8");
+
+        int idProveedor = 0;
+        if (request.getParameter("idProveedor") != null && !request.getParameter("idProveedor").isEmpty()) {
+            idProveedor = Integer.parseInt(request.getParameter("idProveedor"));
         }
+
+        String nombreProveedor = request.getParameter("nombreProveedor");
+        String contactoNombre = request.getParameter("contactoNombre");
+        String telefono = request.getParameter("telefono");
+        String correo = request.getParameter("correo");
+        String direccion = request.getParameter("direccion");
+        String estado = request.getParameter("estado");
+
+        Proveedores proveedor = new Proveedores();
+        proveedor.setNombreProveedor(nombreProveedor);
+        proveedor.setContactoNombre(contactoNombre);
+        proveedor.setTelefono(telefono);
+        proveedor.setCorreo(correo);
+        proveedor.setDireccion(direccion);
+        proveedor.setEstado(estado);
+
+        ProveedoresDAO dao = new ProveedoresDAO();
+
+        if (idProveedor > 0) {
+            proveedor.setIdProveedor(idProveedor);
+            dao.actualizar(proveedor);
+        } else {
+            dao.guardar(proveedor);
+        }
+
+        List<Proveedores> listaProveedores = dao.listarActivos();
+        request.setAttribute("proveedores", listaProveedores);
+        request.getRequestDispatcher("proveedores.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest solicitud, HttpServletResponse respuesta) throws ServletException, IOException {
-        Proveedores p = new Proveedores();
-        p.setNombreProveedor(solicitud.getParameter("nombreProveedor"));
-        p.setContactoNombre(solicitud.getParameter("contactoNombre"));
-        p.setTelefono(solicitud.getParameter("telefono"));
-        p.setCorreo(solicitud.getParameter("correo"));
-        p.setDireccion(solicitud.getParameter("direccion"));
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-        dao.agregar(p);
-        respuesta.sendRedirect("ServletProveedores?accion=listar");
+        String accion = request.getParameter("accion");
+        ProveedoresDAO dao = new ProveedoresDAO();
+
+        if ("eliminar".equalsIgnoreCase(accion)) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            dao.eliminar(id);
+        }
+
+        List<Proveedores> listaProveedores = dao.listarActivos();
+        request.setAttribute("proveedores", listaProveedores);
+        request.getRequestDispatcher("proveedores.jsp").forward(request, response);
     }
 }
