@@ -10,6 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Administracion</title>
+        <link rel="stylesheet" href="style/administrar.css">
+
     </head>
     <body>
         <div class="menu">
@@ -19,15 +21,23 @@
             </form>
 
             <div class="nav-links">
-                <a href="contactenos.jsp">Contacto</a>
-                <a href="index.jsp">Regresar</a>
+                <a href="ServletMenuPrincipal">Regresar</a>
             </div>
         </div>
         
-        <div class="botones">
-            <div class="botones-images"></div>
-            
+         <div class="tablas">
+            <div class="card">
+                <a href="productos.jsp"> <img src="https://img.icons8.com/?size=100&id=11229&format=png&color=000000" alt="Poductos"></a>
+                <h3>Productos</h3>
+            </div>
+            <div class="card">
+                <a href="login.jsp"><img src="https://img.icons8.com/?size=100&id=61849&format=png&color=000000" alt="Proveedores"></a>
+                <h3>Proveedores</h3>
+            </div>
+            <div class="card">
+                <a href="login.jsp"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
+                <h3>Clientes</h3>
+            </div>
         </div>
-
     </body>
 </html>
