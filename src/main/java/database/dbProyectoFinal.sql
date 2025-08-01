@@ -123,14 +123,23 @@ insert into Pedidos (idUsuario, fechaPedido, total, metodoPago, estado)
 -- ------------------------------------------------- TUPLAS DE MARCAS -------------------------------------------------------------------------
 insert into Marcas (nombreMarca, correoMarca, descripcion)
 	values 	('Adidas','adidasrecepcion@gmail.com','Marca de ropa, tenis y mas!!'),
+			('Shein','sheinrecepcion@gmail.com','Marca de ropa, tenis y mas!!'),
+			('H&M','hymrecepcion@gmail.com','Marca de ropa, tenis y mas!!'),
+			('Forever21','foreverrecepcion@gmail.com','Marca de ropa, tenis y mas!!'),
 			('Nike','nikerecepcion@gmail.com','Marca de ropa, tenis y mas!!');
  
  
  -- ------------------------------------------------ TUPLAS DE CATEGORIAS -------------------------------------------------------------------------
 insert into Categorias (nombreCategoria)
 	values	('Pantalones'),
-			('Camisas');
+			('Camisas'),
+			('Sueteres');
 
+ -- ------------------------------------------------ TUPLAS DE PROOVEDORES -------------------------------------------------------------------------
+ insert into Proveedores(nombreProveedor, contactoNombre, telefono, correo, direccion, estado)
+	values 	();
+ 
+ desc Proveedores;
 
 -- ------------------------------------------------- TUPLAS DE PRODUCTOS -------------------------------------------------------------------------
 INSERT INTO Productos (idProveedor,nombreProducto, descripcion, precio, stock, talla, color, idMarca, idCategoria, imagenURL) 
