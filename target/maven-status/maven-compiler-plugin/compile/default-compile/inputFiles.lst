@@ -1,6 +1,12 @@
+C:\ProyectoFinal\src\main\java\controller\ServletListarProducto.java
 C:\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
 C:\ProyectoFinal\src\main\java\controller\ServletUsuario.java
+C:\ProyectoFinal\src\main\java\dao\ProductoDAO.java
+C:\ProyectoFinal\src\main\java\model\Productos.java
+C:\ProyectoFinal\src\main\java\controller\ServletEditarProducto.java
 C:\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
 C:\ProyectoFinal\src\main\java\controller\ServletLogin.java
 C:\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
+C:\ProyectoFinal\src\main\java\controller\ServletEliminarProducto.java
+C:\ProyectoFinal\src\main\java\controller\ServletProductos.java
 C:\ProyectoFinal\src\main\java\model\Usuario.java

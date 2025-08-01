@@ -4,18 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stillz Ropa</title>
-  <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
-    <div class="container-buttons">
-        <h1>¡Bienvenido!</h1>
-        <a href="registrarse.jsp">
-            <button class="btn btn-success btn-custom">Registrar</button>
-        </a>
-        <a href="login.jsp">
-            <button class="btn btn-primary btn-custom">Login</button>
-       
-    </div>
 </body>
 
   <div class="fondo">
@@ -38,7 +29,8 @@
       <section class="panel">
         <h2>Bienvenido</h2>
         <div class="botones">
-          <button class="login">Iniciar Sesion</button>
+            <a href="login.jsp">   
+          <button class="login">Iniciar Sesion</button></a>
           <a href="registrarse.jsp">
           <button class="registrarse">Registrarse</button></a>
         </div>

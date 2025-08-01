@@ -27,7 +27,7 @@
         
          <div class="tablas">
             <div class="card">
-                <a href="productos.jsp"> <img src="https://img.icons8.com/?size=100&id=11229&format=png&color=000000" alt="Poductos"></a>
+                <a href="ServletListarProducto"> <img src="https://img.icons8.com/?size=100&id=11229&format=png&color=000000" alt="Poductos"></a>
                 <h3>Productos</h3>
             </div>
             <div class="card">
