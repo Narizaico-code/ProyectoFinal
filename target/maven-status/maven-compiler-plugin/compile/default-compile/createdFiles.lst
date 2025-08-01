@@ -1,9 +1,8 @@
 controller\ServletLogin.class
-<<<<<<< HEAD
-=======
 controller\ServletUsuario.class
->>>>>>> main
+model\Producto.class
 dao\UsuarioDAO.class
+dao\ProductoDAO.class
 controller\ServletMenuPrincipal.class
 model\Usuario.class
 controller\ServletCerrarSesion.class
