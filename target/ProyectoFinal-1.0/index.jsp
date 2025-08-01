@@ -39,7 +39,8 @@
         <h2>Bienvenido</h2>
         <div class="botones">
           <button class="login">Iniciar Sesion</button>
-          <button class="registrarse">Registrarse</button>
+          <a href="registrarse.jsp">
+          <button class="registrarse">Registrarse</button></a>
         </div>
       </section>
     </main>
