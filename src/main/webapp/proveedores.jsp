@@ -5,66 +5,117 @@
     <head>
         <meta charset="UTF-8">
         <title>Listado de Proveedores</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-            }
-            h1 {
-                text-align: center;
-            }
-            .btn-add {
-                background-color: #007bff;
-                color: white;
-                padding: 10px 15px;
-                border: none;
-                border-radius: 5px;
-                margin-bottom: 20px;
-                cursor: pointer;
-            }
-            .btn {
-                padding: 5px 10px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-            .btn-edit {
-                background-color: #f1c40f;
-                color: black;
-            }
-            .btn-delete {
-                background-color: #e74c3c;
-                color: white;
-            }
-            table {
-                width: 98%;
-                margin: auto;
-                border-collapse: collapse;
-            }
-            th, td {
-                border: 1px solid #ccc;
-                padding: 10px;
-                text-align: left;
-            }
-            th {
-                background-color: #111;
-                color: white;
-            }
-            form {
-                width: 50%;
-                margin: 0 auto 30px auto;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 10px;
-                background-color: #f9f9f9;
-            }
-            input {
-                width: 96%;
-                padding: 8px;
-                margin-bottom: 10px;
-                border: 1px solid #aaa;
-                border-radius: 5px;
-            }
-        </style>
+      <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0d1b2a;
+        color: #f1f1f1;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    /* Imagen menú con fondo oscuro */
+    .menu {
+        width: 128px;
+        height: auto;
+        display: block;
+        margin: 15px 20px;
+    }
+
+    /* Formulario */
+    form {
+        width: 50%;
+        margin: 0 auto 30px auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #1b263b;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    input {
+        width: 96%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background-color: #0d1b2a;
+        color: #f1f1f1;
+    }
+
+    input::placeholder {
+        color: #bbb;
+    }
+
+    /* Botones */
+    .btn-add {
+        background-color: #3b82f6;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .btn-add:hover {
+        background-color: #2563eb;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .btn-edit {
+        background-color: #fbbf24;
+        color: #1b263b;
+    }
+    .btn-edit:hover {
+        background-color: #f59e0b;
+        color: #111;
+    }
+    .btn-delete {
+        background-color: #ef4444;
+        color: white;
+    }
+    .btn-delete:hover {
+        background-color: #dc2626;
+    }
+
+    /* Tabla */
+    table {
+        width: 98%;
+        margin: auto;
+        border-collapse: collapse;
+        background-color: #1b263b;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        color: #f1f1f1;
+    }
+    th, td {
+        border: 1px solid #0d1b2a;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #16213e;
+        color: #f1f1f1;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #142850;
+    }
+    tbody tr:hover {
+        background-color: #1f4068;
+    }
+</style>
+
             <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar a menú principal"></a>
 
     </head>

@@ -25,7 +25,6 @@
             </form>
 
             <div class="nav-links">
-                <a href="administrar.jsp">Administra</a>
                 <a href="contactenos.jsp">Contacto</a>
                 <a href="index.jsp">Cerrar Sesión</a>
             </div>
