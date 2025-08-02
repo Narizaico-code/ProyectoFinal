@@ -57,7 +57,7 @@ create table Productos (
 	constraint fk_Productos_Marcas foreign key (idMarca)
 		references Marcas(idMarca) on delete cascade,
 	constraint fk_Prodcutos_Categorias foreign key(idCategoria)
-		references Categorias(idCategoria)
+		references Categorias(idCategoria) on delete cascade
 );
 
 create table Pedidos (
@@ -168,3 +168,6 @@ VALUES
 (3, 'Calle Real 123, CDMX', 'DHL', 1001001, '2025-07-29 08:00:00', NULL, 'En tránsito'),
 (4, 'Av. Reforma 456, Puebla', 'FedEx', 1001002, '2025-07-28 09:00:00', '2025-07-29 16:00:00', 'Entregado'),
 (5, 'Cra. 45 #12-34, Bogotá', 'Estafeta', 1001003, '2025-07-27 10:00:00', NULL, 'Pendiente');
+
+
+select * from Categorias;
