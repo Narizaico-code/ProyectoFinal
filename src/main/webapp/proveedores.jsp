@@ -65,6 +65,8 @@
                 border-radius: 5px;
             }
         </style>
+            <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar a menú principal"></a>
+
     </head>
     <body>
 

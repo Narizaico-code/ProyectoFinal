@@ -25,12 +25,8 @@
             </form>
 
             <div class="nav-links">
-<<<<<<< HEAD
-                <a href="camisas.jsp">Contacto</a>
-=======
                 <a href="administrar.jsp">Administra</a>
                 <a href="contactenos.jsp">Contacto</a>
->>>>>>> ft/saul
                 <a href="index.jsp">Cerrar Sesión</a>
             </div>
         </div>

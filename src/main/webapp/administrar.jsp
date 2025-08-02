@@ -38,6 +38,10 @@
                 <a href="login.jsp"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
                 <h3>Clientes</h3>
             </div>
+            <div class="card">
+                <a href="ServletListarCategoria"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
+                <h3>Categorias</h3>
+            </div>
         </div>
     </body>
 </html>

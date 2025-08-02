@@ -16,7 +16,7 @@
             height: auto;
         }
     </style>
-    <a href="index.jsp"><img class="menu" src="resources/menu.png" alt="Regresar al menú principal"></a>
+    <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar al menú principal"></a>
 </head>
 
 <body>
