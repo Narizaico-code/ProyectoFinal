@@ -1,5 +1,6 @@
 package controller;
  
+import dao.ProveedoresDAO;
 import dao.UsuarioDAO;
 import model.Usuario;
  
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
+import model.Proveedores;
  
 @WebServlet("/ServletProveedores")
 public class ServletCliente extends HttpServlet {
