@@ -1,15 +1,19 @@
+/* === Estilos Generales combinados === */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Mantengo Arial para que sea igual que el primero */
+    background-color: #0d1b2a; /* del segundo */
+    color: #f1f1f1; /* texto claro del segundo */
 }
 
+/* === Menú Superior === */
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
+    background-color: #1b263b; /* del segundo */
+    padding: 10px 20px; /* mantengo padding del primero */
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -22,71 +26,76 @@ body {
 }
 
 .menu .search-bar img {
-    height: 50px; /* Logo size */
+    height: 50px; /* tamaño logo del primero */
 }
 
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 20px; /* un poco más consistente con segundo */
+    margin-left: auto; /* para que quede a la derecha */
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 0; /* elimino margen izquierdo para usar gap */
     font-size: 1.1em;
+    font-weight: bold; /* del segundo */
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ffd700;
+    color: #a9def9; /* color hover del segundo */
 }
 
+/* === Sección de tarjetas (tablas) === */
 .tablas {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 50px 20px;
+    gap: 30px; /* intermedia entre 30 y 40 */
+    padding: 50px 40px; /* padding unificado */
     flex-wrap: wrap;
 }
 
+/* === Tarjetas (card) === */
 .card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #1b263b; /* color oscuro del segundo */
+    border-radius: 10px; /* del primero */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* sombra del segundo */
     text-align: center;
-    width: 300px; /* **Mantener el ancho del cuadro grande (300px o más si quieres)** */
-    min-height: 250px; /* **Establecer una altura mínima para el cuadro, incluso con imagen pequeña** */
-    display: flex; /* Usamos flexbox para centrar contenido verticalmente */
-    flex-direction: column; /* Apilar elementos verticalmente */
-    justify-content: space-between; /* Espacio entre imagen y título */
-    align-items: center; /* Centrar horizontalmente los elementos */
-    padding: 20px; /* **Añadir padding para que el contenido no pegue a los bordes del cuadro** */
-    transition: transform 0.3s ease;
+    width: 300px; /* tamaño ancho del primero */
+    min-height: 250px; /* altura mínima del primero */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* padding del primero */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px); /* efecto hover del segundo */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* sombra hover del segundo */
 }
 
 .card img {
-    /* **Este es el cambio clave para la imagen dentro del cuadro grande** */
-    width: 150px; /* **Hacemos que la imagen sea más pequeña en ancho** */
-    height: 150px; /* **Y también más pequeña en alto (o lo que desees)** */
-    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
-    border-radius: 5px; /* Ligeras esquinas redondeadas para la imagen, opcional */
-    margin-bottom: 15px; /* Espacio entre la imagen y el título */
+    width: 150px; /* tamaño imagen del primero */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
 .card:hover img {
-    transform: scale(1.1); /* La imagen sigue haciendo zoom al pasar el ratón */
+    transform: scale(1.1);
 }
 
 .card h3 {
-    margin-top: auto; /* Empuja el título hacia abajo si hay espacio extra */
-    margin-bottom: 0; /* Asegurarse de que no haya margen inferior extra */
-    color: #333;
-    font-size: 1.5em; /* Tamaño de la fuente del título */
+    margin-top: auto;
+    margin-bottom: 0;
+    color: #f1f1f1; /* color de texto claro */
+    font-size: 1.5em;
 }
