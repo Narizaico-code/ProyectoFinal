@@ -8,7 +8,7 @@
 <%@page import="model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="model.Productos"%>
+<%@page import="model.Producto"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -285,15 +285,15 @@
         <div class="contenido">
             <%
                 // Obtener lista de productos y resultados de búsqueda
-                List<Productos> resultadoBusqueda = (List<Productos>) request.getAttribute("resultadoBusqueda");
-                List<Productos> productos = (List<Productos>) request.getAttribute("productos");
+                List<Producto> resultadoBusqueda = (List<Producto>) request.getAttribute("resultadoBusqueda");
+                List<Producto> productos = (List<Producto>) request.getAttribute("productos");
 
                 if (resultadoBusqueda != null && !resultadoBusqueda.isEmpty()) {
             %>
             <h2>Resultados de la búsqueda</h2>
             <div class="productos">
                 <%
-                    for (Productos producto : resultadoBusqueda) {
+                    for (Producto producto : resultadoBusqueda) {
                 %>
                 <div class="producto">
                     <img src="<%= producto.getImagenURL()%>" alt="<%= producto.getNombreProducto()%>" 
@@ -310,12 +310,12 @@
             } else {
                 // Mostrar listado completo por categorías
                 // Primero definimos listas auxiliares para cada categoría:
-                List<Productos> camisas = new java.util.ArrayList();
-                List<Productos> pantalones = new java.util.ArrayList();
-                List<Productos> sueteres = new java.util.ArrayList();
+                List<Producto> camisas = new java.util.ArrayList();
+                List<Producto> pantalones = new java.util.ArrayList();
+                List<Producto> sueteres = new java.util.ArrayList();
 
                 if (productos != null) {
-                    for (Productos producto : productos) {
+                    for (Producto producto : productos) {
                         String categoria = producto.getCategoria();
                         if (categoria != null) {
                             categoria = categoria.toLowerCase();
@@ -336,7 +336,7 @@
                 <button type="submit" onclick="location.href = 'camisas.jsp'"><h2>Camisas</h2></button>
                 <div class="productos">
                     <%
-                        for (Productos p : camisas) {
+                        for (Producto p : camisas) {
                     %>
                     <div class="producto">
                         <img src="<%= p.getImagenURL()%>" alt="<%= p.getNombreProducto()%>" 
@@ -360,7 +360,7 @@
                 <button type="submit" onclick="location.href = 'pantalones.jsp'"><h2>Pantalones</h2></button>
                 <div class="productos">
                     <%
-                        for (Productos p : pantalones) {
+                        for (Producto p : pantalones) {
                     %>
                     <div class="producto">
                         <img src="<%= p.getImagenURL()%>" alt="<%= p.getNombreProducto()%>" 
@@ -384,7 +384,7 @@
                 <button type="submit" onclick="location.href = 'sueteres.jsp'"><h2>Suéteres</h2></button>
                 <div class="productos">
                     <%
-                        for (Productos p : sueteres) {
+                        for (Producto p : sueteres) {
                     %>
                     <div class="producto">
                         <img src="<%= p.getImagenURL()%>" alt="<%= p.getNombreProducto()%>" 

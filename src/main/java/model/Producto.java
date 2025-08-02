@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Productos")
-public class Productos {
+public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,10 +58,10 @@ public class Productos {
     @Column(name = "estado")
     private String estado;
 
-    public Productos() {
+    public Producto() {
     }
 
-    public Productos(int idProveedor, String nombreProducto, String descripcion, double precio, int stock,
+    public Producto(int idProveedor, String nombreProducto, String descripcion, double precio, int stock,
                     String talla, String color, String marca, String categoria, String imagenURL, String estado) {
         this.idProveedor = idProveedor;
         this.nombreProducto = nombreProducto;
@@ -76,7 +76,7 @@ public class Productos {
         this.estado = estado;
     }
 
-    public Productos(int idProducto, int idProveedor, String nombreProducto, String descripcion, double precio,
+    public Producto(int idProducto, int idProveedor, String nombreProducto, String descripcion, double precio,
                     int stock, String talla, String color, String marca, String categoria,
                     String imagenURL, LocalDateTime fechaIngreso, String estado) {
         this.idProducto = idProducto;

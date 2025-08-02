@@ -7,7 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import dao.ProductoDAO;
-import model.Productos;
+import model.Producto;
 
 @WebServlet("/ServletProductos")
 public class ServletProductos extends HttpServlet {
@@ -30,7 +30,7 @@ public class ServletProductos extends HttpServlet {
         String imagenURL = solicitud.getParameter("imagenURL");
         String estado = solicitud.getParameter("estado");
 
-        Productos producto = new Productos();
+        Producto producto = new Producto();
         producto.setIdProveedor(idProveedor);
         producto.setNombreProducto(nombreProducto);
         producto.setDescripcion(descripcion);
@@ -47,7 +47,7 @@ public class ServletProductos extends HttpServlet {
         ProductoDAO dao = new ProductoDAO();
         dao.guardar(producto);
 
-        List<Productos> listaProductos = dao.listarTodos();
+        List<Producto> listaProductos = dao.listarTodos();
 
         solicitud.setAttribute("listaProductos", listaProductos);
         solicitud.getRequestDispatcher("listarProductos.jsp").forward(solicitud, respuesta);

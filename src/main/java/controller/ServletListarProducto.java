@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Productos;
+import model.Producto;
 
 /**
  *
@@ -22,7 +22,7 @@ public class ServletListarProducto extends HttpServlet {
         respuesta.setContentType("text/html;charset=UTF-8");
         //Obtener la lista -> DAO
         ProductoDAO dao = new ProductoDAO();
-        List<Productos> listaProductos = dao.listarTodos();
+        List<Producto> listaProductos = dao.listarTodos();
         //Cargar la lista en un elemento a enviar
         solicitud.setAttribute("listaProductos", listaProductos);
         //Enviar lista

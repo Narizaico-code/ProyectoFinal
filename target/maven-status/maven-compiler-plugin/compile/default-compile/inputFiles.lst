@@ -1,13 +1,13 @@
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletEliminarProducto.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletEditarProducto.java
-C:\gitpv\ProyectoFinal\src\main\java\model\Productos.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletProductos.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletListarProducto.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletUsuario.java
-C:\gitpv\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletLogin.java
-C:\gitpv\ProyectoFinal\src\main\java\model\Usuario.java
-C:\gitpv\ProyectoFinal\src\main\java\dao\ProductoDAO.java
-C:\gitpv\ProyectoFinal\src\main\java\controller\ServletCliente.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Producto.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletProductos.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\ProductoDAO.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletEditarProducto.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletCliente.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletUsuario.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Usuario.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletLogin.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletEliminarProducto.java
+C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletListarProducto.java

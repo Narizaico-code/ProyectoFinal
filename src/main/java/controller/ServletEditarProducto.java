@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import dao.ProductoDAO;
-import model.Productos;
+import model.Producto;
 
 @WebServlet("/ServletEditarProducto")
 public class ServletEditarProducto extends HttpServlet {
@@ -22,7 +22,7 @@ public class ServletEditarProducto extends HttpServlet {
 
         if ("editar".equals(accion)) {
             int idEditar = Integer.parseInt(solicitud.getParameter("id"));
-            Productos producto = productoDao.buscarPorId(idEditar);
+            Producto producto = productoDao.buscarPorId(idEditar);
             solicitud.setAttribute("producto", producto);
             solicitud.getRequestDispatcher("editarProducto.jsp").forward(solicitud, respuesta);
         } else {
@@ -39,7 +39,7 @@ public class ServletEditarProducto extends HttpServlet {
 
         if ("actualizar".equals(accion)) {
             int id = Integer.parseInt(solicitud.getParameter("id"));
-            Productos producto = productoDao.buscarPorId(id);
+            Producto producto = productoDao.buscarPorId(id);
 
             producto.setIdProveedor(Integer.parseInt(solicitud.getParameter("idProveedor")));
             producto.setNombreProducto(solicitud.getParameter("nombreProducto"));

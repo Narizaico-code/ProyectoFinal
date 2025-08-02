@@ -6,13 +6,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import model.Productos;
+import model.Producto;
 
 public class ProductoDAO {
 
     private EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
 
-    public void guardar(Productos producto) {
+    public void guardar(Producto producto) {
         EntityManager admin = fabrica.createEntityManager();
         try {
             admin.getTransaction().begin();
@@ -28,31 +28,31 @@ public class ProductoDAO {
         }
     }
 
-    public List<Productos> listarTodos() {
+    public List<Producto> listarTodos() {
         EntityManager admin = fabrica.createEntityManager();
         try {
-            return admin.createQuery("SELECT p FROM Productos p", Productos.class).getResultList();
+            return admin.createQuery("SELECT p FROM Producto p", Producto.class).getResultList();
         } finally {
             admin.close();
         }
     }
 
-    public Productos buscarPorId(int id) {
+    public Producto buscarPorId(int id) {
         EntityManager admin = fabrica.createEntityManager();
         try {
-            return admin.find(Productos.class, id);
+            return admin.find(Producto.class, id);
         } finally {
             admin.close();
         }
     }
 
-    public List<Productos> listarPorBusqueda(String busqueda) {
+    public List<Producto> listarPorBusqueda(String busqueda) {
         EntityManager admin = fabrica.createEntityManager();
         try {
             String consulta = "SELECT p FROM Producto p WHERE p.estado = 'activo' AND (p.talla = :filtro OR p.categoria = :filtro)";
             Query query = admin.createQuery(consulta);
             query.setParameter("filtro", busqueda);
-            List<Productos> resultados = query.getResultList();
+            List<Producto> resultados = query.getResultList();
             return resultados;
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,7 +62,7 @@ public class ProductoDAO {
         }
     }
 
-    public void actualizar(Productos producto) {
+    public void actualizar(Producto producto) {
         EntityManager admin = fabrica.createEntityManager();
         EntityTransaction transaccion = admin.getTransaction();
         try {
@@ -84,7 +84,7 @@ public class ProductoDAO {
         EntityTransaction tr = admin.getTransaction();
         try {
             tr.begin();
-            Productos producto = admin.find(Productos.class, id);
+            Producto producto = admin.find(Producto.class, id);
             if (producto != null) {
                 admin.remove(producto);
             }

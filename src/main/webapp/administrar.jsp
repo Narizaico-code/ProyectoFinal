@@ -35,7 +35,7 @@
                 <h3>Proveedores</h3>
             </div>
             <div class="card">
-                <a href="login.jsp"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
+                <a href="ServletCliente"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
                 <h3>Clientes</h3>
             </div>
         </div>
