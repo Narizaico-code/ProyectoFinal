@@ -6,13 +6,19 @@ dao\UsuarioDAO.class
 controller\ServletListarProducto.class
 model\Productos.class
 controller\ServletEditarProducto.class
+<<<<<<< HEAD
 >>>>>>> ft/Angel
+=======
+model\Proveedores.class
+>>>>>>> ft/saul
 controller\ServletMenuPrincipal.class
 model\Usuario.class
 controller\ServletCerrarSesion.class
 controller\ServletLogin.class
 controller\ServletProductos.class
+dao\ProveedoresDAO.class
 controller\ServletUsuario.class
 dao\UsuarioDAO.class
+controller\ServletProveedores.class
 dao\ProductoDAO.class
 controller\ServletEliminarProducto.class

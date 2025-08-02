@@ -1,18 +1,8 @@
 package model;
 
 import java.time.LocalDateTime;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-/**
- * 
- *
- * @author informatica 
- */
 @Entity
 @Table(name = "Productos")
 public class Productos {
@@ -22,16 +12,22 @@ public class Productos {
     @Column(name = "idProducto")
     private int idProducto;
 
-    @Column(name = "idProveedor", nullable = false)
+    @Column(name = "idProveedor")
     private int idProveedor;
 
-    @Column(name = "nombreProducto", nullable = false)
+    @Column(name = "idMarca")
+    private int idMarca;
+
+    @Column(name = "idCategoria")
+    private int idCategoria;
+
+    @Column(name = "nombreProducto")
     private String nombreProducto;
 
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "precio", nullable = false)
+    @Column(name = "precio")
     private double precio;
 
     @Column(name = "stock")
@@ -43,12 +39,6 @@ public class Productos {
     @Column(name = "color")
     private String color;
 
-    @Column(name = "marca")
-    private String marca;
-
-    @Column(name = "categoria")
-    private String categoria;
-
     @Column(name = "imagenURL")
     private String imagenURL;
 
@@ -58,41 +48,42 @@ public class Productos {
     @Column(name = "estado")
     private String estado;
 
-    public Productos() {
-    }
+    public Productos() {}
 
-    public Productos(int idProveedor, String nombreProducto, String descripcion, double precio, int stock,
-                    String talla, String color, String marca, String categoria, String imagenURL, String estado) {
+    public Productos(int idProveedor, int idMarca, int idCategoria, String nombreProducto, String descripcion,
+                     double precio, int stock, String talla, String color, String imagenURL, String estado) {
         this.idProveedor = idProveedor;
+        this.idMarca = idMarca;
+        this.idCategoria = idCategoria;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         this.talla = talla;
         this.color = color;
-        this.marca = marca;
-        this.categoria = categoria;
         this.imagenURL = imagenURL;
         this.estado = estado;
     }
 
-    public Productos(int idProducto, int idProveedor, String nombreProducto, String descripcion, double precio,
-                    int stock, String talla, String color, String marca, String categoria,
-                    String imagenURL, LocalDateTime fechaIngreso, String estado) {
+    public Productos(int idProducto, int idProveedor, int idMarca, int idCategoria, String nombreProducto,
+                     String descripcion, double precio, int stock, String talla, String color,
+                     String imagenURL, LocalDateTime fechaIngreso, String estado) {
         this.idProducto = idProducto;
         this.idProveedor = idProveedor;
+        this.idMarca = idMarca;
+        this.idCategoria = idCategoria;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.precio = precio;
         this.stock = stock;
         this.talla = talla;
         this.color = color;
-        this.marca = marca;
-        this.categoria = categoria;
         this.imagenURL = imagenURL;
         this.fechaIngreso = fechaIngreso;
         this.estado = estado;
     }
+
+    // Getters y Setters
 
     public int getIdProducto() {
         return idProducto;
@@ -108,6 +99,22 @@ public class Productos {
 
     public void setIdProveedor(int idProveedor) {
         this.idProveedor = idProveedor;
+    }
+
+    public int getIdMarca() {
+        return idMarca;
+    }
+
+    public void setIdMarca(int idMarca) {
+        this.idMarca = idMarca;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getNombreProducto() {
@@ -158,22 +165,6 @@ public class Productos {
         this.color = color;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
     public String getImagenURL() {
         return imagenURL;
     }
@@ -197,6 +188,4 @@ public class Productos {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-
 }
