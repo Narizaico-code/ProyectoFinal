@@ -42,14 +42,14 @@ public class ServletEditarProducto extends HttpServlet {
             Productos producto = productoDao.buscarPorId(id);
 
             producto.setIdProveedor(Integer.parseInt(solicitud.getParameter("idProveedor")));
+            producto.setIdMarca(Integer.parseInt(solicitud.getParameter("idMarca")));
+            producto.setIdCategoria(Integer.parseInt(solicitud.getParameter("idCategoria")));
             producto.setNombreProducto(solicitud.getParameter("nombreProducto"));
             producto.setDescripcion(solicitud.getParameter("descripcion"));
             producto.setPrecio(Double.parseDouble(solicitud.getParameter("precio")));
             producto.setStock(Integer.parseInt(solicitud.getParameter("stock")));
             producto.setTalla(solicitud.getParameter("talla"));
             producto.setColor(solicitud.getParameter("color"));
-            producto.setMarca(solicitud.getParameter("marca"));
-            producto.setCategoria(solicitud.getParameter("categoria"));
             producto.setImagenURL(solicitud.getParameter("imagenURL"));
             producto.setEstado(solicitud.getParameter("estado"));
 

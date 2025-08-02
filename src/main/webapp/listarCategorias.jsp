@@ -1,17 +1,23 @@
+<%-- 
+    Document   : listarCategorias
+    Created on : 1/08/2025, 15:50:10
+    Author     : informatica
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="model.Productos"%>
+<%@page import="model.Categorias"%>
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Productos</title>
+<html  lang="es">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Categorías</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
           crossorigin="anonymous">
-          
-     <style>
+       <style>
     body {
         margin: 0;
         padding: 0;
@@ -121,75 +127,45 @@
         background-color: #1f4068;
     }
 </style>
-</style>
-
 </head>
 
 <body>
-<!-- Menú con la imagen, en un contenedor para fondo oscuro -->
-<div class="menu-container">
-    <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar al menú principal"></a>
-</div>
 
 <div class="container mt-4">
-    <h2 class="text-center mb-4">Listado de Productos</h2>
-    <a href="registroProducto.jsp" class="btn btn-primary mb-3">Agregar Producto</a>
+    <h2 class="text-center mb-4">Listado de Categorías</h2>
+    <a href="registroCategoria.jsp" class="btn btn-primary mb-3">Agregar Categoría</a>
 
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-stripe">
         <thead class="table-dark">
-        <tr>
-            <th>ID</th>
-            <th>ID Proveedor</th>
-            <th>ID Marca</th>
-            <th>ID Categoría</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Talla</th>
-            <th>Color</th>
-            <th>Imagen</th>
-            <th>Fecha Ingreso</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>Nombre de Categoría</th>
+                <th>Acciones</th>
+            </tr>
         </thead>
         <tbody>
-        <%
-            List<Productos> listaProductos = (List<Productos>) request.getAttribute("listaProductos");
-            if (listaProductos != null && !listaProductos.isEmpty()) {
-                for (Productos producto : listaProductos) {
-        %>
-        <tr>
-            <td><%=producto.getIdProducto()%></td>
-            <td><%=producto.getIdProveedor()%></td>
-            <td><%=producto.getIdMarca()%></td>
-            <td><%=producto.getIdCategoria()%></td>
-            <td><%=producto.getNombreProducto()%></td>
-            <td><%=producto.getDescripcion()%></td>
-            <td>Q.<%=producto.getPrecio()%></td>
-            <td><%=producto.getStock()%></td>
-            <td><%=producto.getTalla()%></td>
-            <td><%=producto.getColor()%></td>
-            <td><img src="<%=producto.getImagenURL()%>" width="80" alt="imagen"></td>
-            <td><%=producto.getFechaIngreso()%></td>
-            <td><%=producto.getEstado()%></td>
-            <td>
-                <a href="<%=request.getContextPath()%>/ServletEditarProducto?accion=editar&id=<%=producto.getIdProducto()%>"
-                   class="btn btn-warning btn-sm">Editar</a>
-                <a href="<%=request.getContextPath()%>/ServletEliminarProducto?id=<%=producto.getIdProducto()%>"
-                   class="btn btn-danger btn-sm"
-                   onclick="return confirm('¿Desea eliminar este producto?')">Eliminar</a>
-            </td>
-        </tr>
-        <%
-                }
-            } else {
-        %>
-        <tr>
-            <td colspan="14" class="text-center">No hay productos registrados</td>
-        </tr>
-        <% } %>
+            <%
+                List<Categorias> listaCategorias = (List<Categorias>) request.getAttribute("listaCategorias");
+                if (listaCategorias != null && !listaCategorias.isEmpty()) {
+                    for (Categorias categoria : listaCategorias) {
+            %>
+            <tr>
+                <td><%=categoria.getIdCategoria()%></td>
+                <td><%=categoria.getNombreCategoria()%></td>
+                <td>
+                    <a href="<%=request.getContextPath()%>/ServletEditarCategoria?accion=editar&id=<%=categoria.getIdCategoria()%>" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="<%=request.getContextPath()%>/ServletEliminarCategoria?id=<%=categoria.getIdCategoria()%>" class="btn btn-danger btn-sm"
+                       onclick="return confirm('¿Desea eliminar esta categoría?')">Eliminar</a>
+                </td>
+            </tr>
+            <%
+                    }
+                } else {
+            %>
+            <tr>
+                <td class="text-center" colspan="3">No hay categorías registradas</td>
+            </tr>
+            <% } %>
         </tbody>
     </table>
 </div>

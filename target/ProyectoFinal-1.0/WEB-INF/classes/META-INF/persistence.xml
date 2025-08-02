@@ -7,8 +7,13 @@
         <class>model.Cliente</class>
         <properties>
             <!--configuracion del JDBC-->
+<<<<<<< HEAD
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/proyecto_final_db?useSSL=false"/> 
             <property name="javax.persistence.jdbc.user" value="quintov"/> 
+=======
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/proyecto_final_db?useSSL=false"/> 
+            <property name="javax.persistence.jdbc.user" value="SaulSical"/> 
+>>>>>>> eddy
             <property name="javax.persistence.jdbc.password" value="admin"/> 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <!--configuracion de Hibernet-->
