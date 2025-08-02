@@ -8,6 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Editar Categoría</title>
+        <link rel="stylesheet" href="style/extra.css">
     </head>
     <body>
         <h1>Editar Categoría</h1>

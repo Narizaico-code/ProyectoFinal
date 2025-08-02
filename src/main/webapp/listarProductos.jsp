@@ -128,7 +128,7 @@
 <body>
 <!-- Menú con la imagen, en un contenedor para fondo oscuro -->
 <div class="menu-container">
-    <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar al menú principal"></a>
+    <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar a la administracion"></a>
 </div>
 
 <div class="container mt-4">
