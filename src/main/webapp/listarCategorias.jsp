@@ -127,6 +127,10 @@
         background-color: #1f4068;
     }
 </style>
+
+<div class="menu-container">
+    <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar a la Administracion"></a>
+</div>
 </head>
 
 <body>

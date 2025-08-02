@@ -116,7 +116,7 @@
     }
 </style>
 
-            <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar a menú principal"></a>
+            <a href="administrar.jsp"><img class="menu" src="resources/menu.png" alt="Regresar a la administracion"></a>
 
     </head>
     <body>
