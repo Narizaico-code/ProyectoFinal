@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page import="java.util.List"%>
+<%@page import="model.Productos"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -108,31 +111,9 @@
                     } else {
                         mujer.style.display = "flex";
                         hombre.style.display = "none";
-                    }
-                }
 
-                // Ocultar el mega menÃº cuando se hace clic fuera
-                document.addEventListener("click", function (event) {
-                    const btnHombre = document.querySelector("button[onclick=\"mostrarMegaMenu('hombre')\"]");
-                    const btnMujer = document.querySelector("button[onclick=\"mostrarMegaMenu('mujer')\"]");
-                    const menuHombre = document.getElementById("menu-hombre");
-                    const menuMujer = document.getElementById("menu-mujer");
-
-                    // Si el clic NO fue sobre los botones ni sobre los menÃºs
-                    if (
-                            !menuHombre.contains(event.target) &&
-                            !btnHombre.contains(event.target) &&
-                            !menuMujer.contains(event.target) &&
-                            !btnMujer.contains(event.target))
-                    {
-                        menuHombre.style.display = "none";
-                        menuMujer.style.display = "none";
-
-                    }
-
-                });
             </script>
-        </script>
+        </div>
 
         <!-- SecciÃ³n Productos -->
         <!-- SecciÃ³n: Camisas -->
@@ -141,7 +122,6 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Camisas</h2>
-                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver mÃ¡s</button>
                         <a href="camisas.jsp">
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
@@ -181,7 +161,6 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Pantalones</h2>
-                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver mÃ¡s</button>
                         <a href="pantalones.jsp">
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
@@ -220,8 +199,6 @@
             <section>
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
-                        <h2>SuÃ©teres</h2>
-                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver mÃ¡s</button>
                         <h2>Suéteres</h2>
                         <a href="sueteres.jsp">
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>

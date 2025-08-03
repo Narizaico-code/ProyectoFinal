@@ -31,6 +31,7 @@ public class ProductoDAO {
 
     
     public List<Productos> listarTodos() {
+
         EntityManager admin = fabrica.createEntityManager();
         try {
             return admin.createQuery("SELECT p FROM Productos p", Productos.class).getResultList();
@@ -41,6 +42,7 @@ public class ProductoDAO {
 
     
     public Productos buscarPorId(int id) {
+
         EntityManager admin = fabrica.createEntityManager();
         try {
             return admin.find(Productos.class, id);
@@ -61,6 +63,7 @@ public class ProductoDAO {
             Query query = admin.createQuery(jpql);
             query.setParameter("filtro", "%" + filtro.toLowerCase() + "%");
             return query.getResultList();
+
         } catch (Exception e) {
             e.printStackTrace();
             return null;

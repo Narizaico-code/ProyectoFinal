@@ -1,73 +1,65 @@
 package controller;
  
 import dao.ProveedoresDAO;
+
 import dao.UsuarioDAO;
 import model.Usuario;
- 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.List;
 import model.Proveedores;
  
+
 @WebServlet("/ServletCliente")
 public class ServletCliente extends HttpServlet {
- 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
- 
+
         request.setCharacterEncoding("UTF-8");
- 
-        int idProveedor = 0;
-        if (request.getParameter("idProveedor") != null && !request.getParameter("idProveedor").isEmpty()) {
-            idProveedor = Integer.parseInt(request.getParameter("idProveedor"));
+        String accion = request.getParameter("accion");
+
+        UsuarioDAO dao = new UsuarioDAO();
+        switch (accion) {
+            case "editar":
+                Usuario usuario = new Usuario();
+                usuario.setIdUsuario(Integer.parseInt(request.getParameter("idUsuario")));
+                usuario.setNombre(request.getParameter("nombre"));
+                usuario.setApellido(request.getParameter("apellido"));
+                usuario.setCorreo(request.getParameter("correo"));
+                usuario.setContrasena(request.getParameter("contrasena"));
+                usuario.setTelefono(request.getParameter("telefono"));
+                usuario.setGenero(request.getParameter("genero"));
+                usuario.setFechaNacimiento(Timestamp.valueOf(request.getParameter("fechaNacimiento").replace("T", " ") + ":00"));
+                usuario.setRol(request.getParameter("rol"));
+
+                dao.actualizar(usuario);
+
+                break;
+            case "eliminar":
+                dao.eliminar(Integer.parseInt(request.getParameter("id")));
+                break;
+            default:
+                throw new AssertionError();
         }
- 
-        String nombreProveedor = request.getParameter("nombreProveedor");
-        String contactoNombre = request.getParameter("contactoNombre");
-        String telefono = request.getParameter("telefono");
-        String correo = request.getParameter("correo");
-        String direccion = request.getParameter("direccion");
-        String estado = request.getParameter("estado");
- 
-        Proveedores proveedor = new Proveedores();
-        proveedor.setNombreProveedor(nombreProveedor);
-        proveedor.setContactoNombre(contactoNombre);
-        proveedor.setTelefono(telefono);
-        proveedor.setCorreo(correo);
-        proveedor.setDireccion(direccion);
-        proveedor.setEstado(estado);
- 
-        ProveedoresDAO dao = new ProveedoresDAO();
- 
-        if (idProveedor > 0) {
-            proveedor.setIdProveedor(idProveedor);
-            dao.actualizar(proveedor);
-        } else {
-            dao.guardar(proveedor);
-        }
- 
-        List<Proveedores> listaProveedores = dao.listarActivos();
-        request.setAttribute("proveedores", listaProveedores);
-        request.getRequestDispatcher("proveedores.jsp").forward(request, response);
+
+        List<Usuario> listaUsuario = dao.listarTodos();
+        request.setAttribute("listaUsuario", listaUsuario);
+        response.sendRedirect("ServletCliente");
     }
- 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
- 
-        String accion = request.getParameter("accion");
-        ProveedoresDAO dao = new ProveedoresDAO();
- 
-        if ("eliminar".equalsIgnoreCase(accion)) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            dao.eliminar(id);
-        }
- 
-        List<Proveedores> listaProveedores = dao.listarActivos();
-        request.setAttribute("proveedores", listaProveedores);
-        request.getRequestDispatcher("proveedores.jsp").forward(request, response);
+
+        UsuarioDAO dao = new UsuarioDAO();
+        List<Usuario> listaUsuario = dao.listarTodos();
+        request.setAttribute("listaUsuario", listaUsuario);
+        request.getRequestDispatcher("cliente.jsp").forward(request, response);
     }
 }
