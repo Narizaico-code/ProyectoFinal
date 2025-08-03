@@ -22,4 +22,5 @@ dao\UsuarioDAO.class
 controller\ServletProveedores.class
 dao\ProductoDAO.class
 controller\ServletEliminarProducto.class
+controller\ServletPantalon.class
 controller\ServletAgregarCategoria.class

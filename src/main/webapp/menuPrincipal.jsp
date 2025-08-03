@@ -25,8 +25,7 @@
             </form>
 
             <div class="nav-links">
-                <a href="contactenos.jsp">Contacto</a>
-                <a href="index.jsp">Cerrar SesiÃ³n</a>
+                <a href="index.jsp">Cerrar Sesión</a>
             </div>
         </div>
 
@@ -143,6 +142,8 @@
                     <div class="encabezado-seccion">
                         <h2>Camisas</h2>
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver mÃ¡s</button>
+                        <a href="camisas.jsp">
+                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
                     <div class="productos">
@@ -172,6 +173,7 @@
                             <p>Ideal para salidas informales o trabajo casual.</p>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- SecciÃ³n: Pantalones -->
@@ -180,6 +182,8 @@
                     <div class="encabezado-seccion">
                         <h2>Pantalones</h2>
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver mÃ¡s</button>
+                        <a href="pantalones.jsp">
+                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
                     <div class="productos">
@@ -209,6 +213,7 @@
                             <p>Ajustado a las piernas para un look moderno.</p>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- SecciÃ³n: SuÃ©teres -->
@@ -217,6 +222,9 @@
                     <div class="encabezado-seccion">
                         <h2>SuÃ©teres</h2>
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver mÃ¡s</button>
+                        <h2>Suéteres</h2>
+                        <a href="sueteres.jsp">
+                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
                     <div class="productos">

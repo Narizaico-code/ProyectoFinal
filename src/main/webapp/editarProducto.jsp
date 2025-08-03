@@ -74,7 +74,7 @@
             <div class="mb-3">
                 <label for="fechaIngreso" class="form-label">Fecha de Ingreso</label>
                 <input type="datetime-local" class="form-control" id="fechaIngreso" name="fechaIngreso"
-                       value="<%=producto.getFechaIngresoLocalDateTime()%>">
+                       value="<%=producto.getFechaIngreso()%>">
             </div>
 
             <div class="mb-3">
