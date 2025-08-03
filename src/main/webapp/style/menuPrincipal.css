@@ -1,0 +1,152 @@
+/* === Estilos Generales === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d1b2a; /* Azul oscuro elegante */
+    color: #f1f1f1;
+}
+
+/* === Formulario de Registro === */
+.form-container {
+    background-color: #1b263b; /* Azul intermedio */
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.form-container h2,
+.form-container label {
+    color: #f1f1f1;
+}
+
+.form-container input,
+.form-container select {
+    background-color: #e0e0e0;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    background-color: #4682b4;
+    color: #fff;
+}
+
+.form-container button:hover {
+    background-color: #5a9bd4;
+}
+
+/* === Estilos del Menú Principal === */
+.menu {
+    background-color: #1b263b;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    color: white;
+}
+
+.menu img {
+    height: 40px;
+    margin-right: 15px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    width: 300px;
+}
+
+.search-bar button {
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin-left: auto; /* ✅ Esto empuja el bloque a la derecha */
+}
+
+
+/* === Categorías y Mega Menú === */
+.categorias {
+    display: flex;
+    justify-content: center;
+    background-color: #273a56;
+    padding: 10px 0;
+    gap: 30px;
+}
+
+.categorias button {
+    background-color: #1b263b;
+    color: #f1f1f1;
+    border: 1px solid #aaa;
+}
+
+.mega-menu {
+    display: none;
+    justify-content: center;
+    gap: 50px;
+    background-color: #1b263b;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.mega-menu .col h4,
+.mega-menu .col a {
+    color: #f1f1f1;
+}
+
+/* === Productos === */
+.seccion {
+    padding: 30px;
+    background-color: #0d1b2a; /* Consistente con body */
+}
+
+.encabezado-seccion h2 {
+    font-size: 24px;
+    color: #f1f1f1;
+}
+
+.ver-mas {
+    background-color: #4682b4;
+    color: #fff;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.producto {
+    background-color: #1b263b;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    width: 18%;
+    min-width: 180px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.producto p {
+    color: #ccc;
+}
+
+.producto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
