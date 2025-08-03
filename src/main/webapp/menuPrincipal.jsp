@@ -142,7 +142,8 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Camisas</h2>
-                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button>
+                        <a href="camisas.jsp">
+                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
                     <div class="productos">
@@ -216,7 +217,8 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Suéteres</h2>
-                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button>
+                        <a href="sueteres.jsp">
+                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
                     <div class="productos">
