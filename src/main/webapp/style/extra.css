@@ -1,0 +1,84 @@
+:root {
+  --fondo-oscuro: #0F1A2B;
+  --fondo-panel: #000000;
+  --texto-primario: #FFFFFF;
+  --texto-secundario: #CCCCCC;
+  --dorado: #8C6E3F;
+  --dorado-hover: #A88C5E;
+}
+
+body {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-primario);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: var(--fondo-panel);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  border: 1px solid var(--dorado);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: var(--dorado);
+  margin-bottom: 25px;
+}
+
+/* Estilo del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  font-weight: bold;
+  color: var(--dorado);
+}
+
+form input,
+form select {
+  padding: 10px;
+  border: 1px solid var(--dorado);
+  border-radius: 8px;
+  background-color: #1f2f55;
+  color: var(--texto-primario);
+  font-size: 14px;
+}
+
+form input::placeholder {
+  color: var(--texto-secundario);
+}
+
+/* Botón */
+form button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: var(--dorado);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--dorado-hover);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}

@@ -57,15 +57,22 @@ public class ServletLogin extends HttpServlet {
                 session.setAttribute("fechaNacimiento", usuario.getFechaNacimiento());
                 session.setAttribute("rol",       usuario.getRol());
 
-                // Redirigir al menú principal
+             // Redirigir según el rol
+            if ("Admin".equalsIgnoreCase(usuario.getRol())) {
+                respuesta.sendRedirect(solicitud.getContextPath() + "/administrar.jsp");
+            } else if ("cliente".equalsIgnoreCase(usuario.getRol())) {
                 respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
-                return;
+            } else {
+                // En caso de rol inesperado, redirigir al menú principal por defecto
+                respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
             }
+            return;
         }
-
-        // Si llegamos aquí, credenciales inválidas
-        solicitud.setAttribute("error", "Correo o contraseña incorrectos");
-        solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
     }
+
+    // Si llegamos aquí, credenciales inválidas
+    solicitud.setAttribute("error", "Correo o contraseña incorrectos");
+    solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
+}
 }
 }

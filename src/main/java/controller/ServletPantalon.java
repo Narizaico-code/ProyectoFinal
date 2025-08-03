@@ -7,8 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Producto;
 import java.util.List;
+import model.Productos;
 
 /**
  *
@@ -24,7 +24,7 @@ public class ServletPantalon extends HttpServlet {
     System.out.println("Valor recibido en query: " + busqueda); // <-- esto es para verificar
 
     ProductoDAO dao = new ProductoDAO();
-    List<Producto> resultados;
+    List<Productos> resultados;
 
     if (busqueda != null && !busqueda.trim().isEmpty()) {
         resultados = dao.listarPorBusqueda(busqueda.trim());
