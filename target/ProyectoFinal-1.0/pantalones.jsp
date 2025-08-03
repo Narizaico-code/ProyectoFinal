@@ -4,7 +4,7 @@
     Author     : informatica
 --%>
 
-<%@ page import="model.Producto" %>
+<%@page import="model.Productos"%>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ page import="dao.ProductoDAO" %>
@@ -28,14 +28,14 @@
         </div>
         <div class="contenido">
             <%
-                List<Producto> resultadoBusqueda = (List<Producto>) request.getAttribute("resultadoBusqueda");
+                List<Productos> resultadoBusqueda = (List<Productos>) request.getAttribute("resultadoBusqueda");
 
                 if (resultadoBusqueda != null && !resultadoBusqueda.isEmpty()) {
             %>
             <h2>Resultados</h2>
             <div class="productos">
                 <%
-                    for (Producto producto : resultadoBusqueda) {
+                    for (Productos producto : resultadoBusqueda) {
                 %>
                 <div class="producto">
                     <img src="<%= producto.getImagenURL()%>" alt="<%= producto.getNombreProducto()%>">

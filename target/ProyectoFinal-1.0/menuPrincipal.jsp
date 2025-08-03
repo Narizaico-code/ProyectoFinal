@@ -181,7 +181,8 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Pantalones</h2>
-                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button>
+                        <a href="pantalones.jsp">
+                        <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
                     <div class="productos">
