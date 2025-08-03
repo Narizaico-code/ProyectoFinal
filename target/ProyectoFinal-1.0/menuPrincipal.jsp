@@ -173,6 +173,7 @@
                             <p>Ideal para salidas informales o trabajo casual.</p>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- Sección: Pantalones -->
@@ -210,6 +211,7 @@
                             <p>Ajustado a las piernas para un look moderno.</p>
                         </div>
                     </div>
+                </div>
             </section>
 
             <!-- Sección: Suéteres -->
