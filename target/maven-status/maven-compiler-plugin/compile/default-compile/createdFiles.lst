@@ -2,12 +2,9 @@ controller\ServletListarProducto.class
 model\Productos.class
 controller\ServletCliente.class
 controller\ServletEditarProducto.class
-<<<<<<< HEAD
-=======
 model\Proveedores.class
 controller\ServletListarCategoria.class
 model\Categorias.class
->>>>>>> eddy
 controller\ServletMenuPrincipal.class
 model\Usuario.class
 controller\ServletCerrarSesion.class

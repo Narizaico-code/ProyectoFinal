@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import model.Proveedores;
  
-@WebServlet("/ServletProveedores")
+@WebServlet("/ServletCliente")
 public class ServletCliente extends HttpServlet {
  
     @Override
