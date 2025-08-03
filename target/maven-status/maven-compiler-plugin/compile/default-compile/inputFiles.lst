@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-C:\Users\Informatica\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
-C:\Users\Informatica\ProyectoFinal\src\main\java\model\Usuario.java
-C:\Users\Informatica\ProyectoFinal\src\main\java\controller\ServletLogin.java
-C:\Users\Informatica\ProyectoFinal\src\main\java\controller\ServletUsuario.java
-C:\Users\Informatica\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
-C:\Users\Informatica\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
-=======
 C:\ProyectoFinal\src\main\java\controller\ServletEditarCategoria.java
 C:\ProyectoFinal\src\main\java\controller\ServletListarCategoria.java
 C:\ProyectoFinal\src\main\java\controller\ServletProveedores.java
@@ -28,4 +20,3 @@ C:\ProyectoFinal\src\main\java\controller\ServletLogin.java
 C:\ProyectoFinal\src\main\java\controller\ServletPantalon.java
 C:\ProyectoFinal\src\main\java\model\Categorias.java
 C:\ProyectoFinal\src\main\java\model\Usuario.java
->>>>>>> ft/Kenny

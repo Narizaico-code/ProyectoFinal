@@ -233,7 +233,7 @@
                 </div>
             </div>
             <div class="btn-regresar-container">
-                <a href="ServletMenuPrincipal">
+                <a href="index.jsp">
                     <button class="btn btn-primary btn-custom">Regresar</button>
                 </a>
             </div>
