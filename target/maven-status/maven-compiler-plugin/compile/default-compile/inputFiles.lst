@@ -1,23 +1,23 @@
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\categoriaDAO.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletAgregarCategoria.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletProductos.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletEliminarCategoria.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletPantalon.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\ProductoDAO.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletEditarProducto.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Categorias.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletCliente.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletEditarCategoria.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletListarCategoria.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\dao\ProveedoresDAO.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Proveedores.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletUsuario.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Usuario.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletLogin.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletProveedores.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\model\Productos.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletEliminarProducto.java
-C:\Users\Angel Geovanny\Documents\NetBeansProjects\ProyectoFinal\src\main\java\controller\ServletListarProducto.java
+C:\ProyectoFinal\src\main\java\controller\ServletEditarCategoria.java
+C:\ProyectoFinal\src\main\java\controller\ServletListarCategoria.java
+C:\ProyectoFinal\src\main\java\controller\ServletProveedores.java
+C:\ProyectoFinal\src\main\java\model\Proveedores.java
+C:\ProyectoFinal\src\main\java\controller\ServletMenuPrincipal.java
+C:\ProyectoFinal\src\main\java\model\Productos.java
+C:\ProyectoFinal\src\main\java\dao\categoriaDAO.java
+C:\ProyectoFinal\src\main\java\controller\ServletCerrarSesion.java
+C:\ProyectoFinal\src\main\java\dao\UsuarioDAO.java
+C:\ProyectoFinal\src\main\java\controller\ServletEliminarProducto.java
+C:\ProyectoFinal\src\main\java\controller\ServletProductos.java
+C:\ProyectoFinal\src\main\java\dao\ProveedoresDAO.java
+C:\ProyectoFinal\src\main\java\controller\ServletEliminarCategoria.java
+C:\ProyectoFinal\src\main\java\controller\ServletListarProducto.java
+C:\ProyectoFinal\src\main\java\controller\ServletAgregarCategoria.java
+C:\ProyectoFinal\src\main\java\controller\ServletCliente.java
+C:\ProyectoFinal\src\main\java\controller\ServletUsuario.java
+C:\ProyectoFinal\src\main\java\dao\ProductoDAO.java
+C:\ProyectoFinal\src\main\java\controller\ServletEditarProducto.java
+C:\ProyectoFinal\src\main\java\controller\ServletLogin.java
+C:\ProyectoFinal\src\main\java\controller\ServletPantalon.java
+C:\ProyectoFinal\src\main\java\model\Categorias.java
+C:\ProyectoFinal\src\main\java\model\Usuario.java
