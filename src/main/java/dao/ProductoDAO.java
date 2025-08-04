@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import model.Productos;
 
 public class ProductoDAO {
@@ -30,6 +31,7 @@ public class ProductoDAO {
 
     
     public List<Productos> listarTodos() {
+
         EntityManager admin = fabrica.createEntityManager();
         try {
             return admin.createQuery("SELECT p FROM Productos p", Productos.class).getResultList();
@@ -40,6 +42,7 @@ public class ProductoDAO {
 
     
     public Productos buscarPorId(int id) {
+
         EntityManager admin = fabrica.createEntityManager();
         try {
             return admin.find(Productos.class, id);
@@ -48,8 +51,29 @@ public class ProductoDAO {
         }
     }
 
+
+    public List<Productos> listarPorBusqueda(String filtro) {
+        EntityManager admin = fabrica.createEntityManager();
+        try {
+            String jpql = "SELECT p FROM Producto p WHERE p.estado = 'activo' AND "
+                    + "(LOWER(p.nombreProducto) LIKE :filtro OR "
+                    + "LOWER(p.talla) LIKE :filtro OR "
+                    + "LOWER(p.color) LIKE :filtro OR "
+                    + "LOWER(p.categoria) LIKE :filtro)";
+            Query query = admin.createQuery(jpql);
+            query.setParameter("filtro", "%" + filtro.toLowerCase() + "%");
+            return query.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            admin.close();
+        }
+    }
     
     public void actualizar(Productos producto) {
+
         EntityManager admin = fabrica.createEntityManager();
         EntityTransaction transaccion = admin.getTransaction();
         try {
