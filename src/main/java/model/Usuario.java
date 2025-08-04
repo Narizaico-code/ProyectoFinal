@@ -84,8 +84,6 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-  
-
     public String getRol() {
         return rol;
     }

@@ -1,0 +1,155 @@
+:root {
+  --fondo-oscuro: #0F1A2B;         /* Azul marino oscuro para fondo general */
+  --fondo-panel: #000000;          /* Panel Bienvenido: negro */
+  --texto-primario: #FFFFFF;
+  --texto-secundario: #CCCCCC;
+  --dorado: #8C6E3F;
+  --dorado-hover: #A88C5E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-primario);
+}
+
+.fondo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  padding: 15px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--dorado);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+  margin-bottom: 40px;
+  color: var(--dorado);
+}
+
+.logo {
+  height: 60px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--dorado);
+  font-size: 16px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+nav button:hover {
+  color: var(--dorado-hover);
+}
+
+.contenido {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+
+.info {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.info h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: var(--dorado);
+}
+
+.info p {
+  font-size: 18px;
+  color: var(--texto-secundario);
+}
+
+.panel {
+  flex: 1 1 300px;
+  max-width: 400px;
+  background-color: var(--fondo-panel);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  text-align: center;
+  color: var(--dorado);
+}
+
+.panel h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: var(--dorado);
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button.login,
+button.registrarse {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+button.login {
+  background-color: var(--dorado);
+  color: #000000;
+}
+
+button.login:hover {
+  background-color: var(--dorado-hover);
+}
+
+button.registrarse {
+  background-color: transparent;
+  border: 2px solid var(--dorado);
+  color: var(--dorado);
+}
+
+button.registrarse:hover {
+  background-color: var(--dorado-hover);
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav button {
+    margin: 10px 10px 0 10px;
+  }
+}
