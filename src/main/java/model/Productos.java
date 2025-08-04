@@ -52,7 +52,7 @@ public class Productos {
 
     public Productos(int idProveedor, int idMarca, int idCategoria, String nombreProducto, String descripcion,
                      double precio, int stock, String talla, String color, String imagenURL, String estado) {
-        this.idProveedor = idProveedor;
+         this.idProveedor = idProveedor;
         this.idMarca = idMarca;
         this.idCategoria = idCategoria;
         this.nombreProducto = nombreProducto;
@@ -68,6 +68,8 @@ public class Productos {
     public Productos(int idProducto, int idProveedor, int idMarca, int idCategoria, String nombreProducto,
                      String descripcion, double precio, int stock, String talla, String color,
                      String imagenURL, LocalDateTime fechaIngreso, String estado) {
+        
+    
         this.idProducto = idProducto;
         this.idProveedor = idProveedor;
         this.idMarca = idMarca;
