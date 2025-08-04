@@ -1,5 +1,6 @@
 controller\ServletListarProducto.class
 model\Productos.class
+controller\ServletCliente.class
 controller\ServletEditarProducto.class
 model\Proveedores.class
 controller\ServletListarCategoria.class
@@ -18,4 +19,5 @@ dao\UsuarioDAO.class
 controller\ServletProveedores.class
 dao\ProductoDAO.class
 controller\ServletEliminarProducto.class
+controller\ServletPantalon.class
 controller\ServletAgregarCategoria.class

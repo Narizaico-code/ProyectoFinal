@@ -13,10 +13,13 @@
     <header>
       <img src="logo.png" alt="Logo Stillz" class="logo" />
       <nav>
-        <button>Mision y Vision</button>
-        <button>Acerca de</button>
+          <a href="Vision y Mision.jsp">
+        <button>Mision y Vision</button></a>
+          <a href="Acerca De.jsp">
+              <button>Acerca de</button></a>
         <button>Valores</button>
-        <button>Contactenos</button>
+        <a href="contactenos.jsp">
+            <button>Contactenos</button></a>
       </nav>
     </header>
 
