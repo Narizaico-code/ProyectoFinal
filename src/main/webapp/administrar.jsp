@@ -139,11 +139,11 @@ body {
                 <h3>Proveedores</h3>
             </div>
             <div class="card">
-                <a href="login.jsp"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
+                <a href="ServletCliente"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
                 <h3>Clientes</h3>
             </div>
               <div class="card">
-                <a href="ServletMarcas"><img src="https://static.vecteezy.com/system/resources/previews/008/942/288/large_2x/icon-name-brand-suitable-for-branding-symbol-line-style-simple-design-editable-design-template-simple-illustration-vector.jpg" alt="Marcas"></a>
+                <a href="ServletMarcas"><img src="https://img.icons8.com/?size=100&id=uKfnnSphjuCt&format=png&color=000000" alt="Marcas"></a>
                 <h3>Marcas</h3>
             </div>
             <div class="card">

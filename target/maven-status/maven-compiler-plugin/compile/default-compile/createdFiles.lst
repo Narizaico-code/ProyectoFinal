@@ -1,4 +1,10 @@
 controller\ServletListarProducto.class
+<<<<<<< HEAD
+=======
+model\Productos.class
+controller\ServletCliente.class
+controller\ServletEditarProducto.class
+>>>>>>> ft/zeta
 model\Proveedores.class
 model\Categorias.class
 controller\ServletMenuPrincipal.class
@@ -19,3 +25,8 @@ controller\ServletUsuario.class
 controller\ServletEditarCategoria.class
 dao\ProductoDAO.class
 controller\ServletEliminarProducto.class
+<<<<<<< HEAD
+=======
+controller\ServletPantalon.class
+controller\ServletAgregarCategoria.class
+>>>>>>> ft/zeta
