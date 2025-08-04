@@ -1,11 +1,8 @@
 controller\ServletListarProducto.class
-<<<<<<< HEAD
-=======
-model\Productos.class
+model\Marca.class
 controller\ServletCliente.class
-controller\ServletEditarProducto.class
->>>>>>> ft/zeta
 model\Proveedores.class
+controller\ServletMarcas.class
 model\Categorias.class
 controller\ServletMenuPrincipal.class
 model\Usuario.class
@@ -13,9 +10,12 @@ controller\ServletEliminarCategoria.class
 controller\ServletLogin.class
 controller\ServletProductos.class
 dao\ProveedoresDAO.class
+dao\MarcasDAO.class
 dao\UsuarioDAO.class
 controller\ServletProveedores.class
+controller\ServletPantalon.class
 controller\ServletAgregarCategoria.class
+database\Conexion.class
 model\Productos.class
 controller\ServletEditarProducto.class
 controller\ServletListarCategoria.class
@@ -25,8 +25,3 @@ controller\ServletUsuario.class
 controller\ServletEditarCategoria.class
 dao\ProductoDAO.class
 controller\ServletEliminarProducto.class
-<<<<<<< HEAD
-=======
-controller\ServletPantalon.class
-controller\ServletAgregarCategoria.class
->>>>>>> ft/zeta
