@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package database;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,14 +11,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Conexion {
+
     private static Conexion instancia;
     private Connection conexion;
 
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/proyecto_final_db?useSSL=false&serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASSWORD = "jhernandez";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/proyecto_final_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+    private static final String USER = "SaulSical";
+    private static final String PASSWORD = "admin";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-                                          
+
     private Conexion() {
         try {
             Class.forName(DRIVER);
@@ -26,9 +28,9 @@ public class Conexion {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException("Error al conectar a la base de datos", ex);
-        } 
+        }
     }
-    
+
     public static Conexion getInstancia() {
         if (instancia == null) {
             instancia = new Conexion();
@@ -47,7 +49,7 @@ public class Conexion {
         }
         return conexion;
     }
- 
+
     public void cerrarConexion() {
         try {
             if (conexion != null && !conexion.isClosed()) {
