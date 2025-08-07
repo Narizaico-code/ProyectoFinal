@@ -24,4 +24,5 @@ dao\categoriaDAO.class
 controller\ServletUsuario.class
 controller\ServletEditarCategoria.class
 dao\ProductoDAO.class
+controller\ServletCamisas.class
 controller\ServletEliminarProducto.class

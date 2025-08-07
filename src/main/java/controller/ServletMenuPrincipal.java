@@ -29,10 +29,11 @@ public class ServletMenuPrincipal extends HttpServlet {
 
 
         String busqueda = solicitud.getParameter("query");
+        int idCategoria =2; 
         ProductoDAO dao = new ProductoDAO();
 
         if (busqueda != null && !busqueda.trim().isEmpty()) {
-            List<Productos> resultados = dao.listarPorBusqueda(busqueda);
+            List<Productos> resultados = dao.listarPorBusqueda(busqueda, idCategoria);
             solicitud.setAttribute("resultadoBusqueda", resultados);
         } else {
             List<Productos> todos = dao.listarTodos();

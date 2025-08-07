@@ -19,6 +19,8 @@ public class ServletPantalon extends HttpServlet {
 
     protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
         throws ServletException, IOException {
+        
+        int idCategoriaCamisas = 2;
     
     String busqueda = solicitud.getParameter("query");
     System.out.println("Valor recibido en query: " + busqueda); // <-- esto es para verificar
@@ -27,7 +29,8 @@ public class ServletPantalon extends HttpServlet {
     List<Productos> resultados;
 
     if (busqueda != null && !busqueda.trim().isEmpty()) {
-        resultados = dao.listarPorBusqueda(busqueda.trim());
+       // resultados = dao.listarPorBusqueda(busqueda.trim());
+        resultados = dao.listarPorBusqueda(busqueda.trim(), idCategoriaCamisas);
     } else {
         resultados = dao.listarTodos();
     }

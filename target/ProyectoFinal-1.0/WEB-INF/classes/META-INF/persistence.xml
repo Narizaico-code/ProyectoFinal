@@ -5,15 +5,19 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--Clase de entidad-->
         <class>model.Cliente</class>
+        <class>model.Productos</class>
+        <class>model.Categorias</class>
+        <class>model.Proveedores</class>
+        <class>model.Marca</class>
         <properties>
             <!--configuracion del JDBC-->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/proyecto_final_db?useSSL=false"/> 
-            <property name="javax.persistence.jdbc.user" value="SaulSical"/> 
+            <property name="javax.persistence.jdbc.user" value="quintov"/> 
             <property name="javax.persistence.jdbc.password" value="admin"/> 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <!--configuracion de Hibernet-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
-            <property name="hibernate.hbm2dd.auto" value="update" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
