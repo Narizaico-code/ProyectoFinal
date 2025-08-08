@@ -19,6 +19,7 @@ database\Conexion.class
 model\Productos.class
 controller\ServletEditarProducto.class
 controller\ServletListarCategoria.class
+controller\ServletSueteres.class
 controller\ServletCerrarSesion.class
 dao\categoriaDAO.class
 controller\ServletUsuario.class

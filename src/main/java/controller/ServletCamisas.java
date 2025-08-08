@@ -18,31 +18,60 @@ import model.Productos;
 @WebServlet(name = "ServletCamisas", urlPatterns = {"/ServletCamisas"})
 public class ServletCamisas extends HttpServlet {
 
-protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
+@Override
+    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
         throws ServletException, IOException {
-    
-    final int ID_CATEGORIA_CAMISAS = 2;
+        
+        final int ID_CATEGORIA_CAMISAS = 2; 
+        
         String busqueda = solicitud.getParameter("query");
-       
+        System.out.println("Valor recibido en query (GET): " + busqueda);
+
         ProductoDAO dao = new ProductoDAO();
         List<Productos> resultados;
 
-       
         if (busqueda != null && !busqueda.trim().isEmpty()) {
             resultados = dao.listarPorBusqueda(busqueda.trim(), ID_CATEGORIA_CAMISAS);
         } else {
             resultados = dao.listarPorCategoria(ID_CATEGORIA_CAMISAS);
         }
-        
+
         solicitud.setAttribute("resultadoBusqueda", resultados);
-       
         solicitud.getRequestDispatcher("camisas.jsp").forward(solicitud, respuesta);
     }
-    
+
     @Override
-    protected void doPost(HttpServletRequest solicitud, HttpServletResponse respuesta)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(solicitud, respuesta);
+        
+        String idProductoStr = request.getParameter("idProducto");
+        String tallaSeleccionada = request.getParameter("tallaSeleccionada");
+
+        if (idProductoStr != null && !idProductoStr.isEmpty() && tallaSeleccionada != null && !tallaSeleccionada.isEmpty()) {
+            int idProducto = Integer.parseInt(idProductoStr);
+            
+            ProductoDAO dao = new ProductoDAO();
+            Productos productoSeleccionado = dao.buscarPorId(idProducto);
+
+            System.out.println("----------------------------------------");
+            System.out.println("¡Información de compra recibida en el servidor!");
+            System.out.println("ID del Producto: " + idProducto);
+            if (productoSeleccionado != null) {
+                System.out.println("Nombre del Producto: " + productoSeleccionado.getNombreProducto());
+            } else {
+                System.out.println("Nombre del Producto: No encontrado (ID: " + idProducto + ")");
+            }
+            System.out.println("Talla seleccionada: " + tallaSeleccionada);
+            System.out.println("----------------------------------------");
+
+            request.setAttribute("mensajeConfirmacion", "Producto " + idProducto + " (Talla: " + tallaSeleccionada + ") seleccionado.");
+
+        } else {
+            System.err.println("Error (POST): No se recibió el ID del producto o la talla seleccionada.");
+            request.setAttribute("mensajeError", "Por favor, selecciona una talla antes de continuar.");
+        }
+        
+        response.sendRedirect(request.getContextPath() + "/ServletCamisas");
     }
 
     @Override
