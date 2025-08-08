@@ -25,6 +25,7 @@
                 <img src="images/Logo.jpg" alt="Logo de la marca">
                 <input type="text" name="query" placeholder="Buscar productos...">
                 <button type="submit">Buscar</button>
+                <a href="carrito.jsp" style="width:64px; height:auto "><img src="images/carrito.png" alt="Carrito de compras"/></a>
             </form>
 
             <div class="nav-links">
