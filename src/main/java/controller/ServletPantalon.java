@@ -22,7 +22,7 @@ public class ServletPantalon extends HttpServlet {
     protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
         throws ServletException, IOException {
         
-        int idCategoriaPantalones = 1;
+        int idCategoriaPantalones = 2;
         
         String busqueda = solicitud.getParameter("query");
         System.out.println("Valor recibido en query (GET): " + busqueda);
