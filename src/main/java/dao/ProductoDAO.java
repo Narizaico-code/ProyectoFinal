@@ -10,7 +10,7 @@ import model.Productos;
 
 public class ProductoDAO {
 
-    private EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
+    public EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
 
     
     public void guardar(Productos producto) {
