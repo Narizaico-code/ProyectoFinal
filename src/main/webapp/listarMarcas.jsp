@@ -254,7 +254,8 @@ listarMarcas jsp, <%--
                 <div class="nav-links">
                     <a href="ServletMarcas?accion=listar">Marcas</a>
                     <a href="contactenos.jsp">Contacto</a>
-                    <a href="index.jsp">Cerrar Sesión</a>
+                    <a href="administrar.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+
                 </div>
             </div>
         </header>

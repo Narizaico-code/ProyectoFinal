@@ -15,33 +15,34 @@ import model.Productos;
 import model.DetallePedidos;
 import model.Pedidos;
 
-@WebServlet(name = "ServletPantalon", urlPatterns = {"/ServletPantalon"})
-public class ServletPantalon extends HttpServlet {
+@WebServlet(name = "ServletSueteres", urlPatterns = {"/ServletSueteres"})
+public class ServletSueteres extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
             throws ServletException, IOException {
 
-        int idCategoriaPantalones = 2;
+        final int ID_CATEGORIA_SUETERES = 3;
+
         String busqueda = solicitud.getParameter("query");
+        System.out.println("Valor recibido en query (GET): " + busqueda);
 
         ProductoDAO dao = new ProductoDAO();
         List<Productos> resultados;
 
         if (busqueda != null && !busqueda.trim().isEmpty()) {
-            resultados = dao.listarPorBusqueda(busqueda.trim(), idCategoriaPantalones);
+            resultados = dao.listarPorBusqueda(busqueda.trim(), ID_CATEGORIA_SUETERES);
         } else {
-            resultados = dao.listarPorCategoria(idCategoriaPantalones);
+            resultados = dao.listarPorCategoria(ID_CATEGORIA_SUETERES);
         }
 
         solicitud.setAttribute("resultadoBusqueda", resultados);
-        solicitud.getRequestDispatcher("pantalones.jsp").forward(solicitud, respuesta);
+        solicitud.getRequestDispatcher("sueteres.jsp").forward(solicitud, respuesta);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         String idProductoStr = request.getParameter("idProducto");
         String tallaSeleccionada = request.getParameter("tallaSeleccionada");
 
@@ -50,7 +51,6 @@ public class ServletPantalon extends HttpServlet {
 
             try {
                 int idProducto = Integer.parseInt(idProductoStr);
-
                 ProductoDAO productoDAO = new ProductoDAO();
                 Productos producto = productoDAO.buscarPorId(idProducto);
 
@@ -58,35 +58,27 @@ public class ServletPantalon extends HttpServlet {
                     HttpSession session = request.getSession();
                     Pedidos pedido = (Pedidos) session.getAttribute("pedidoActual");
                     PedidosDAO pedidoDAO = new PedidosDAO();
+                    DetallePedidosDAO detalleDAO = new DetallePedidosDAO();
 
                     if (pedido == null) {
+                        // Crear nuevo pedido si no existe
                         pedido = new Pedidos();
-
-                        // Fecha actual
                         LocalDate hoy = LocalDate.now();
                         ZoneId zona = ZoneId.systemDefault();
                         Date fechaActual = Date.from(hoy.atStartOfDay(zona).toInstant());
 
-                        pedido.setFechaPedido(fechaActual);
-                        pedido.setEstado("PENDIENTE"); 
-                        pedido.setMetodoPago("EFECTIVO");
-                        pedido.setTotal(0.0); 
-
-                        pedido = pedidoDAO.crearPedido(
-                            pedido.getIdUsuario() != null ? pedido.getIdUsuario() : 1, // Ajusta el idUsuario según sesión
-                            pedido.getTotal(),
-                            pedido.getMetodoPago()
-                        );
+                        // Asigna un idUsuario temporal, deberías usar el ID del usuario logueado
+                        pedido = pedidoDAO.crearPedido(1, 0.0, "EFECTIVO");
 
                         if (pedido == null) {
                             request.getSession().setAttribute("mensajeError", "Error al crear el pedido.");
-                            response.sendRedirect(request.getContextPath() + "/ServletPantalon");
+                            response.sendRedirect(request.getContextPath() + "/ServletSueteres");
                             return;
                         }
                         session.setAttribute("pedidoActual", pedido);
                     }
 
-                    // Crear detalle
+                    // Crear detalle y agregarlo
                     DetallePedidos detalle = new DetallePedidos();
                     detalle.setIdPedido(pedido.getIdPedido());
                     detalle.setIdProducto(idProducto);
@@ -94,14 +86,12 @@ public class ServletPantalon extends HttpServlet {
                     detalle.setCantidad(1);
                     detalle.setPrecioUnitario(producto.getPrecio());
                     detalle.setSubTotal(producto.getPrecio());
-
-                    DetallePedidosDAO detalleDAO = new DetallePedidosDAO();
                     detalleDAO.agregarDetalle(detalle);
 
-                    // Actualizar total pedido sumando subtotal del detalle
+                    // Actualizar total del pedido
                     double nuevoTotal = (pedido.getTotal() != null ? pedido.getTotal() : 0) + detalle.getSubTotal();
                     pedido.setTotal(nuevoTotal);
-                    pedidoDAO.actualizarPedido(pedido);
+                    pedidoDAO.actualizar(pedido);
 
                     session.setAttribute("mensaje", "Producto agregado al carrito correctamente.");
                 } else {
@@ -111,11 +101,16 @@ public class ServletPantalon extends HttpServlet {
             } catch (NumberFormatException e) {
                 request.getSession().setAttribute("mensajeError", "ID de producto inválido.");
             }
-
         } else {
             request.getSession().setAttribute("mensajeError", "Selecciona una talla antes de comprar.");
         }
 
-        response.sendRedirect(request.getContextPath() + "/ServletPantalon");
+        // Redirigir al CarritoServlet para que se muestre el carrito actualizado
+        response.sendRedirect(request.getContextPath() + "/ServletSueteres");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Servlet para mostrar productos 'Sueteres'";
     }
 }

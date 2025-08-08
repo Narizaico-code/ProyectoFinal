@@ -15,27 +15,27 @@ import model.Productos;
 import model.DetallePedidos;
 import model.Pedidos;
 
-@WebServlet(name = "ServletPantalon", urlPatterns = {"/ServletPantalon"})
-public class ServletPantalon extends HttpServlet {
+@WebServlet(name = "ServletCamisas", urlPatterns = {"/ServletCamisas"})
+public class ServletCamisas extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        int idCategoriaPantalones = 2;
-        String busqueda = solicitud.getParameter("query");
+        final int ID_CATEGORIA_CAMISAS = 1;
+        String busqueda = request.getParameter("query");
 
         ProductoDAO dao = new ProductoDAO();
         List<Productos> resultados;
 
         if (busqueda != null && !busqueda.trim().isEmpty()) {
-            resultados = dao.listarPorBusqueda(busqueda.trim(), idCategoriaPantalones);
+            resultados = dao.listarPorBusqueda(busqueda.trim(), ID_CATEGORIA_CAMISAS);
         } else {
-            resultados = dao.listarPorCategoria(idCategoriaPantalones);
+            resultados = dao.listarPorCategoria(ID_CATEGORIA_CAMISAS);
         }
 
-        solicitud.setAttribute("resultadoBusqueda", resultados);
-        solicitud.getRequestDispatcher("pantalones.jsp").forward(solicitud, respuesta);
+        request.setAttribute("resultadoBusqueda", resultados);
+        request.getRequestDispatcher("camisas.jsp").forward(request, response);
     }
 
     @Override
@@ -62,15 +62,14 @@ public class ServletPantalon extends HttpServlet {
                     if (pedido == null) {
                         pedido = new Pedidos();
 
-                        // Fecha actual
                         LocalDate hoy = LocalDate.now();
                         ZoneId zona = ZoneId.systemDefault();
                         Date fechaActual = Date.from(hoy.atStartOfDay(zona).toInstant());
 
                         pedido.setFechaPedido(fechaActual);
-                        pedido.setEstado("PENDIENTE"); 
+                        pedido.setEstado("PENDIENTE");
                         pedido.setMetodoPago("EFECTIVO");
-                        pedido.setTotal(0.0); 
+                        pedido.setTotal(0.0);
 
                         pedido = pedidoDAO.crearPedido(
                             pedido.getIdUsuario() != null ? pedido.getIdUsuario() : 1, // Ajusta el idUsuario según sesión
@@ -80,13 +79,14 @@ public class ServletPantalon extends HttpServlet {
 
                         if (pedido == null) {
                             request.getSession().setAttribute("mensajeError", "Error al crear el pedido.");
-                            response.sendRedirect(request.getContextPath() + "/ServletPantalon");
+                            response.sendRedirect(request.getContextPath() + "/ServletCamisas");
                             return;
                         }
+
                         session.setAttribute("pedidoActual", pedido);
                     }
 
-                    // Crear detalle
+                    // Crear detalle del pedido
                     DetallePedidos detalle = new DetallePedidos();
                     detalle.setIdPedido(pedido.getIdPedido());
                     detalle.setIdProducto(idProducto);
@@ -98,10 +98,10 @@ public class ServletPantalon extends HttpServlet {
                     DetallePedidosDAO detalleDAO = new DetallePedidosDAO();
                     detalleDAO.agregarDetalle(detalle);
 
-                    // Actualizar total pedido sumando subtotal del detalle
+                    // Actualizar total del pedido
                     double nuevoTotal = (pedido.getTotal() != null ? pedido.getTotal() : 0) + detalle.getSubTotal();
                     pedido.setTotal(nuevoTotal);
-                    pedidoDAO.actualizarPedido(pedido);
+                    pedidoDAO.actualizar(pedido);
 
                     session.setAttribute("mensaje", "Producto agregado al carrito correctamente.");
                 } else {
@@ -116,6 +116,11 @@ public class ServletPantalon extends HttpServlet {
             request.getSession().setAttribute("mensajeError", "Selecciona una talla antes de comprar.");
         }
 
-        response.sendRedirect(request.getContextPath() + "/ServletPantalon");
+        response.sendRedirect(request.getContextPath() + "/ServletCamisas");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Servlet para mostrar productos 'Camisas'";
     }
 }
