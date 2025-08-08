@@ -13,6 +13,9 @@
         p { color: #444; line-height: 1.6em; }
         .gallery img { width: 200px; margin: 10px; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.15);}
     </style>
+    
+       <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+
 </head>
 <body>
 

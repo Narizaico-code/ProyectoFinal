@@ -27,8 +27,9 @@
             </form>
 
             <div class="nav-links">
-                <a href="index.jsp">Cerrar Sesión</a>
-                <a href="CarritoServlet">Carrito
+                <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=30279&format=png&color=000000" alt="Cerrar Sesion" style="width:50px;height:50px;"</a>
+                <a href="CarritoServlet">
+            <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Ir al Carrito" style="width:50px;height:50px;">
                 </a>
             </div>
         </div
