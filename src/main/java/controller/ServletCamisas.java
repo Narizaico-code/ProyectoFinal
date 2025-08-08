@@ -21,7 +21,7 @@ public class ServletCamisas extends HttpServlet {
 protected void doGet(HttpServletRequest solicitud, HttpServletResponse respuesta)
         throws ServletException, IOException {
     
-    final int ID_CATEGORIA_CAMISAS = 2;
+    final int ID_CATEGORIA_CAMISAS = 1;
         String busqueda = solicitud.getParameter("query");
        
         ProductoDAO dao = new ProductoDAO();

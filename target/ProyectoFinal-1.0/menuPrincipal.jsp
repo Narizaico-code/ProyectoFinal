@@ -161,7 +161,7 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Pantalones</h2>
-                        <a href="ServletPantalones">
+                        <a href="ServletPantalon">
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 
