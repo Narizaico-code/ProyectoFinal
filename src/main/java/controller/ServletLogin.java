@@ -45,34 +45,39 @@ public class ServletLogin extends HttpServlet {
             List<Usuario> listaUsuarios = dao.listarTodos();
 
             // Buscar usuario
-        for (Usuario usuario : listaUsuarios) {
-            if (usuario.getCorreo().equalsIgnoreCase(correo)
-             && usuario.getContrasena().equals(contraseña)) {
-                // Credenciales OK, inicializar sesión
-                HttpSession session = solicitud.getSession();
-                session.setAttribute("correo",    usuario.getCorreo());
-                session.setAttribute("nombre",    usuario.getNombre());
-                session.setAttribute("telefono",  usuario.getTelefono());
-                session.setAttribute("genero", usuario.getGenero());
-                session.setAttribute("fechaNacimiento", usuario.getFechaNacimiento());
-                session.setAttribute("rol",       usuario.getRol());
+            for (Usuario usuario : listaUsuarios) {
+                if (usuario.getCorreo().equalsIgnoreCase(correo)
+                        && usuario.getContrasena().equals(contraseña)) {
 
-             // Redirigir según el rol
-            if ("Admin".equalsIgnoreCase(usuario.getRol())) {
-                respuesta.sendRedirect(solicitud.getContextPath() + "/administrar.jsp");
-            } else if ("cliente".equalsIgnoreCase(usuario.getRol())) {
-                respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
-            } else {
-                // En caso de rol inesperado, redirigir al menú principal por defecto
-                respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
+                    // ✅ Credenciales OK, inicializar sesión
+                    HttpSession session = solicitud.getSession();
+
+                    // ✅ Guardar usuario completo (para usar su ID, etc.)
+                    session.setAttribute("usuarioLogueado", usuario);
+
+                    // También puedes seguir guardando otros atributos individualmente si los necesitas
+                    session.setAttribute("correo", usuario.getCorreo());
+                    session.setAttribute("nombre", usuario.getNombre());
+                    session.setAttribute("telefono", usuario.getTelefono());
+                    session.setAttribute("genero", usuario.getGenero());
+                    session.setAttribute("fechaNacimiento", usuario.getFechaNacimiento());
+                    session.setAttribute("rol", usuario.getRol());
+
+                    // ✅ Redirigir según el rol
+                    if ("Admin".equalsIgnoreCase(usuario.getRol())) {
+                        respuesta.sendRedirect(solicitud.getContextPath() + "/administrar.jsp");
+                    } else if ("cliente".equalsIgnoreCase(usuario.getRol())) {
+                        respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
+                    } else {
+                        respuesta.sendRedirect(solicitud.getContextPath() + "/ServletMenuPrincipal");
+                    }
+                    return;
+                }
             }
-            return;
+
+            // Si llegamos aquí, credenciales inválidas
+            solicitud.setAttribute("error", "Correo o contraseña incorrectos");
+            solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
         }
     }
-
-    // Si llegamos aquí, credenciales inválidas
-    solicitud.setAttribute("error", "Correo o contraseña incorrectos");
-    solicitud.getRequestDispatcher("login.jsp").forward(solicitud, respuesta);
-}
-}
 }
