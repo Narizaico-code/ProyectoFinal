@@ -14,6 +14,8 @@
         h2 { color: #2d8fdd; }
         p { line-height: 1.5em; color: #555; }
     </style>
+           <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+
 </head>
 <body>
 <header>

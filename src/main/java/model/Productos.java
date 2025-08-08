@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name = "Productos")
 public class Productos {
 
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idProducto")
     private int idProducto;
@@ -50,43 +50,7 @@ public class Productos {
 
     public Productos() {}
 
-    public Productos(int idProveedor, int idMarca, int idCategoria, String nombreProducto, String descripcion,
-                     double precio, int stock, String talla, String color, String imagenURL, String estado) {
-         this.idProveedor = idProveedor;
-        this.idMarca = idMarca;
-        this.idCategoria = idCategoria;
-        this.nombreProducto = nombreProducto;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.stock = stock;
-        this.talla = talla;
-        this.color = color;
-        this.imagenURL = imagenURL;
-        this.estado = estado;
-    }
-
-    public Productos(int idProducto, int idProveedor, int idMarca, int idCategoria, String nombreProducto,
-                     String descripcion, double precio, int stock, String talla, String color,
-                     String imagenURL, LocalDateTime fechaIngreso, String estado) {
-        
-    
-        this.idProducto = idProducto;
-        this.idProveedor = idProveedor;
-        this.idMarca = idMarca;
-        this.idCategoria = idCategoria;
-        this.nombreProducto = nombreProducto;
-        this.descripcion = descripcion;
-        this.precio = precio;
-        this.stock = stock;
-        this.talla = talla;
-        this.color = color;
-        this.imagenURL = imagenURL;
-        this.fechaIngreso = fechaIngreso;
-        this.estado = estado;
-    }
-
-    // Getters y Setters
-
+    // Getters y setters
     public int getIdProducto() {
         return idProducto;
     }

@@ -1,19 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Marca")
 public class Marca {
 
+     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idMarca")
     private int idMarca;
+
+    @Column(name = "nombreMarca")
     private String nombreMarca;
+
+    @Column(name = "correoMarca")
     private String correoMarca;
+
+    @Column(name = "descripcion")
     private String descripcion;
 
-    // Constructor vacío
-    public Marca() {
-    }
+    public Marca() {}
 
     // Getters y Setters
     public int getIdMarca() {
@@ -46,6 +59,5 @@ public class Marca {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-
     }
 }
