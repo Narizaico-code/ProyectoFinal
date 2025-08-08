@@ -150,6 +150,9 @@
                 margin-top: -5px; /* Ajuste para que se vea mejor */
             }
         </style>
+        
+                    <a href="administrar.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+
     </head>
     <body>
 
