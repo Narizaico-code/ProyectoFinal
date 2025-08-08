@@ -17,7 +17,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>sueteres</title>
         <link rel="stylesheet" href="style/sueteres.css">
-
+        <a href="CarritoServlet">
+            <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Ir al Carrito" style="width:50px;height:50px;">
+                </a>
+    
+                <a href="ServletMenuPrincipal">
+                    <button class="btn btn-primary btn-custom"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></button>
+                </a>
    </head>
         <div class="busqueda-form">
             <!-- El formulario apunta al ServletSueteres -->

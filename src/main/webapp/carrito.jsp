@@ -42,9 +42,11 @@
         <img src="imagenes/logo.png" alt="Logo Stillz" class="logo" />
         <div class="titulo">Mi Carrito de Compras</div>
         <div class="acciones">
-            <form action="menuPrincipal.jsp">
-                <button type="submit">Volver</button>
-            </form>
+            <div class="btn-regresar-container">
+                <a href="ServletMenuPrincipal">
+                    <button class="btn btn-primary btn-custom"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></button>
+                </a>
+            </div>
             <form action="cerrarSesion.jsp" method="post">
                 <button type="submit">Cerrar Sesión</button>
             </form>
