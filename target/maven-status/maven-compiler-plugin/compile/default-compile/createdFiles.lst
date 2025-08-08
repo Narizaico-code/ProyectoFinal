@@ -22,6 +22,7 @@ model\Productos.class
 controller\ServletEditarProducto.class
 controller\ServletComprar.class
 controller\ServletListarCategoria.class
+controller\ServletSueteres.class
 dao\PedidosDAO.class
 model\DetallePedidos.class
 controller\ServletCerrarSesion.class

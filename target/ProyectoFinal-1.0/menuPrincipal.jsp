@@ -204,7 +204,7 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Suéteres</h2>
-                        <a href="sueteres.jsp">
+                        <a href="ServletSueteres">
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 

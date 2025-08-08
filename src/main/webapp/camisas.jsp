@@ -36,7 +36,7 @@
                 <%
                     for (Productos producto : resultadoBusqueda) {
                 %>
-                <div class="producto">
+                <div class="producto" data-id-producto="<%= producto.getIdProducto() %>">
                     <div class="producto-info-visual">
                         <img src="<%= producto.getImagenURL()%>" alt="<%= producto.getNombreProducto()%>">
                         <h3><%= producto.getNombreProducto()%></h3>
@@ -45,26 +45,32 @@
                     </div>
 
                     <div class="producto-acciones">
-                        <p>Talla: **<%= producto.getTalla()%>**</p> <!-- Muestra la talla específica del producto -->
+                        <p>Talla: **<%= producto.getTalla()%>**</p>
 
-                        <div class="talla-selector">
-                            <p>Seleccionar Talla:</p>
-                            <!-- Botones de radio para seleccionar talla -->
-                            <!-- nombre único para el grupo de radio buttons de cada producto -->
-                            <input type="radio" id="tallaS_<%= producto.getIdProducto() %>" name="talla_<%= producto.getIdProducto() %>" value="S">
-                            <label for="tallaS_<%= producto.getIdProducto() %>">S</label>
+                        <!-- Formulario para enviar el ID del producto y la talla seleccionada al Servlet -->
+                        <form action="ServletCamisas" method="post">
+                            <!-- Campo oculto para enviar el ID del producto -->
+                            <input type="hidden" name="idProducto" value="<%= producto.getIdProducto() %>">
 
-                            <input type="radio" id="tallaM_<%= producto.getIdProducto() %>" name="talla_<%= producto.getIdProducto() %>" value="M">
-                            <label for="tallaM_<%= producto.getIdProducto() %>">M</label>
+                            <div class="talla-selector">
+                                <p>Seleccionar Talla:</p>
+                                <!-- Los radio buttons deben tener el mismo 'name' dentro de su grupo para que solo uno sea seleccionable -->
+                                <input type="radio" id="tallaS_<%= producto.getIdProducto() %>" name="tallaSeleccionada" value="S" required>
+                                <label for="tallaS_<%= producto.getIdProducto() %>">S</label>
 
-                            <input type="radio" id="tallaL_<%= producto.getIdProducto() %>" name="talla_<%= producto.getIdProducto() %>" value="L">
-                            <label for="tallaL_<%= producto.getIdProducto() %>">L</label>
+                                <input type="radio" id="tallaM_<%= producto.getIdProducto() %>" name="tallaSeleccionada" value="M" required>
+                                <label for="tallaM_<%= producto.getIdProducto() %>">M</label>
 
-                            <input type="radio" id="tallaXL_<%= producto.getIdProducto() %>" name="talla_<%= producto.getIdProducto() %>" value="XL">
-                            <label for="tallaXL_<%= producto.getIdProducto() %>">XL</label>
-                        </div>
+                                <input type="radio" id="tallaL_<%= producto.getIdProducto() %>" name="tallaSeleccionada" value="L" required>
+                                <label for="tallaL_<%= producto.getIdProducto() %>">L</label>
 
-                        <button class="btn-comprar">Comprar</button>
+                                <input type="radio" id="tallaXL_<%= producto.getIdProducto() %>" name="tallaSeleccionada" value="XL" required>
+                                <label for="tallaXL_<%= producto.getIdProducto() %>">XL</label>
+                            </div>
+
+                            <!-- El botón es de tipo "submit" para enviar el formulario -->
+                            <button type="submit" class="btn-comprar">Comprar</button>
+                        </form>
                     </div>
                 </div>
                 <%

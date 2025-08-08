@@ -4,156 +4,155 @@
 */
 
 body {
-    font-family: Arial, sans-serif;
-    max-width: 100%;
-    margin: 0 auto;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
     padding: 20px;
-    background-color: #f5f5f5;
 }
-
-h1 {
-    color: #333;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
 .nav-links {
     margin-bottom: 20px;
 }
-
 .nav-links a {
     text-decoration: none;
-    color: #2a6496;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 4px;
-    background-color: #e0e0e0;
+    color: #337ab7;
 }
 
+/* Estilos para el formulario de búsqueda */
 .busqueda-form {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    margin-bottom: 20px;
+    text-align: center;
 }
-
-
 .busqueda-form input[type="text"] {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ddd;
+    padding: 8px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
+    width: 300px;
 }
-
 .busqueda-form button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    padding: 8px 15px;
+    background-color: #5cb85c;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.busqueda-form button:hover {
-    background-color: #45a049;
+/* Estilos para el contenedor de productos */
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
-
 .productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
-.producto-card {
+/* Estilos para cada tarjeta de producto */
+.producto {
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
     padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.producto-imagen {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.producto-imagen img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.producto-nombre {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #444;
-    margin-bottom: 8px;
-}
-
-.producto-descripcion {
-    color: #666;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-    min-height: 40px;
-}
-
-.producto-precio {
-    color: #2a6496;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-.producto-talla {
-    margin: 10px 0;
-    font-size: 0.9em;
-}
-
-.talla-actual {
-    font-weight: bold;
-}
-
-.tallas-disponibles {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 600px; 
     display: flex;
-    gap: 8px;
-    margin: 10px 0;
-    flex-wrap: wrap;
+    flex-direction: row; 
+    align-items: flex-start; 
+    gap: 20px; 
 }
 
-.talla-opcion {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 0.8em;
+/* Contenedor para la imagen y la información principal */
+.producto-info-visual {
+    flex: 2; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
-
-.talla-opcion:hover {
-    background-color: #f0f0f0;
-}
-
-.boton-comprar {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+.producto-info-visual img {
+    max-width: 180px; 
+    height: auto;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.producto-info-visual h3 {
+    margin: 0 0 10px;
+    color: #333;
+    text-align: center;
+}
+.producto-info-visual p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
 }
 
-.boton-comprar:hover {
-    background-color: #45a049;
+
+/* Contenedor para la selección de talla y el botón de compra */
+.producto-acciones {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding-left: 10px; 
+    border-left: 1px solid #eee; 
+}
+
+/* Estilos para el botón de comprar */
+.btn-comprar {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px; 
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+    max-width: 180px; 
+}
+.btn-comprar:hover {
+    background-color: #0056b3; 
+}
+
+/* Estilos para los botones de selección de talla (radio buttons) */
+.talla-selector {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee; 
+    text-align: center; 
+}
+.talla-selector p {
+    margin-bottom: 10px;
+    font-weight: bold;
+} 
+.talla-selector label {
+    display: inline-block; 
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.talla-selector input[type="radio"] {
+    display: none; 
+}
+.talla-selector input[type="radio"]:checked + label {
+    background-color: #28a745; 
+    color: white;
+    border-color: #28a745;
+}
+.talla-selector input[type="radio"]:hover + label {
+    background-color: #d0d0d0; 
+}
+.talla-selector input[type="radio"]:checked:hover + label {
+    background-color: #218838; 
 }
