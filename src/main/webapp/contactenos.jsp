@@ -234,7 +234,7 @@
             </div>
             <div class="btn-regresar-container">
                 <a href="index.jsp">
-                    <button class="btn btn-primary btn-custom">Regresar</button>
+                    <button class="btn btn-primary btn-custom"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></button>
                 </a>
             </div>
 
