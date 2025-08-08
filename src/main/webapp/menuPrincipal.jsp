@@ -28,8 +28,10 @@
 
             <div class="nav-links">
                 <a href="index.jsp">Cerrar Sesión</a>
+                <a href="CarritoServlet">Carrito
+                </a>
             </div>
-        </div>
+        </div
 
         <div class="contenido">
 
