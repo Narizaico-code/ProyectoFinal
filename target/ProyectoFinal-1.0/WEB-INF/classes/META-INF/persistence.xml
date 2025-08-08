@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
     <!-- Define Persistence Unit -->
     <persistence-unit name="LibreriaPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
@@ -11,10 +12,12 @@
         <class>model.Marca</class>
         <properties>
             <!--configuracion del JDBC-->
+
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/proyecto_final_db?useSSL=false"/> 
             <property name="javax.persistence.jdbc.user" value="quintov"/> 
             <property name="javax.persistence.jdbc.password" value="admin"/> 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            
             <!--configuracion de Hibernet-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
@@ -23,4 +26,5 @@
             <property name="hibernate.use_sql_comments" value="true"/>
         </properties>
     </persistence-unit>
+
 </persistence>

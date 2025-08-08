@@ -18,7 +18,6 @@
     </head>
     <body>
 
-        <!-- Barra superior -->
         <div class="menu">
             <div class="espacio"></div>
             <form class="search-bar" action="buscarProductos" method="get">
@@ -32,20 +31,22 @@
             </div>
         </div>
 
-        <!-- Contenido dividido en 2 -->
         <div class="contenido">
 
+
             <!-- SecciÃ³n CategorÃ­as -->
+
             <div class="categorias">
                 <button onclick="mostrarMegaMenu('hombre')">Hombre</button>
                 <button onclick="mostrarMegaMenu('mujer')">Mujer</button>
             </div>
 
+
             <!-- Mega menÃº para Hombre -->
+
             <div class="mega-menu" id="menu-hombre" style="display: none;">
                 <div class="col">
-                    <h4><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJg7kZ0OB80zIHn_tnJwUdqQMGnq7tOIe4378iptqQ7R37KBhn52twXbL5Qsrll7bvyzY&usqp=CAU" alt="Tops" 
-
+                    <h4><img src="https://i.pinimg.com/1200x/4f/df/89/4fdf898eed5d37f567b43d60688e1dbe.jpg" alt="Tops" 
                              style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">Tops</h4>
                     <a href="#">Estampadas</a>
                     <a href="#">Basic</a>
@@ -53,7 +54,7 @@
                     <a href="#">Manga Larga</a>
                 </div>
                 <div class="col">
-                    <h4><img src="https://m.media-amazon.com/images/I/31UPR5tvMLL._SY1000_.jpg" alt="sweaters"
+                    <h4><img src="https://i.pinimg.com/1200x/4f/df/89/4fdf898eed5d37f567b43d60688e1dbe.jpg" alt="sweaters"
 
                              style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">sweaters</h4>
                     <a href="#">Jackets</a>
@@ -61,7 +62,7 @@
                     <a href="#">Abrigos</a>
                 </div>
                 <div class="col">
-                    <h4><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCW9v-ULn9S3irnivR7aqcRIJV6I8Qy9u2cw&s" alt="pants"
+                    <h4><img src="https://i.pinimg.com/736x/7d/9e/ed/7d9eedf6d0c700041dc733a395f58e80.jpg" alt="pants"
 
                              style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">Pants</h4>
                     <a href="#">Joger</a>
@@ -73,7 +74,7 @@
             <!-- Mega menÃº para Mujer -->
             <div class="mega-menu" id="menu-mujer" style="display: none;">
                 <div class="col">
-                    <h4><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJg7kZ0OB80zIHn_tnJwUdqQMGnq7tOIe4378iptqQ7R37KBhn52twXbL5Qsrll7bvyzY&usqp=CAU" alt="Tops" 
+                    <h4><img src="https://i.pinimg.com/1200x/14/7d/ef/147defd738c61c27c1477987437f6ac9.jpg" alt="Tops" 
 
                              style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">Tops</h4>
                     <a href="#">Estampadas</a>
@@ -82,7 +83,7 @@
                     <a href="#">Manga Larga</a>
                 </div>
                 <div class="col">
-                    <h4><img src="https://m.media-amazon.com/images/I/31UPR5tvMLL._SY1000_.jpg" alt="sweaters"
+                    <h4><img src="https://i.pinimg.com/736x/34/69/b8/3469b86182fb37cbd28c82ac49c3381b.jpg" alt="sweaters"
 
                              style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">sweaters</h4>
                     <a href="#">Jackets</a>
@@ -90,7 +91,7 @@
                     <a href="#">Abrigos</a>
                 </div>
                 <div class="col">
-                    <h4><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCW9v-ULn9S3irnivR7aqcRIJV6I8Qy9u2cw&s" alt="pants"
+                    <h4><img src="https://i.pinimg.com/736x/82/33/09/823309fc1fd325d8243fdcee4a3eeb1f.jpg" alt="pants"
 
                              style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">Pants</h4>
                     <a href="#">Joger</a>
@@ -161,7 +162,7 @@
                 <div class="contenedor-productos">
                     <div class="encabezado-seccion">
                         <h2>Pantalones</h2>
-                        <a href="ServletPantalones">
+                        <a href="ServletPantalon">
                         <button class="ver-mas" onclick="mostrarMegaMenu('verMas')">Ver más</button></a>
                     </div>
 

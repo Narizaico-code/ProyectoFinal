@@ -1,194 +1,406 @@
-<%-- 
-    Document   : sueteres
-    Created on : 28/07/2025, 22:30:16
-    Author     : ricar
---%>
+/* 
+Created on : 29/07/2025, 23:10:52
+Author     : ricar
+*/
+
+<%@page import="model.Productos"%>
+<%@ page import="java.util.List" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="dao.ProductoDAO" %>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+<<<<<<< HEAD
         <title>Tienda de Suéteres</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
               rel="stylesheet"
               integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
               crossorigin="anonymous">
         <link rel="stylesheet" href="style/extra.css">
+=======
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sueteres</title>
+        <link rel="stylesheet" href="style/sueteres.css">
+
+>>>>>>> ricardo
     </head>
     <body>
-
-
-        <div class="menu">
-            <button class="btn"  id="btn-volver" onclick="history.back()">←Volver</button>
-            <div class="grid"></div>
-            <div id="poda">
-                <div class="glow"></div>
-                <div class="darkBorderBg"></div>
-                <div class="darkBorderBg"></div>
-                <div class="darkBorderBg"></div>
-
-                <div class="white"></div>
-
-                <div class="border"></div>
-
-                <div id="main">
-                    <input placeholder="Search..." type="text" name="text" class="input" />
-                    <div id="input-mask"></div>
-                    <div id="pink-mask"></div>
-                    <div class="filterBorder"></div>
-                    <div id="filter-icon">
-                        <svg
-                            preserveAspectRatio="none"
-                            height="27"
-                            width="27"
-                            viewBox="4.8 4.56 14.832 15.408"
-                            fill="none"
-                            >
-                        <path
-                            d="M8.16 6.65002H15.83C16.47 6.65002 16.99 7.17002 16.99 7.81002V9.09002C16.99 9.56002 16.7 10.14 16.41 10.43L13.91 12.64C13.56 12.93 13.33 13.51 13.33 13.98V16.48C13.33 16.83 13.1 17.29 12.81 17.47L12 17.98C11.24 18.45 10.2 17.92 10.2 16.99V13.91C10.2 13.5 9.97 12.98 9.73 12.69L7.52 10.36C7.23 10.08 7 9.55002 7 9.20002V7.87002C7 7.17002 7.52 6.65002 8.16 6.65002Z"
-                            stroke="#d6d6e6"
-                            stroke-width="1"
-                            stroke-miterlimit="10"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            ></path>
-                        </svg>
-                    </div>
-                    <div id="search-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            viewBox="0 0 24 24"
-                            stroke-width="2"
-                            stroke-linejoin="round"
-                            stroke-linecap="round"
-                            height="24"
-                            fill="none"
-                            class="feather feather-search"
-                            >
-                        <circle stroke="url(#search)" r="8" cy="11" cx="11"></circle>
-                        <line
-                            stroke="url(#searchl)"
-                            y2="16.65"
-                            y1="22"
-                            x2="16.65"
-                            x1="22"
-                            ></line>
-                        <defs>
-                        <linearGradient gradientTransform="rotate(50)" id="search">
-                        <stop stop-color="#f8e7f8" offset="0%"></stop>
-                        <stop stop-color="#b6a9b7" offset="50%"></stop>
-                        </linearGradient>
-                        <linearGradient id="searchl">
-                        <stop stop-color="#b6a9b7" offset="0%"></stop>
-                        <stop stop-color="#837484" offset="50%"></stop>
-                        </linearGradient>
-                        </defs>
-                        </svg>
-                    </div>
-                </div>
-            </div>
+        <div class="nav-links">
+            <a href="menuPrincipal.jsp">Regresar</a>
         </div>
-        <div class="productos">
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/8d/b1/f7/8db1f77ba93e90910c6883f278d03f6a.jpg" alt="Suéter de Spiderman">
-                <h3>Suéter de Spiderman</h3>
-                <p>Suéter de Spiderman de algodón rojo</p>
+
+        <div class="busqueda-form">
+            <form method="get" action="ServletCamisas">
+                <input type="text" name="query" placeholder="Buscar..." />
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <h1>Resultados para Camisas</h1>
+
+        <div class="productos-grid">
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/e4/98/cc/e498cc4bc14ba44a2b696f1d1fab9f46.jpg" alt="Camisa Básica">
+                </div>
+                <div class="producto-nombre">Camisa Básica</div>
+                <div class="producto-descripcion">Camisa básica de uso diario, ligera y cómoda.</div>
+                <div class="producto-precio">$25.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/1200x/a2/df/16/a2df16ff43493c295c3f346e8c7163a6.jpg" alt="Sudadera Manga Larga">
-                <h3>Sudadera Con Manga Larga</h3>
-                <p>Sudadera manga larga color morado</p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/2e/e6/83/2ee6838c0ca61f984636a7473875f7eb.jpg" alt="Camisa Básica">
+                </div>
+                <div class="producto-nombre">Camisa Básica</div>
+                <div class="producto-descripcion">Camisa básica de uso diario, ligera y cómoda.</div>
+                <div class="producto-precio">$25.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/1200x/2e/e6/83/2ee6838c0ca61f984636a7473875f7eb.jpg" alt="Sudadera de Stitch">
-                <h3>Sudadera de Stitch</h3>
-                <p>Sudadera con capucha de graffiti urbano con personajes de Stitch y detalles neón</p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/91/1e/6c/911e6c28a10918cbbdb490e689debcf5.jpg" alt="Sudadero Kawasaki">
+                </div>
+                <div class="producto-nombre">Sudadero de Kawasaki</div>
+                <div class="producto-descripcion"></div>
+                <div class="producto-precio">$55.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/34/69/b8/3469b86182fb37cbd28c82ac49c3381b.jpg" alt="Suéter de Dragon Ball">
-                <h3>Suéter de Dragon Ball</h3>
-                <p>Sudadera suéter de anime Dragon Ball</p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/5f/5c/49/5f5c49100ba9a4c8c23715472488e5ef.jpg" alt="Suéter Ducati">
+                </div>
+                <div class="producto-nombre">Suéter de moto Ducati</div>
+                <div class="producto-descripcion">Color rojo.</div>
+                <div class="producto-precio">$35.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/d3/47/69/d34769d78df2e872fbc2994be628c1b0.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de Daisy y Yankees</h3>
-                <p>Suéter lila con diseño único</p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/fa/73/36/fa733644ecbf16931a55857f9d374a0c.jpg" alt="Suéter KTM">
+                </div>
+                <div class="producto-nombre">Suéter de KTM</div>
+                <div class="producto-descripcion">Suéter negro con naranja</div>
+                <div class="producto-precio">$25.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/d9/f2/6f/d9f26f4016717e9d36a8abc6efef29c8.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de Rugrats</h3>
-                <p>Suéter  de la serie Rugrats</p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/35/79/69/357969fc831ef8a9566b273f8e42fcb9.jpg" alt="Suéter Fox">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Fox</div>
+                <div class="producto-descripcion">Suéter blanco</div>
+                <div class="producto-precio">$65.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/6c/6f/6f/6c6f6f17b5fb5a090b0f3d6b9e6bec8e.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de carlitos rugrats</h3>
-                <p>Suéter  de la serie Rugrats</p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/63/88/2b/63882b958df62db08b0e3ff12d0c0686.jpg" alt="Suéter Fox">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Fox</div>
+                <div class="producto-descripcion">Suéter rojo</div>
+                <div class="producto-precio">$65.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/1200x/e4/98/cc/e498cc4bc14ba44a2b696f1d1fab9f46.jpg" alt="Suéter Daisy y Yankees">
-                <h3>Suéter de  carro Toyota Supra</h3>
-                <p>Suéter  de Toyota Supra  </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/32/f9/89/32f9893bd87771e14e4120c5f2f87029.jpg" alt="Suéter Honda">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Honda</div>
+                <div class="producto-descripcion">Suéter de color rojo con detalles rojos</div>
+                <div class="producto-precio">$40.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/1200x/55/c4/e4/55c4e457e051b552de3140ed04143386.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter  </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/dd/c8/04/ddc804a1751ec96e442201a66ef8f8aa.jpg" alt="Suéter Honda">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Honda</div>
+                <div class="producto-descripcion">Suéter de color blanco</div>
+                <div class="producto-precio">$40.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/55/e8/2f/55e82fe6ec5def4dd4d572fef98beb40.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter Ferrari </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/79/fc/21/79fc21b86e8d007736e0898d7bbacdae.jpg" alt="Suéter Cherry">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Cherry</div>
+                <div class="producto-descripcion">Suéter de color blanco</div>
+                <div class="producto-precio">$35.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/fa/73/36/fa733644ecbf16931a55857f9d374a0c.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter  Ktm </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/73/b7/12/73b7127111b0d40dd78bbc2d79b27192.jpg" alt="Suéter Cherry">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Cherry</div>
+                <div class="producto-descripcion">Suéter de color blanco</div>
+                <div class="producto-precio">$25.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/1200x/8f/49/ff/8f49ff4cfd1bfeba32b6e3877fd2b5af.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de one piece </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/fb/5d/da/fb5dda0ad989d54bac41bd3d90422876.jpg" alt="Suéter Be Yourself">
+                </div>
+                <div class="producto-nombre">Suéter de la marca Be Yourself</div>
+                <div class="producto-descripcion">Suéter de color negro</div>
+                <div class="producto-precio">$35.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/1200x/3d/66/fa/3d66fac7da32baf0ebf0f8eb37a9f45f.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Nasa </h3>
-                <p>Suéter  de Nasa    </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/d8/0e/a0/d80ea04af96867d9fc24f4ffe2dfe390.jpg" alt="Sudadera Be Yourself">
+                </div>
+                <div class="producto-nombre">Sudadera Be Yourself</div>
+                <div class="producto-descripcion">Sudadera Con Capucha Y Cordón De Forro Polar Con Estampado De Dibujos Animados</div>
+                <div class="producto-precio">$45.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/91/1e/6c/911e6c28a10918cbbdb490e689debcf5.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Moto Kawasaki </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/45/e0/c1/45e0c15718752d432507f502c3fe8d89.jpg" alt="Suéter Capibara">
+                </div>
+                <div class="producto-nombre">Suéter de Capibara</div>
+                <div class="producto-descripcion">Suéter morado</div>
+                <div class="producto-precio">$55.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/f1/04/a0/f104a0aae3bc89f61bc6f03992187e09.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Yamaha  </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/a7/49/30/a74930351f1d3768f51d9f541f75d585.jpg" alt="Suéter Labubus">
+                </div>
+                <div class="producto-nombre">Suéter de Labubus</div>
+                <div class="producto-descripcion">Suéter azul marino</div>
+                <div class="producto-precio">$75.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/3f/23/70/3f237063f047d025cedfd009cd79d8f3.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Moto Panigale </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/736x/d3/47/69/d34769d78df2e872fbc2994be628c1b0.jpg" alt="Suéter Daisy Duck">
+                </div>
+                <div class="producto-nombre">Suéter de Daisy Duck</div>
+                <div class="producto-descripcion">Suéter color morado</div>
+                <div class="producto-precio">$85.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/c4/a5/e7/c4a5e74eb95e04465254e7ee6c54e5b6.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Porshe </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/47/56/05/475605b883f71bb5818f7bf145ea67cb.jpg" alt="Suéter Pantera Rosa">
+                </div>
+                <div class="producto-nombre">Suéter de la Pantera Rosa</div>
+                <div class="producto-descripcion">Suéter color rosado</div>
+                <div class="producto-precio">$11.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/e9/55/8e/e9558ed36912254c84f083445c290d15.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Bmw M4 </h3>
-                <p>Suéter      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/a9/6a/84/a96a84dfccce386ffab11cb013b0b9fc.jpg" alt="Suéter Stich">
+                </div>
+                <div class="producto-nombre">Suéter de Stich</div>
+                <div class="producto-descripcion">Suéter color violeta</div>
+                <div class="producto-precio">$15.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/00/5a/4b/005a4b652e8675eea9dd859281efc700.jpg"all="Suéter Daisy y Yankees">
-                <h3>Suéter de Jeep  </h3>
-                <p>Suéter      </p>
-            </div>
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/35/79/69/357969fc831ef8a9566b273f8e42fcb9.jpg"all="Suéter Daisy y Yankees">
-                <h3>Sudadero Fox </h3>
-                <p>Sudadero      </p>
+
+            <div class="producto-card">
+                <div class="producto-imagen">
+                    <img src="https://i.pinimg.com/1200x/8d/19/57/8d1957d94c8413d17c5d3c99be6eb4ad.jpg" alt="Suéter Mickey">
+                </div>
+                <div class="producto-nombre">Suéter de Mickey</div>
+                <div class="producto-descripcion">Suéter sublimado</div>
+                <div class="producto-precio">$19.99</div>
+                <div class="producto-talla">
+                    <span class="talla-actual">Talla:</span> L
+                </div>
+                <div class="tallas-disponibles">
+                    <span class="talla-opcion">S</span>
+                    <span class="talla-opcion">M</span>
+                    <span class="talla-opcion">L</span>
+                    <span class="talla-opcion">XL</span>
+                </div>
+                <button class="boton-comprar">Comprar</button>
             </div>
         </div>
 
