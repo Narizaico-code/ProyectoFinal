@@ -124,9 +124,8 @@ body {
                 <img src="images/Logo.jpg" alt="Logo de la marca">
             </form>
 
-            <div class="nav-links">
-                <a href="index.jsp">Regresar</a>
-            </div>
+           <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+
         </div>
         
          <div class="tablas">
@@ -139,8 +138,12 @@ body {
                 <h3>Proveedores</h3>
             </div>
             <div class="card">
-                <a href="login.jsp"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
+                <a href="ServletCliente"> <img src="https://img.icons8.com/?size=100&id=69&format=png&color=000000" alt="Clientes"></a>
                 <h3>Clientes</h3>
+            </div>
+              <div class="card">
+                <a href="ServletMarcas"><img src="https://img.icons8.com/?size=100&id=uKfnnSphjuCt&format=png&color=000000" alt="Marcas"></a>
+                <h3>Marcas</h3>
             </div>
             <div class="card">
                 <a href="ServletListarCategoria"> <img src="https://img.icons8.com/?size=100&id=12560&format=png&color=000000" alt="Clientes"></a>
