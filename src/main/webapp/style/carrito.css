@@ -1,0 +1,136 @@
+:root {
+    --fondo-oscuro: #0F1A2B;
+    --fondo-panel: #000000;
+    --texto-primario: #FFFFFF;
+    --texto-secundario: #CCCCCC;
+    --dorado: #8C6E3F;
+    --dorado-hover: #A88C5E;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-primario);
+}
+
+header {
+    background-color: var(--fondo-panel);
+    color: var(--dorado);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--dorado);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.logo {
+    height: 50px;
+}
+
+.titulo {
+    font-size: 28px;
+    text-align: center;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+.carrito {
+    width: 70%;
+    background-color: var(--fondo-panel);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(140, 110, 63, 0.3);
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--dorado);
+    padding: 15px 0;
+}
+
+.producto img {
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(140, 110, 63, 0.4);
+}
+
+.producto-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: var(--texto-secundario);
+}
+
+
+.resumen {
+    width: 25%;
+    background-color: var(--fondo-panel);
+    border: 1px solid var(--dorado);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(140, 110, 63, 0.3);
+}
+
+.subtotal {
+    font-weight: bold;
+    color: var(--dorado);
+}
+
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--dorado);
+    background-color: var(--fondo-panel);
+    color: var(--texto-primario);
+}
+
+
+.boton {
+    background-color: var(--dorado);
+    color: #000000;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: var(--dorado-hover);
+    transform: scale(1.02);
+}
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    .carrito, .resumen {
+        width: 100%;
+    }
+}

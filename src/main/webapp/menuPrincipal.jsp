@@ -27,9 +27,9 @@
             </form>
 
             <div class="nav-links">
-                <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=30279&format=png&color=000000" alt="Cerrar Sesion" style="width:50px;height:50px;"</a>
+                <a href="index.jsp"><img src="https://img.icons8.com/?size=256w&id=34526&format=png&color=FFFFFF" alt="Cerrar Sesion" style="width:50px;height:50px;"</a>
                 <a href="CarritoServlet">
-            <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Ir al Carrito" style="width:50px;height:50px;">
+            <img src="https://img.icons8.com/?size=256w&id=59997&format=png&color=FFFFFF" alt="Ir al Carrito" style="width:50px;height:50px;">
                 </a>
             </div>
         </div
