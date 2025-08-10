@@ -9,6 +9,8 @@ import javax.persistence.Query;
 import model.Productos;
 
 public class ProductoDAO {
+    
+
 
     private static EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
 
@@ -102,6 +104,23 @@ public class ProductoDAO {
             admin.close();
         }
     }
+    
+    public List<Productos> listarLimit(int idCategoria, int limite) {
+    EntityManager admin = null;
+    try {
+        admin = fabrica.createEntityManager();
+        List<Productos> productos = admin.createQuery(
+                "SELECT p FROM Productos p WHERE p.idCategoria = :id ORDER BY p.idProducto ASC", Productos.class)
+                .setParameter("id", idCategoria)
+                .setMaxResults(limite)
+                .getResultList();
+        return productos;
+    } finally {
+        if (admin != null) {
+            admin.close();
+        }
+    }
+}
 
     public void eliminar(int id) {
         EntityManager admin = fabrica.createEntityManager();
