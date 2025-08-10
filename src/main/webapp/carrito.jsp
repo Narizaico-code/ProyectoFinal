@@ -19,23 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrito</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background-color: #2c3e50; color: white; padding: 20px; display: flex; align-items: center; justify-content: space-between; }
-        .logo { height: 50px; }
-        .titulo { font-size: 28px; text-align: center; flex-grow: 1; }
-        .acciones { display: flex; gap: 10px; }
-        main { display: flex; justify-content: space-between; padding: 20px; }
-        .carrito { width: 70%; }
-        .producto { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ccc; padding: 15px 0; }
-        .producto img { height: 80px; margin-right: 20px; }
-        .producto-info { flex: 1; display: flex; flex-direction: column; }
-        .resumen { width: 25%; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
-        input[type="number"] { width: 60px; padding: 5px; }
-        .boton { background-color: orange; color: white; padding: 10px; border: none; width: 100%; font-size: 16px; cursor: pointer; }
-        .boton:hover { background-color: darkorange; }
-        .subtotal { font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="style/carrito.css?">
 </head>
 <body>
     <header>
@@ -46,7 +30,6 @@
                 <a href="ServletMenuPrincipal">
                     <button class="btn btn-primary btn-custom"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></button>
                 </a>
-            </div>
             <form action="cerrarSesion.jsp" method="post">
                 <button type="submit">Cerrar Sesión</button>
             </form>
