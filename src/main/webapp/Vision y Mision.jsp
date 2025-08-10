@@ -5,16 +5,8 @@
     <head>
 <meta charset="UTF-8">
     <title>Visión y Misión - Stillz</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 30px; background-color: #f8f8f8; }
-        header { display: flex; align-items: center; margin-bottom: 20px; }
-        header img { height: 60px; margin-right: 15px; }
-        h1 { color: #333; }
-        section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 0 8px rgba(0,0,0,0.1);}
-        h2 { color: #2d8fdd; }
-        p { line-height: 1.5em; color: #555; }
-    </style>
-           <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+    <link rel="stylesheet" href="style/vision y mision.css?">
+           <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=39977&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
 
 </head>
 <body>
