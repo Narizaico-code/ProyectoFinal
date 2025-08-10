@@ -10,74 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Factura</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background: #fdfcfa;
-                margin: 0;
-                padding: 20px;
-            }
-            .contenedor {
-                max-width: 800px;
-                background: white;
-                padding: 30px;
-                margin: auto;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            }
-            .titulo {
-                font-size: 36px;
-                font-weight: bold;
-            }
-            .row {
-                display: flex;
-                justify-content: space-between;
-                margin-top: 20px;
-            }
-            .col {
-                width: 48%;
-                border: 1px solid #ccc;
-                border-radius: 10px;
-                padding: 10px;
-            }
-            .tabla {
-                width: 100%;
-                margin-top: 30px;
-                border-collapse: collapse;
-            }
-            .tabla thead {
-                background: black;
-                color: white;
-            }
-            .tabla th, .tabla td {
-                padding: 10px;
-                border: 1px solid #ddd;
-                text-align: left;
-            }
-            .iva {
-                margin-top: 20px;
-                text-align: right;
-            }
-            .logo {
-                width: 100px;
-                height: 100px;
-                background-color: #eaeaea;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 12px;
-                border-radius: 50%;
-            }
-            .gracias {
-                display: inline-block;
-                background: black;
-                color: white;
-                padding: 10px 20px;
-                margin-top: 30px;
-                border-radius: 20px;
-                font-weight: bold;
-            }
-        </style>
+        <link rel="stylesheet" href="factura.css">
     </head>
     <body>
         <div class="contenedor">
