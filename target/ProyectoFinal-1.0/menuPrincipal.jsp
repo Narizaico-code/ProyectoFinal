@@ -20,7 +20,7 @@
 
         <div class="menu">
             <div class="espacio"></div>
-            <form class="search-bar" action="buscarProductos" method="get">
+            <form class="search-bar" action="ServletMenuPrincipal" method="get">
                 <img src="images/Logo.jpg" alt="Logo de la marca">
                 <input type="text" name="query" placeholder="Buscar productos...">
                 <button type="submit">Buscar</button>

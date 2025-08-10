@@ -19,9 +19,15 @@
     </head>
     <body>
         <div class="nav-links">
+<<<<<<< HEAD
             <a href="menuPrincipal.jsp"><img src="https://img.icons8.com/?size=100&id=39977&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
             <a href="CarritoServlet">
                 <img src="https://img.icons8.com/?size=100&id=59997&format=png&color=000000" alt="Ir al Carrito" style="width:50px;height:50px;">
+=======
+            <a href="menuPrincipal.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+            <a href="CarritoServlet">
+                <img src="https://img.icons8.com/?size=100&id=9671&format=png&color=000000" alt="Ir al Carrito" style="width:50px;height:50px;">
+>>>>>>> ft/Angel
             </a>
         </div>
         <div class="busqueda-form">

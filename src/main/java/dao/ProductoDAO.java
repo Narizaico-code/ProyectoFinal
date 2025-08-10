@@ -9,20 +9,9 @@ import javax.persistence.Query;
 import model.Productos;
 
 public class ProductoDAO {
-    
-     private static EntityManagerFactory fabrica;
 
-    static {
-        try {
-            fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
-            System.out.println("DAO: EntityManagerFactory 'LibreriaPU' inicializada correctamente.");
-        } catch (Exception e) {
-            System.err.println("DAO: ERROR FATAL al inicializar EntityManagerFactory 'LibreriaPU': " + e.getMessage());
-            e.printStackTrace();
-            throw new RuntimeException("No se pudo inicializar la fábrica de entidades.", e);
-        }
-    }
-    
+    private static EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
+
     public void guardar(Productos producto) {
         EntityManager admin = fabrica.createEntityManager();
         try {
@@ -39,7 +28,6 @@ public class ProductoDAO {
         }
     }
 
-    
     public List<Productos> listarTodos() {
 
         EntityManager admin = fabrica.createEntityManager();
@@ -49,14 +37,14 @@ public class ProductoDAO {
             admin.close();
         }
     }
-    
-     public List<Productos> listarPorCategoria(int idCategoria) {
-        EntityManager admin = null;  
+
+    public List<Productos> listarPorCategoria(int idCategoria) {
+        EntityManager admin = null;
         try {
             admin = fabrica.createEntityManager();
             List<Productos> productos = admin.createQuery("SELECT p FROM Productos p WHERE p.idCategoria = :id", Productos.class)
-                        .setParameter("id", idCategoria)
-                        .getResultList();
+                    .setParameter("id", idCategoria)
+                    .getResultList();
             System.out.println("DAO: Se encontraron " + productos.size() + " productos para la categoría " + idCategoria);
             return productos;
         } finally {
@@ -64,7 +52,6 @@ public class ProductoDAO {
         }
     }
 
-    
     public Productos buscarPorId(int id) {
 
         EntityManager admin = fabrica.createEntityManager();
@@ -75,16 +62,15 @@ public class ProductoDAO {
         }
     }
 
-
     public List<Productos> listarPorBusqueda(String filtro, int idCategoria) {
-        EntityManager admin = null; 
+        EntityManager admin = null;
         try {
             admin = fabrica.createEntityManager();
-            String jpql = "SELECT p FROM Productos p " +
-                          "WHERE p.idCategoria = :idCategoria AND " +
-                          "(LOWER(p.nombreProducto) LIKE :filtro OR " +
-                          "LOWER(p.talla) LIKE :filtro OR " +
-                          "LOWER(p.color) LIKE :filtro)";
+            String jpql = "SELECT p FROM Productos p "
+                    + "WHERE p.idCategoria = :idCategoria AND "
+                    + "(LOWER(p.nombreProducto) LIKE :filtro OR "
+                    + "LOWER(p.talla) LIKE :filtro OR "
+                    + "LOWER(p.color) LIKE :filtro)";
             Query query = admin.createQuery(jpql, Productos.class);
             query.setParameter("idCategoria", idCategoria);
             query.setParameter("filtro", "%" + filtro.toLowerCase() + "%");
@@ -98,7 +84,7 @@ public class ProductoDAO {
             admin.close();
         }
     }
-    
+
     public void actualizar(Productos producto) {
 
         EntityManager admin = fabrica.createEntityManager();
@@ -117,7 +103,6 @@ public class ProductoDAO {
         }
     }
 
-    
     public void eliminar(int id) {
         EntityManager admin = fabrica.createEntityManager();
         EntityTransaction tr = admin.getTransaction();
