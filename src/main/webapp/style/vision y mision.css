@@ -1,0 +1,64 @@
+:root {
+    --fondo-oscuro: #0F1A2B;
+    --fondo-panel: #000000;
+    --texto-primario: #FFFFFF;
+    --texto-secundario: #CCCCCC;
+    --dorado: #8C6E3F;
+    --dorado-hover: #A88C5E;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 30px;
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-primario);
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--dorado);
+}
+
+header img {
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(140, 110, 63, 0.4);
+}
+
+
+h1 {
+    color: var(--dorado);
+    font-weight: bold;
+}
+
+
+section {
+    background: var(--fondo-panel);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(140, 110, 63, 0.3);
+    border: 1px solid var(--dorado);
+}
+
+
+h2 {
+    color: var(--dorado);
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.5em;
+    color: var(--texto-secundario);
+}
+
+
+section:hover {
+    box-shadow: 0 0 20px rgba(168, 140, 94, 0.4);
+    transition: box-shadow 0.3s ease;
+}
