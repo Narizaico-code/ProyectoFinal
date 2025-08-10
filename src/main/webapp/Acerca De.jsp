@@ -5,16 +5,8 @@
     <head>
      <meta charset="UTF-8">
     <title>Acerca de Nosotros - Stillz</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 30px; background-color: #f9f9f9; }
-        h1 { color: #222; }
-        section { background: white; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 0 8px rgba(0,0,0,0.1);}
-        h2 { color: #dd572d; }
-        p { color: #444; line-height: 1.6em; }
-        .gallery img { width: 200px; margin: 10px; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.15);}
-    </style>
-    
-       <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
+    <link rel="stylesheet" href="style/acerca de.css?">
+       <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=39977&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
 
 </head>
 <body>

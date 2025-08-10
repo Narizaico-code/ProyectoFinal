@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Usuario</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/usuario.css" />
 </head>
 <body>
 <div class="container mt-5">

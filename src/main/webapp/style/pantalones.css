@@ -1,42 +1,76 @@
-body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
+:root {
+    --fondo-oscuro: #0F1A2B;         /* Fondo general */
+    --fondo-panel: #000000;          /* Fondo tarjetas/paneles */
+    --texto-primario: #FFFFFF;
+    --texto-secundario: #CCCCCC;
+    --dorado: #8C6E3F;
+    --dorado-hover: #A88C5E;
+}
+
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-primario);
     padding: 20px;
 }
+
+/* Enlaces navegación */
 .nav-links {
     margin-bottom: 20px;
 }
 .nav-links a {
     text-decoration: none;
-    color: #337ab7;
+    color: var(--dorado);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: var(--dorado-hover);
 }
 
+/* Buscador */
 .busqueda-form {
     margin-bottom: 20px;
     text-align: center;
 }
 .busqueda-form input[type="text"] {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dorado);
     border-radius: 4px;
     width: 300px;
+    background-color: var(--fondo-panel);
+    color: var(--texto-primario);
 }
 .busqueda-form button {
     padding: 8px 15px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: var(--dorado);
+    color: #000;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.busqueda-form button:hover {
+    background-color: var(--dorado-hover);
 }
 
+/* Contenedor principal */
 .contenido {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
+
+/* Productos */
 .productos-grid {
     display: flex;
     flex-wrap: wrap;
@@ -45,16 +79,17 @@ body {
 }
 
 .producto {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: var(--fondo-panel);
+    border: 1px solid var(--dorado);
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
     width: 600px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
+    color: var(--texto-primario);
 }
 
 .producto-info-visual {
@@ -68,20 +103,21 @@ body {
     height: auto;
     border-radius: 4px;
     margin-bottom: 10px;
+    border: 1px solid var(--dorado);
 }
 .producto-info-visual h3 {
     margin: 0 0 10px;
-    color: #333;
+    color: var(--dorado);
     text-align: center;
 }
 .producto-info-visual p {
     margin: 0;
-    color: #666;
+    color: var(--texto-secundario);
     font-size: 14px;
     text-align: center;
 }
 
-
+/* Acciones del producto */
 .producto-acciones {
     flex: 1;
     display: flex;
@@ -89,12 +125,12 @@ body {
     justify-content: center;
     align-items: center;
     padding-left: 10px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid var(--dorado);
 }
 
 .btn-comprar {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--dorado);
+    color: #000;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -104,27 +140,30 @@ body {
     transition: background-color 0.3s ease;
     width: 100%;
     max-width: 180px;
+    font-weight: bold;
 }
 .btn-comprar:hover {
-    background-color: #0056b3;
+    background-color: var(--dorado-hover);
 }
 
+/* Selector de talla */
 .talla-selector {
     margin-top: 15px;
     padding-top: 10px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--dorado);
     text-align: center;
 }
 .talla-selector p {
     margin-bottom: 10px;
     font-weight: bold;
+    color: var(--texto-primario);
 }
 .talla-selector label {
     display: inline-block;
-    background-color: #e0e0e0;
-    color: #333;
+    background-color: #1a1a1a;
+    color: var(--texto-primario);
     padding: 8px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--dorado);
     border-radius: 5px;
     cursor: pointer;
     margin: 5px;
@@ -134,13 +173,13 @@ body {
     display: none;
 }
 .talla-selector input[type="radio"]:checked + label {
-    background-color: #28a745;
-    color: white;
-    border-color: #28a745;
+    background-color: var(--dorado);
+    color: #000;
+    border-color: var(--dorado);
 }
 .talla-selector input[type="radio"]:hover + label {
-    background-color: #d0d0d0;
+    background-color: #333;
 }
 .talla-selector input[type="radio"]:checked:hover + label {
-    background-color: #218838;
+    background-color: var(--dorado-hover);
 }
