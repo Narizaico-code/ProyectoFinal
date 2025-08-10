@@ -23,7 +23,7 @@
 </head>
 <body>
     <header>
-        <img src="imagenes/logo.png" alt="Logo Stillz" class="logo" />
+       <img src="images/Logo.jpg" alt="Logo" class="logo">
         <div class="titulo">Mi Carrito de Compras</div>
         <div class="acciones">
             <div class="btn-regresar-container">

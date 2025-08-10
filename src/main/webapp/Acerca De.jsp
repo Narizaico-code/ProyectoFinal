@@ -26,7 +26,7 @@
 <section>
     <h2>Galería</h2>
     <div class="gallery">
-        <img src="/src/main/webapp/images/tienda.jpg" alt="Tienda Stillz" />
+           <img src="images/Logo.jpg" alt="Logo" class="logo">
     </div>
 </section>
 

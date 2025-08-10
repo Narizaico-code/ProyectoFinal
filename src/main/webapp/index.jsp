@@ -11,7 +11,7 @@
 
   <div class="fondo">
     <header>
-      <img src="logo.png" alt="Logo Stillz" class="logo" />
+       <img src="images/Logo.jpg" alt="Logo" class="logo">
       <nav>
           <a href="Vision y Mision.jsp">
         <button>Mision y Vision</button></a>
