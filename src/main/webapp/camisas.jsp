@@ -15,13 +15,15 @@
         <link rel="stylesheet" href="style/camisas.css?">
         
     </head>
-    <body>
+        
+        
         <div class="nav-links">
             <a href="ServletMenuPrincipal"><img src="https://img.icons8.com/?size=100&id=39977&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
             <a href="CarritoServlet">
                 <img src="https://img.icons8.com/?size=100&id=59997&format=png&color=000000" alt="Ir al Carrito" style="width:50px;height:50px;">
             </a>
         </div>
+
         <div class="busqueda-form">
             <form method="get" action="ServletCamisas">
                 <input type="text" name="query" placeholder="Buscar..." />

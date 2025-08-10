@@ -1,6 +1,6 @@
 :root {
-  --fondo-oscuro: #0F1A2B;         /* Azul marino oscuro para fondo general */
-  --fondo-panel: #000000;          /* Panel Bienvenido: negro */
+  --fondo-oscuro: #0F1A2B;
+  --fondo-panel: #000000;
   --texto-primario: #FFFFFF;
   --texto-secundario: #CCCCCC;
   --dorado: #8C6E3F;
@@ -42,7 +42,7 @@ header {
 }
 
 .logo {
-  height: 60px;
+  height: 40px; /* Tamaño más pequeño para la imagen del logo */
 }
 
 nav button {
@@ -66,7 +66,6 @@ nav button:hover {
   gap: 40px;
   padding: 0 20px;
 }
-
 
 .info {
   flex: 1 1 300px;

@@ -7,8 +7,6 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <title>Tienda de Suéteres</title>
         <link rel="stylesheet" href="style/sueteres.css?">
     </head>
     

@@ -39,5 +39,4 @@ controller\ActualizarCarritoServlet.class
 controller\ServletEditarCategoria.class
 dao\DetallePedidosDAO.class
 dao\ProductoDAO.class
-controller\ServletCamisas.class
 controller\ServletEliminarProducto.class

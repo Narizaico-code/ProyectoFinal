@@ -9,6 +9,8 @@ import javax.persistence.Query;
 import model.Productos;
 
 public class ProductoDAO {
+    
+
 
     private static EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
 

@@ -23,12 +23,13 @@
 </head>
 <body>
     <header>
-        <img src="imagenes/logo.png" alt="Logo Stillz" class="logo" />
+       <img src="images/Logo.jpg" alt="Logo" class="logo">
         <div class="titulo">Mi Carrito de Compras</div>
         <div class="acciones">
-            <form action="ServletMenuPrincipal">
-                <button type="submit">Volver</button>
-            </form>
+            <div class="btn-regresar-container">
+                <a href="ServletMenuPrincipal">
+                    <button class="btn btn-primary btn-custom"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></button>
+                </a>
             <form action="cerrarSesion.jsp" method="post">
                 <button type="submit">Cerrar Sesión</button>
             </form>
