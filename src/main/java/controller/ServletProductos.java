@@ -48,6 +48,7 @@ public class ServletProductos extends HttpServlet {
         dao.guardar(producto);
 
         List<Productos> listaProductos = dao.listarTodos();
+
         solicitud.setAttribute("listaProductos", listaProductos);
         solicitud.getRequestDispatcher("listarProductos.jsp").forward(solicitud, respuesta);
     }

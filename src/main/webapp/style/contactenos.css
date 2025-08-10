@@ -1,0 +1,218 @@
+:root {
+    --fondo-oscuro: #0F1A2B;
+    --fondo-panel: #000000;
+    --texto-primario: #FFFFFF;
+    --texto-secundario: #CCCCCC;
+    --dorado: #8C6E3F;
+    --dorado-hover: #A88C5E;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--fondo-oscuro);
+    color: var(--texto-primario);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    gap: 40px;
+}
+
+
+.left {
+    flex: 1;
+}
+
+.left h2 {
+    font-size: 2.5em;
+    margin: 0;
+    color: var(--dorado);
+    text-shadow: 0 0 15px rgba(140, 110, 63, 0.6);
+}
+
+.left h2:nth-of-type(2) {
+    margin-bottom: 20px;
+}
+
+.left p {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: var(--texto-secundario);
+}
+
+
+.redes-horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.redes-horizontal .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--texto-primario);
+    text-decoration: none;
+}
+
+.redes-horizontal .item img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(140, 110, 63, 0.5);
+    margin-bottom: 6px;
+}
+
+.redes-horizontal .item h3 {
+    color: var(--dorado);
+    font-size: 1em;
+    margin: 0;
+}
+
+.redes-horizontal .item p {
+    font-size: 0.9em;
+    margin: 0;
+    color: var(--texto-secundario);
+}
+
+
+.form-container {
+    background-color: var(--fondo-panel);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(140, 110, 63, 0.4);
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid var(--dorado);
+    background-color: var(--fondo-panel) !important;
+    color: var(--texto-primario);
+    border-radius: 8px;
+    outline: none;
+    caret-color: var(--texto-primario);
+}
+
+
+.form-group input:-webkit-autofill,
+.form-group textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--fondo-panel) inset !important;
+    -webkit-text-fill-color: var(--texto-primario) !important;
+    caret-color: var(--texto-primario) !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--dorado-hover);
+    box-shadow: 0 0 10px var(--dorado-hover);
+}
+
+/* Etiquetas flotantes */
+.form-group label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    padding: 0 5px;
+    background: var(--fondo-panel);
+    color: var(--dorado);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    border-radius: 4px;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 13px;
+    padding: 0 6px;
+    background: var(--fondo-panel);
+    color: var(--dorado-hover);
+}
+
+
+button {
+    background-color: var(--dorado);
+    color: #000;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(140, 110, 63, 0.4);
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: var(--dorado-hover);
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(168, 140, 94, 0.6);
+}
+
+
+.btn-regresar-container {
+    margin-top: 30px;
+}
+
+.btn-custom {
+    background-color: var(--dorado);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--dorado);
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--dorado-hover);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,6 +1,6 @@
 :root {
-  --fondo-oscuro: #0F1A2B;         /* Azul marino oscuro para fondo general */
-  --fondo-panel: #000000;          /* Panel Bienvenido: negro */
+  --fondo-oscuro: #0F1A2B;
+  --fondo-panel: #000000;
   --texto-primario: #FFFFFF;
   --texto-secundario: #CCCCCC;
   --dorado: #8C6E3F;
@@ -20,7 +20,6 @@ body, html {
   color: var(--texto-primario);
 }
 
-/* Fondo principal */
 .fondo {
   display: flex;
   flex-direction: column;
@@ -43,7 +42,7 @@ header {
 }
 
 .logo {
-  height: 60px;
+  height: 40px; /* Tamaño más pequeño para la imagen del logo */
 }
 
 nav button {
@@ -60,7 +59,6 @@ nav button:hover {
   color: var(--dorado-hover);
 }
 
-/* Contenido central */
 .contenido {
   display: flex;
   justify-content: space-between;
@@ -69,7 +67,6 @@ nav button:hover {
   padding: 0 20px;
 }
 
-/* Sección informativa */
 .info {
   flex: 1 1 300px;
   max-width: 500px;
@@ -86,7 +83,6 @@ nav button:hover {
   color: var(--texto-secundario);
 }
 
-/* Panel de login */
 .panel {
   flex: 1 1 300px;
   max-width: 400px;
@@ -104,7 +100,6 @@ nav button:hover {
   color: var(--dorado);
 }
 
-/* Botones */
 .botones {
   display: flex;
   flex-direction: column;
@@ -142,7 +137,6 @@ button.registrarse:hover {
   color: #000000;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .contenido {
     flex-direction: column;

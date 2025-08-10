@@ -5,13 +5,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import model.Productos;
 
 public class ProductoDAO {
-
-    private EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
-
     
+
+
+    private static EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("LibreriaPU");
+
     public void guardar(Productos producto) {
         EntityManager admin = fabrica.createEntityManager();
         try {
@@ -28,8 +30,8 @@ public class ProductoDAO {
         }
     }
 
-    
     public List<Productos> listarTodos() {
+
         EntityManager admin = fabrica.createEntityManager();
         try {
             return admin.createQuery("SELECT p FROM Productos p", Productos.class).getResultList();
@@ -38,8 +40,22 @@ public class ProductoDAO {
         }
     }
 
-    
+    public List<Productos> listarPorCategoria(int idCategoria) {
+        EntityManager admin = null;
+        try {
+            admin = fabrica.createEntityManager();
+            List<Productos> productos = admin.createQuery("SELECT p FROM Productos p WHERE p.idCategoria = :id", Productos.class)
+                    .setParameter("id", idCategoria)
+                    .getResultList();
+            System.out.println("DAO: Se encontraron " + productos.size() + " productos para la categoría " + idCategoria);
+            return productos;
+        } finally {
+            admin.close();
+        }
+    }
+
     public Productos buscarPorId(int id) {
+
         EntityManager admin = fabrica.createEntityManager();
         try {
             return admin.find(Productos.class, id);
@@ -48,8 +64,31 @@ public class ProductoDAO {
         }
     }
 
-    
+    public List<Productos> listarPorBusqueda(String filtro, int idCategoria) {
+        EntityManager admin = null;
+        try {
+            admin = fabrica.createEntityManager();
+            String jpql = "SELECT p FROM Productos p "
+                    + "WHERE p.idCategoria = :idCategoria AND "
+                    + "(LOWER(p.nombreProducto) LIKE :filtro OR "
+                    + "LOWER(p.talla) LIKE :filtro OR "
+                    + "LOWER(p.color) LIKE :filtro)";
+            Query query = admin.createQuery(jpql, Productos.class);
+            query.setParameter("idCategoria", idCategoria);
+            query.setParameter("filtro", "%" + filtro.toLowerCase() + "%");
+            List<Productos> productos = query.getResultList();
+            System.out.println("DAO: Se encontraron " + productos.size() + " productos en la búsqueda para la categoría " + idCategoria);
+            return productos;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            admin.close();
+        }
+    }
+
     public void actualizar(Productos producto) {
+
         EntityManager admin = fabrica.createEntityManager();
         EntityTransaction transaccion = admin.getTransaction();
         try {
@@ -65,8 +104,24 @@ public class ProductoDAO {
             admin.close();
         }
     }
-
     
+    public List<Productos> listarLimit(int idCategoria, int limite) {
+    EntityManager admin = null;
+    try {
+        admin = fabrica.createEntityManager();
+        List<Productos> productos = admin.createQuery(
+                "SELECT p FROM Productos p WHERE p.idCategoria = :id ORDER BY p.idProducto ASC", Productos.class)
+                .setParameter("id", idCategoria)
+                .setMaxResults(limite)
+                .getResultList();
+        return productos;
+    } finally {
+        if (admin != null) {
+            admin.close();
+        }
+    }
+}
+
     public void eliminar(int id) {
         EntityManager admin = fabrica.createEntityManager();
         EntityTransaction tr = admin.getTransaction();
