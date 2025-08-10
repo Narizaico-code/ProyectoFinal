@@ -227,3 +227,23 @@ VALUES
 
 
 select * from Productos;
+
+-- Prueba
+INSERT INTO Pedidos (idUsuario, fechaPedido, total, metodoPago, estado)
+VALUES (4, '2025-08-10', 238.75, 'Efectivo', 'Pendiente');
+select * from Pedidos;
+INSERT INTO Detallepedidos (idPedido, idProducto, talla, cantidad, precioUnitario, subTotal)
+VALUES
+    (6, 1,  'M', 2, 75.50, 151.00),   -- Camisa de Hombre #1 (75.50 * 2)
+    (6, 11, 'S', 1, 87.75,  87.75);   -- Camisa de Mujer #1 (87.75 * 1)
+    -- Insertar un pedido para Kenny (usuario id = 4)
+INSERT INTO Pedidos (idUsuario, fechaPedido, total, metodoPago, estado)
+VALUES (4, '2025-08-10', 238.75, 'Efectivo', 'Pendiente');
+
+INSERT INTO Detallepedidos (idPedido, idProducto, talla, cantidad, precioUnitario, subTotal)
+VALUES
+    (6, 1,  'M', 2, 75.50, 151.00), 
+    (6, 11, 'S', 1, 87.75,  87.75); 
+
+INSERT INTO Envios (idPedido, direccionEnvio, empresaEnvio, codigoSeguimiento, fechaEnvio, fechaEntrega, estado)
+VALUES (6, '10 Avenida 5-20, Zona 1, Ciudad de Guatemala', 'Correos GT', 2025081001, NULL, NULL, 'Pendiente');
