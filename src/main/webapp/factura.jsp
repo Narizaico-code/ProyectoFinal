@@ -24,10 +24,6 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-<<<<<<< HEAD
-        <title>Factura</title>
-        <link rel="stylesheet" href="factura.css">
-=======
         <title>Factura - Pedido <%= idPedido%></title>
         <style>
             body {
@@ -71,7 +67,6 @@
                 justify-content:flex-end;
             }
         </style>
->>>>>>> ft/Angel
     </head>
     <body>
         <div class="container">

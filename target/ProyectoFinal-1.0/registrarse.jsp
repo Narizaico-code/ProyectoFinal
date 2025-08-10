@@ -11,13 +11,8 @@
         <meta charset="UTF-8">
         <title>Formulario de Registro</title>
 
-<<<<<<< HEAD
         <link rel="stylesheet" href="style/registrarse.css">
         <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=39977&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
-=======
-        <link rel="stylesheet" href="style/extra.css">
-        <a href="index.jsp"><img src="https://img.icons8.com/?size=100&id=24338&format=png&color=000000" alt="Regresar" style="width:50px;height:50px;"></a>
->>>>>>> ft/Angel
 
     </head>
     <body>
