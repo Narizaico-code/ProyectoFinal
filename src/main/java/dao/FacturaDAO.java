@@ -6,14 +6,21 @@ import java.util.List;
 
 public class FacturaDAO {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibreriaPU");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("LibreriaPU");
 
-    public void guardar(Factura factura) {
+    public boolean guardar(Factura factura) {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
             em.persist(factura);
             em.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            return false;
         } finally {
             em.close();
         }
@@ -22,9 +29,30 @@ public class FacturaDAO {
     public List<Factura> listarPorPedido(int idPedido) {
         EntityManager em = emf.createEntityManager();
         try {
-            return em.createQuery("SELECT f FROM Factura f WHERE f.idPedido = :idPedido", Factura.class)
-                     .setParameter("idPedido", idPedido)
-                     .getResultList();
+            TypedQuery<Factura> q = em.createQuery("SELECT f FROM Factura f WHERE f.idPedido = :idPedido", Factura.class);
+            q.setParameter("idPedido", idPedido);
+            return q.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public boolean eliminarPorId(Integer idDetallePedido) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Factura f = em.find(Factura.class, idDetallePedido);
+            if (f != null) {
+                em.remove(f);
+            }
+            em.getTransaction().commit();
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            return false;
         } finally {
             em.close();
         }

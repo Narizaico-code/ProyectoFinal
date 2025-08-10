@@ -24,6 +24,7 @@ model\Pedidos.class
 model\Productos.class
 controller\ServletEditarProducto.class
 controller\ServletComprar.class
+controller\ServletFacturaPDF.class
 controller\ServletListarCategoria.class
 controller\ServletSueteres.class
 model\Pedido.class
