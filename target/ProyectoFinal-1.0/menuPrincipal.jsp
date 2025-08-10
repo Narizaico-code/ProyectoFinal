@@ -41,7 +41,7 @@
     <%
         List<Productos> camisas = (List<Productos>) request.getAttribute("camisas");
         if (camisas != null) {
-            for (int i = 0; i < Math.min(3, camisas.size()); i++) {
+            for (int i = 0; i < Math.min(4, camisas.size()); i++) {
                 Productos producto = camisas.get(i);
     %>
         <div class="producto">
@@ -63,7 +63,7 @@
             if (pantalones != null && !pantalones.isEmpty()) {
                 int contador = 0;
                 for (Productos producto : pantalones) {
-                    if (contador >= 3) break;
+                    if (contador >= 4) break;
         %>
         <div class="producto">
             <img src="<%= producto.getImagenURL() %>" alt="<%= producto.getNombreProducto() %>">
@@ -85,7 +85,7 @@
             if (sueteres != null && !sueteres.isEmpty()) {
                 int contador = 0;
                 for (Productos producto : sueteres) {
-                    if (contador >= 3) break;
+                    if (contador >= 4) break;
         %>
         <div class="producto">
             <img src="<%= producto.getImagenURL() %>" alt="<%= producto.getNombreProducto() %>">

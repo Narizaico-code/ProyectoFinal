@@ -33,9 +33,9 @@ public class ServletMenuPrincipal extends HttpServlet {
             solicitud.setAttribute("resultadoBusqueda", resultados);
         } else {
             // Cargar 3 productos de cada categoría
-            List<Productos> camisas = dao.listarLimit(1, 3);    // idCategoria 1 = Camisas
-            List<Productos> pantalones = dao.listarLimit(2, 3);// idCategoria 2 = Pantalones
-            List<Productos> sueteres = dao.listarLimit(3, 3);  // idCategoria 3 = Suéteres
+            List<Productos> camisas = dao.listarLimit(1, 4);    // idCategoria 1 = Camisas
+            List<Productos> pantalones = dao.listarLimit(2, 4);// idCategoria 2 = Pantalones
+            List<Productos> sueteres = dao.listarLimit(3, 4);  // idCategoria 3 = Suéteres
 
             solicitud.setAttribute("camisas", camisas);
             solicitud.setAttribute("pantalones", pantalones);
