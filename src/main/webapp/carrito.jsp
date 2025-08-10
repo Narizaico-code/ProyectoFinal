@@ -26,7 +26,7 @@
         <img src="imagenes/logo.png" alt="Logo Stillz" class="logo" />
         <div class="titulo">Mi Carrito de Compras</div>
         <div class="acciones">
-            <form action="menuPrincipal.jsp">
+            <form action="ServletMenuPrincipal">
                 <button type="submit">Volver</button>
             </form>
             <form action="cerrarSesion.jsp" method="post">
