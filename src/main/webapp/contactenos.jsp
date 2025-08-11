@@ -44,7 +44,7 @@
             </div>
 
             <div class="form-container">
-                <form action="https://formsubmit.co/ramierzk99@gmail.com" method="POST">
+                <form action="https://formsubmit.co/ssical-2024422@kinal.edu.gt" method="POST">
                     <div class="form-group">
                         <input type="text" name="name" required placeholder=" ">
                         <label>Nombre</label>

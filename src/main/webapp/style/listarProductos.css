@@ -1,0 +1,86 @@
+/* General body and container styles for dark theme */
+body {
+    background-color: #1a2035; /* Dark blue background color */
+    color: #e0e0e0; /* Light gray text color */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+/* Styles for the main heading */
+.text-center {
+    color: #ffffff; /* White color for the heading */
+}
+
+/* Styles for the "Add Product" button */
+.btn-primary {
+    background-color: #4a5568; /* A slightly lighter dark gray for the button */
+    border-color: #4a5568;
+    color: #e0e0e0;
+}
+
+.btn-primary:hover {
+    background-color: #6a748a; /* A lighter shade on hover */
+    border-color: #6a748a;
+}
+
+/* Styles for the table itself */
+.table {
+    background-color: #2d3748; /* Darker blue-gray for the table body */
+    color: #e0e0e0; /* Light gray text for table content */
+    border-collapse: collapse; /* Ensure borders collapse for a clean look */
+    width: 100%;
+}
+
+/* Styles for the table header */
+.table-dark thead {
+    background-color: #1a2035; /* The same dark blue as the body */
+    color: #ffffff; /* White text for the header */
+}
+
+.table-dark th {
+    border-color: #4a5568; /* Border color for the header cells */
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Styles for the table body rows and cells */
+.table tbody tr {
+    border-bottom: 1px solid #4a5568; /* Separator for rows */
+}
+
+.table td {
+    padding: 12px 15px;
+    border-top: 1px solid #4a5568;
+}
+
+/* Specific styles for the action buttons */
+.btn-warning {
+    background-color: #ffc107; /* Standard warning color */
+    border-color: #ffc107;
+    color: #212529; /* Dark text for contrast */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Standard danger color */
+    border-color: #dc3545;
+    color: #ffffff;
+}
+
+/* Style for the "No products registered" message */
+.text-center[colspan="14"] {
+    color: #a0aec0; /* A slightly lighter gray for this message */
+}
+
+/* Styles for the menu link at the top */
+.menu-container {
+    background-color: #1a2035;
+    padding: 10px;
+text-align: left;
+}
+
+.menu-container img {
+    filter: invert(100%); /* Inverts the color of the image to make it white */
+}
